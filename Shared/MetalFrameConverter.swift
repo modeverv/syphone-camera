@@ -72,7 +72,7 @@ final class MetalFrameConverter {
         guard source.width == Int(CameraConstants.width),
               source.height == Int(CameraConstants.height),
               source.pixelFormat == .bgra8Unorm ||
-              source.pixelFormat == .bgra8Unorm_sRGB else {
+              source.pixelFormat == .bgra8Unorm_srgb else {
             throw ConverterError.incompatibleTexture
         }
 

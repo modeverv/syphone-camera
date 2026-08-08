@@ -82,7 +82,8 @@ final class CMIOSinkWriter {
 
     func enqueue(_ sampleBuffer: CMSampleBuffer) {
         guard let queue else { return }
-        guard CMSimpleQueueGetFullness(queue) < 1.0 else {
+        let capacity = CMSimpleQueueGetCapacity(queue)
+        guard capacity == 0 || CMSimpleQueueGetCount(queue) < capacity else {
             return // latest-frame-wins: drop instead of building latency
         }
         let ptr = Unmanaged.passRetained(sampleBuffer).toOpaque()
