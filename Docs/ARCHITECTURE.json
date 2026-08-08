@@ -1,0 +1,36 @@
+{
+  "project": "SyphonCamera",
+  "goal": "Webcam Motion Capture/Syphon Metal texture to macOS Camera Extension with minimum overhead",
+  "default_format": {
+    "width": 1280,
+    "height": 720,
+    "fps": 30,
+    "pixel_format": "BGRA"
+  },
+  "processes": {
+    "host": [
+      "Syphon discovery",
+      "SyphonMetalClient",
+      "Metal texture copy/scale",
+      "CMSampleBuffer creation",
+      "CMIO sink writer"
+    ],
+    "extension": [
+      "CMIO sink consume",
+      "CMIO source send"
+    ]
+  },
+  "latency_policy": {
+    "sink_queue_depth": 1,
+    "backpressure": "drop",
+    "encoding": "none"
+  },
+  "priorities": [
+    "build test pattern",
+    "verify sink transport",
+    "integrate Syphon",
+    "profile",
+    "GPU scale",
+    "reconnect"
+  ]
+}
