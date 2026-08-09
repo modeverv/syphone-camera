@@ -18,6 +18,12 @@ enum NetworkTransport: String {
     case udp
 }
 
+enum SourceKind {
+    case testPattern
+    case syphon
+    case network
+}
+
 /// MTU-safe datagram envelope for one fragmented encoded frame. A missing
 /// fragment deliberately drops the whole frame instead of delaying newer video.
 struct UDPFragmentHeader {

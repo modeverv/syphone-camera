@@ -117,9 +117,3 @@ final class AppModel: ObservableObject {
         return arguments[index + 1]
     }
 }
-
-enum SourceKind {
-    case testPattern
-    case syphon
-    case network
-}

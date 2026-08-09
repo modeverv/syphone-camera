@@ -46,7 +46,7 @@ Webcam Motion Captureを使う場合はSyphon出力を有効にし、ブリッ�
 
 ## ネットワーク H.264 転送（実験的）
 
-別 Mac から映像を送る場合、送信側と受信側を別プロセスとして起動できます。既定は UDP/5001 です。送信側は現在テストパターンを入力にするため、リモート Syphon 入力の接続は次段階の作業です。
+別 Mac から映像を送る場合、`SyphonUniCamExSender.app` と `SyphonUniCamExReceiver.app` を別々にビルド・起動します。既定は UDP/5001 です。送信アプリでは **Test Pattern** または **Syphon** を選択できます。Syphon は検出した WMC 系サーバーを優先し、なければ最初のサーバーを使用します。
 
 受信側（UniCamEx をインストールした Mac）:
 
@@ -64,12 +64,6 @@ make run-sender NETWORK_HOST=192.168.1.42 NETWORK_PORT=5001
 
 ```bash
 make run-network
-```
-
-TCP はデバッグ比較用として残しています。
-
-```bash
-make run-network NETWORK_TRANSPORT=tcp
 ```
 
 UDP は H.264 フレームを最大 1,200 byte の datagram に分割し、1 秒以内に揃わないフレームを破棄します。これにより Wi-Fi/LAN でのパケット損失時にも古いフレームの再送待ちを避けます。一方、現時点では暗号化・認証・輻輳制御・FEC/NACK・適応ビットレートを持たないため、信頼できる LAN 専用です。インターネット越しの運用には WebRTC への置換が必要です。

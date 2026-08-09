@@ -13,10 +13,10 @@ existing `FrameSource -> BridgeEngine -> UniCamExSender` path.
 ## Decision
 
 Use **UDP** for the current trusted-LAN PoC, with a fixed receiver address and
-manual configuration. TCP remains a debugging comparison path, but is not
-suitable for interactive video because packet loss causes head-of-line
-blocking. The production target remains **WebRTC**, which adds congestion
-handling, reconnection, and encryption before any public-network deployment.
+manual configuration. TCP testing showed head-of-line blocking risk and is not
+exposed through the separate sender/receiver apps. The production target remains
+**WebRTC**, which adds congestion handling, reconnection, and encryption before
+any public-network deployment.
 
 The sender contract is:
 

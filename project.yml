@@ -8,19 +8,56 @@ settings:
     PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.bridge
     SWIFT_VERSION: 5.10
 targets:
-  SyphonUniCamExBridge:
+  SyphonUniCamExSender:
     type: application
     platform: macOS
     sources:
-      - path: BridgeApp/Sources
       - path: Shared
+      - path: BridgeApp/Sources/NetworkFrameSender.swift
+      - path: BridgeApp/Sources/SyphonFrameSource.swift
+      - path: BridgeApp/Sources/TestPatternFrameSource.swift
+      - path: SenderApp/Sources
     resources:
       - path: BridgeApp/Resources
     settings:
       base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.sender
+        PRODUCT_NAME: SyphonUniCamExSender
         INFOPLIST_FILE: BridgeApp/Resources/Info.plist
         FRAMEWORK_SEARCH_PATHS:
           - $(inherited)
           - $(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release
     dependencies:
       - framework: Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework
+  SyphonUniCamExReceiver:
+    type: application
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: BridgeApp/Sources/BridgeEngine.swift
+      - path: BridgeApp/Sources/NetworkFrameSource.swift
+      - path: BridgeApp/Sources/SyphonFrameSource.swift
+      - path: BridgeApp/Sources/TestPatternFrameSource.swift
+      - path: BridgeApp/Sources/UniCamExSender.swift
+      - path: ReceiverApp/Sources
+    resources:
+      - path: BridgeApp/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.receiver
+        PRODUCT_NAME: SyphonUniCamExReceiver
+        INFOPLIST_FILE: BridgeApp/Resources/Info.plist
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release
+    dependencies:
+      - framework: Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework
+schemes:
+  SyphonUniCamExSender:
+    build:
+      targets:
+        SyphonUniCamExSender: all
+  SyphonUniCamExReceiver:
+    build:
+      targets:
+        SyphonUniCamExReceiver: all

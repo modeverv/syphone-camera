@@ -90,9 +90,10 @@ pattern instead of blocking on an empty source.
 
 ## Experimental network H.264 transport
 
-The sender and receiver can run as separate app processes. UDP on port 5001 is
-the default. The current sender uses the diagnostic pattern as its input; a
-remote Syphon input is a subsequent integration step.
+`SyphonUniCamExSender.app` and `SyphonUniCamExReceiver.app` are built and run
+as separate macOS apps. UDP on port 5001 is the default. The sender app lets
+you select **Test Pattern** or **Syphon**; it prefers a detected WMC-related
+server, then falls back to the first available Syphon server.
 
 On the receiving Mac (with UniCamEx installed):
 
@@ -110,12 +111,6 @@ For a same-Mac loopback test:
 
 ```bash
 make run-network
-```
-
-TCP remains available for debugging and comparison:
-
-```bash
-make run-network NETWORK_TRANSPORT=tcp
 ```
 
 The UDP sender fragments each H.264 frame into datagrams of at most 1,200
