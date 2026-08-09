@@ -67,6 +67,19 @@ xcodegen generate
 make build
 ```
 
+`make build` produces three self-contained app bundles in
+`build/Build/Products/Debug/`:
+
+- `SyphonUniCamExBridge.app` — the integrated, single-Mac bridge
+- `SyphonUniCamExSender.app` — the network H.264 sender
+- `SyphonUniCamExReceiver.app` — the network H.264 receiver and UniCamEx output
+
+Each bundle embeds the required Syphon framework, so it can be copied or moved
+as an intact `.app` bundle without its build directory. The integrated bridge
+and receiver still require UniCamEx to be installed and approved separately on
+the Mac that exposes the virtual camera. Local builds are unsigned; sign and
+notarize them before general distribution.
+
 Launch the app with:
 
 ```bash

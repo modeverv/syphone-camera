@@ -1,8 +1,10 @@
 PROJECT := SyphonUniCamExBridge.xcodeproj
+BRIDGE_SCHEME := SyphonUniCamExBridge
 SENDER_SCHEME := SyphonUniCamExSender
 RECEIVER_SCHEME := SyphonUniCamExReceiver
 CONFIGURATION ?= Debug
 DERIVED_DATA ?= build
+BRIDGE_APP := $(DERIVED_DATA)/Build/Products/$(CONFIGURATION)/$(BRIDGE_SCHEME).app
 SENDER_APP := $(DERIVED_DATA)/Build/Products/$(CONFIGURATION)/$(SENDER_SCHEME).app
 RECEIVER_APP := $(DERIVED_DATA)/Build/Products/$(CONFIGURATION)/$(RECEIVER_SCHEME).app
 NETWORK_HOST ?= 127.0.0.1
@@ -21,6 +23,13 @@ generate:
 build: generate
 	xcodebuild \
 		-project $(PROJECT) \
+		-scheme $(BRIDGE_SCHEME) \
+		-configuration $(CONFIGURATION) \
+		-derivedDataPath $(DERIVED_DATA) \
+		CODE_SIGNING_ALLOWED=$(CODE_SIGNING_ALLOWED) \
+		build
+	xcodebuild \
+		-project $(PROJECT) \
 		-scheme $(SENDER_SCHEME) \
 		-configuration $(CONFIGURATION) \
 		-derivedDataPath $(DERIVED_DATA) \
@@ -35,7 +44,7 @@ build: generate
 		build
 
 run: build
-	open "$(RECEIVER_APP)"
+	open "$(BRIDGE_APP)"
 
 # Launch each endpoint as a separate app process. Override NETWORK_HOST and
 # NETWORK_PORT for a second Mac, e.g. make run-sender NETWORK_HOST=192.168.1.42.
@@ -55,8 +64,8 @@ clean:
 
 help:
 	@printf '%s\n' \
-		'make build  Generate the Xcode project and build the app' \
-		'make run    Build the app and launch it' \
+		'make build  Generate the project and build Bridge, Sender, and Receiver apps' \
+		'make run    Build and launch SyphonUniCamExBridge.app' \
 		'make run-receiver  Build and launch SyphonUniCamExReceiver.app' \
 		'make run-sender    Build and launch SyphonUniCamExSender.app' \
 		'make run-network   Build and launch UDP receiver and sender as separate apps' \

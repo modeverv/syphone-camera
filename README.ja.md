@@ -35,6 +35,17 @@ make build
 make run
 ```
 
+`make build` は `build/Build/Products/Debug/` に次の3つのアプリバンドルを生成します。
+
+- `SyphonUniCamExBridge.app` — 1台のMacで使う統合版
+- `SyphonUniCamExSender.app` — ネットワーク H.264 送信アプリ
+- `SyphonUniCamExReceiver.app` — ネットワーク H.264 受信・UniCamEx 出力アプリ
+
+各 `.app` バンドルには必要な Syphon.framework が内包されるため、ビルドディレクトリを
+伴わずにアプリバンドル全体をコピーまたは移動して実行できます。ただし、仮想カメラを
+公開する統合版と receiver には、対象Macで UniCamEx を別途インストール・承認しておく
+必要があります。ローカルビルドは未署名なので、一般配布には署名と notarization が必要です。
+
 ブリッジをビルドまたは実行する前に、対象MacへUniCamExのリリースバイナリを
 インストールし、必要な承認手続きを完了してください。`bootstrap.sh`が用意する
 UniCamExのソースチェックアウトは開発用の参照であり、仮想カメラをインストール

@@ -8,6 +8,24 @@ settings:
     PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.bridge
     SWIFT_VERSION: 5.10
 targets:
+  SyphonUniCamExBridge:
+    type: application
+    platform: macOS
+    sources:
+      - path: Shared
+      - path: BridgeApp/Sources
+    resources:
+      - path: BridgeApp/Resources
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.bridge
+        PRODUCT_NAME: SyphonUniCamExBridge
+        INFOPLIST_FILE: BridgeApp/Resources/Info.plist
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release
+    dependencies:
+      - framework: Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework
   SyphonUniCamExSender:
     type: application
     platform: macOS
@@ -53,6 +71,10 @@ targets:
     dependencies:
       - framework: Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework
 schemes:
+  SyphonUniCamExBridge:
+    build:
+      targets:
+        SyphonUniCamExBridge: all
   SyphonUniCamExSender:
     build:
       targets:
