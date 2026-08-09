@@ -1,0 +1,376 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0AE6CCC58AAB25FF6C87E895 /* BridgeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A257E589780A332053A6B /* BridgeEngine.swift */; };
+		40A0B14ADE2E39DC3A7DC1D1 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4996FD51CCC869B882CD5 /* AppModel.swift */; };
+		43CD49189E4934907247A690 /* Syphon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07FC50A8060819497A441E /* Syphon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		4E8DF4CB840A03AC939EF522 /* SampleBufferFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */; };
+		59F991F5FB656977CA9B94D2 /* SyphonUniCamExBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8EF8E27C66D04FDB51B5E /* SyphonUniCamExBridgeApp.swift */; };
+		944CED3E61F25A651E52F500 /* LatestFrameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE82D0919AF0C575DC8DCFD /* LatestFrameStore.swift */; };
+		A76A7BBBF858B0E757F9CE31 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07FC50A8060819497A441E /* Syphon.framework */; };
+		A8A257E6E3F3FAE52B4D7EA8 /* TestPatternFrameSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2C9AEA70D0C6A8FD2D2C9B /* TestPatternFrameSource.swift */; };
+		BE325D55E86146E434C7FC58 /* PipelineInstrumentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688E33A6DBEE6333E4CF94D3 /* PipelineInstrumentation.swift */; };
+		C1AD7C5476E0CE2E93BD3F2A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7AA51D00C30E9A0C5E0F6C /* ContentView.swift */; };
+		C75D134E8A594DF2BF741DEE /* UniCamExSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455495602BDB0D604E1B2A88 /* UniCamExSender.swift */; };
+		C7ED8FCCF8FC0CAFE2C331D3 /* FrameContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = B554AC4AA90E5EA4AC8F7E42 /* FrameContracts.swift */; };
+		EF58CB090576B7667F470FE2 /* SyphonFrameSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCEBD6EF3F2D5BF92CD1CF3B /* SyphonFrameSource.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		46E96CBF20370D35502D58D5 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				43CD49189E4934907247A690 /* Syphon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		100A257E589780A332053A6B /* BridgeEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BridgeEngine.swift; sourceTree = "<group>"; };
+		26E8EF8E27C66D04FDB51B5E /* SyphonUniCamExBridgeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphonUniCamExBridgeApp.swift; sourceTree = "<group>"; };
+		2CE82D0919AF0C575DC8DCFD /* LatestFrameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LatestFrameStore.swift; sourceTree = "<group>"; };
+		455495602BDB0D604E1B2A88 /* UniCamExSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniCamExSender.swift; sourceTree = "<group>"; };
+		688E33A6DBEE6333E4CF94D3 /* PipelineInstrumentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PipelineInstrumentation.swift; sourceTree = "<group>"; };
+		8A2C9AEA70D0C6A8FD2D2C9B /* TestPatternFrameSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestPatternFrameSource.swift; sourceTree = "<group>"; };
+		8CB4996FD51CCC869B882CD5 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		9A07FC50A8060819497A441E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = "Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework"; sourceTree = "<group>"; };
+		AA7AA51D00C30E9A0C5E0F6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B554AC4AA90E5EA4AC8F7E42 /* FrameContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameContracts.swift; sourceTree = "<group>"; };
+		C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferFactory.swift; sourceTree = "<group>"; };
+		E7BE78100F565DFEBDD06D5C /* SyphonUniCamExBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyphonUniCamExBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FCEBD6EF3F2D5BF92CD1CF3B /* SyphonFrameSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphonFrameSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		52EB72EDD56C038B64C59667 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A76A7BBBF858B0E757F9CE31 /* Syphon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1482AEB9F589AE8934832123 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				B554AC4AA90E5EA4AC8F7E42 /* FrameContracts.swift */,
+				2CE82D0919AF0C575DC8DCFD /* LatestFrameStore.swift */,
+				688E33A6DBEE6333E4CF94D3 /* PipelineInstrumentation.swift */,
+				C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		330B9123863671B7D540A39F /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				8CB4996FD51CCC869B882CD5 /* AppModel.swift */,
+				100A257E589780A332053A6B /* BridgeEngine.swift */,
+				AA7AA51D00C30E9A0C5E0F6C /* ContentView.swift */,
+				FCEBD6EF3F2D5BF92CD1CF3B /* SyphonFrameSource.swift */,
+				26E8EF8E27C66D04FDB51B5E /* SyphonUniCamExBridgeApp.swift */,
+				8A2C9AEA70D0C6A8FD2D2C9B /* TestPatternFrameSource.swift */,
+				455495602BDB0D604E1B2A88 /* UniCamExSender.swift */,
+			);
+			name = Sources;
+			path = BridgeApp/Sources;
+			sourceTree = "<group>";
+		};
+		568D82975FBA1C6F858C813A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E7BE78100F565DFEBDD06D5C /* SyphonUniCamExBridge.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E7244DE45EA7446279351A14 = {
+			isa = PBXGroup;
+			children = (
+				1482AEB9F589AE8934832123 /* Shared */,
+				330B9123863671B7D540A39F /* Sources */,
+				F710C13682F5C1E65F9EFC49 /* Frameworks */,
+				568D82975FBA1C6F858C813A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F710C13682F5C1E65F9EFC49 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9A07FC50A8060819497A441E /* Syphon.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		676C24A797CF3C903F92EABE /* SyphonUniCamExBridge */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 36A3BC383C305B658BC3837F /* Build configuration list for PBXNativeTarget "SyphonUniCamExBridge" */;
+			buildPhases = (
+				A100A212B59181DE8B4C4A2D /* Sources */,
+				52EB72EDD56C038B64C59667 /* Frameworks */,
+				46E96CBF20370D35502D58D5 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SyphonUniCamExBridge;
+			packageProductDependencies = (
+			);
+			productName = SyphonUniCamExBridge;
+			productReference = E7BE78100F565DFEBDD06D5C /* SyphonUniCamExBridge.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E8CC0EE1AB86C72E3EE1E536 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = 9CBD792E81D87D130EF75469 /* Build configuration list for PBXProject "SyphonUniCamExBridge" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = E7244DE45EA7446279351A14;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 568D82975FBA1C6F858C813A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				676C24A797CF3C903F92EABE /* SyphonUniCamExBridge */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A100A212B59181DE8B4C4A2D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				40A0B14ADE2E39DC3A7DC1D1 /* AppModel.swift in Sources */,
+				0AE6CCC58AAB25FF6C87E895 /* BridgeEngine.swift in Sources */,
+				C1AD7C5476E0CE2E93BD3F2A /* ContentView.swift in Sources */,
+				C7ED8FCCF8FC0CAFE2C331D3 /* FrameContracts.swift in Sources */,
+				944CED3E61F25A651E52F500 /* LatestFrameStore.swift in Sources */,
+				BE325D55E86146E434C7FC58 /* PipelineInstrumentation.swift in Sources */,
+				4E8DF4CB840A03AC939EF522 /* SampleBufferFactory.swift in Sources */,
+				EF58CB090576B7667F470FE2 /* SyphonFrameSource.swift in Sources */,
+				59F991F5FB656977CA9B94D2 /* SyphonUniCamExBridgeApp.swift in Sources */,
+				A8A257E6E3F3FAE52B4D7EA8 /* TestPatternFrameSource.swift in Sources */,
+				C75D134E8A594DF2BF741DEE /* UniCamExSender.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6E2271C27CBC38CA2577BE72 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.syphon-unicamex.bridge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Release;
+		};
+		B00847C35C865952FD40A0A3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "local.syphon-unicamex.bridge";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.1;
+			};
+			name = Debug;
+		};
+		CA9CC5E96AA2DA072B6D4644 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release",
+					"\"Vendor/Syphon-Framework/DerivedData/Build/Products/Release\"",
+				);
+				INFOPLIST_FILE = BridgeApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		DAD9BF9BA6937C8C97ADFC88 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release",
+					"\"Vendor/Syphon-Framework/DerivedData/Build/Products/Release\"",
+				);
+				INFOPLIST_FILE = BridgeApp/Resources/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		36A3BC383C305B658BC3837F /* Build configuration list for PBXNativeTarget "SyphonUniCamExBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DAD9BF9BA6937C8C97ADFC88 /* Debug */,
+				CA9CC5E96AA2DA072B6D4644 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		9CBD792E81D87D130EF75469 /* Build configuration list for PBXProject "SyphonUniCamExBridge" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B00847C35C865952FD40A0A3 /* Debug */,
+				6E2271C27CBC38CA2577BE72 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E8CC0EE1AB86C72E3EE1E536 /* Project object */;
+}

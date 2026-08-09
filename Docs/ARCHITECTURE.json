@@ -1,36 +1,29 @@
 {
-  "project": "SyphonCamera",
-  "goal": "Webcam Motion Capture/Syphon Metal texture to macOS Camera Extension with minimum overhead",
-  "default_format": {
-    "width": 1280,
-    "height": 720,
-    "fps": 30,
-    "pixel_format": "BGRA"
+  "project": "syphon-unicamex",
+  "goal": "Use installed UniCamEx as virtual-camera backend for Webcam Motion Capture via Syphon",
+  "targets": [
+    "SyphonUniCamExBridge"
+  ],
+  "phases": {
+    "phase0": "test pattern -> UniCamEx -> QuickTime/Chrome/Meet",
+    "phase1": "Syphon -> UniCamEx -> Chrome/Meet",
+    "phase2": "zero-copy / minimum-copy optimization"
   },
-  "processes": {
-    "host": [
-      "Syphon discovery",
-      "SyphonMetalClient",
-      "Metal texture copy/scale",
-      "CMSampleBuffer creation",
-      "CMIO sink writer"
-    ],
-    "extension": [
-      "CMIO sink consume",
-      "CMIO source send"
-    ]
+  "policies": {
+    "no_obs": true,
+    "no_custom_camera_extension_first": true,
+    "no_dal_first": true,
+    "queue_policy": "newest-frame-wins",
+    "default_output": {
+      "width": 1280,
+      "height": 720,
+      "fps": 30
+    }
   },
-  "latency_policy": {
-    "sink_queue_depth": 1,
-    "backpressure": "drop",
-    "encoding": "none"
-  },
-  "priorities": [
-    "build test pattern",
-    "verify sink transport",
-    "integrate Syphon",
-    "profile",
-    "GPU scale",
-    "reconnect"
-  ]
+  "preferred_frame_path": [
+    "Syphon MTLTexture",
+    "UniCamEx adapter",
+    "UniCamEx virtual camera"
+  ],
+  "fallback_frame_source": "animated test pattern"
 }

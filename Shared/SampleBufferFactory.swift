@@ -2,37 +2,39 @@ import Foundation
 import CoreMedia
 import CoreVideo
 
-enum SampleBufferFactory {
-    static func make(
-        pixelBuffer: CVPixelBuffer,
-        presentationTime: CMTime,
-        duration: CMTime = CameraConstants.frameDuration
-    ) -> CMSampleBuffer? {
-        var formatDescription: CMVideoFormatDescription?
-        let formatStatus = CMVideoFormatDescriptionCreateForImageBuffer(
-            allocator: kCFAllocatorDefault,
-            imageBuffer: pixelBuffer,
-            formatDescriptionOut: &formatDescription
-        )
-        guard formatStatus == noErr, let formatDescription else {
-            return nil
+final class SampleBufferFactory {
+    static func makeSampleBuffer(from pixelBuffer: CVPixelBuffer,
+                                 formatDescription: CMVideoFormatDescription? = nil,
+                                 hostTime: UInt64 = mach_absolute_time()) throws -> CMSampleBuffer {
+        let fmt: CMVideoFormatDescription
+        if let formatDescription {
+            fmt = formatDescription
+        } else {
+            var created: CMVideoFormatDescription?
+            let status = CMVideoFormatDescriptionCreateForImageBuffer(allocator: kCFAllocatorDefault,
+                                                                      imageBuffer: pixelBuffer,
+                                                                      formatDescriptionOut: &created)
+            guard status == noErr, let created else {
+                throw NSError(domain: NSOSStatusErrorDomain, code: Int(status))
+            }
+            fmt = created
         }
 
-        var timing = CMSampleTimingInfo(
-            duration: duration,
-            presentationTimeStamp: presentationTime,
-            decodeTimeStamp: .invalid
-        )
-
+        var timebase = mach_timebase_info_data_t()
+        mach_timebase_info(&timebase)
+        let hostNanoseconds = UInt64(hostTime) * UInt64(timebase.numer) / UInt64(timebase.denom)
+        var timing = CMSampleTimingInfo(duration: CMTime(value: 1, timescale: 30),
+                                        presentationTimeStamp: CMTime(value: Int64(hostNanoseconds), timescale: 1_000_000_000),
+                                        decodeTimeStamp: .invalid)
         var sampleBuffer: CMSampleBuffer?
-        let sampleStatus = CMSampleBufferCreateReadyWithImageBuffer(
-            allocator: kCFAllocatorDefault,
-            imageBuffer: pixelBuffer,
-            formatDescription: formatDescription,
-            sampleTiming: &timing,
-            sampleBufferOut: &sampleBuffer
-        )
-        guard sampleStatus == noErr else { return nil }
+        let status = CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault,
+                                                               imageBuffer: pixelBuffer,
+                                                               formatDescription: fmt,
+                                                               sampleTiming: &timing,
+                                                               sampleBufferOut: &sampleBuffer)
+        guard status == noErr, let sampleBuffer else {
+            throw NSError(domain: NSOSStatusErrorDomain, code: Int(status))
+        }
         return sampleBuffer
     }
 }

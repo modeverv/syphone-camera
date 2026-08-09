@@ -1,60 +1,36 @@
-# Performance Budget
+# Performance notes
 
-## Baseline target
+## Measurement priorities
 
-1280×720 @ 30 fps.
+1. CPU percent of the bridge app
+2. Memory footprint of the bridge app
+3. End-to-end frame latency
+4. Frame stability at 1280x720 @ 30 fps
+5. Whether any CPU pixel copies occur
 
-Raw BGRA payload:
+## Expected phases
 
-```text
-1280 × 720 × 4 × 30 ≈ 110.6 MB/s
-```
+### Phase 0
+Test pattern only. This proves the UniCamEx path.
 
-That number is memory traffic, not encoded network traffic.
+### Phase 1
+Syphon integrated. Probably acceptable even if there is one GPU conversion.
 
-## Expected bridge work
+### Phase 2
+Copy audit and optimization.
 
-Per accepted frame:
+## Tools to use on the target Mac
 
-1. Syphon exposes an existing Metal texture.
-2. Acquire a pooled CVPixelBuffer.
-3. Exact-size case: one GPU blit.
-4. Wrap pixel buffer in CMSampleBuffer.
-5. Enqueue pointer to CMIO sink.
-6. Extension forwards the buffer.
+- Activity Monitor
+- Instruments: Time Profiler
+- Instruments: Allocations
+- Instruments: Metal System Trace (if needed)
+- `os_signpost` or unified logging timestamps
 
-There is intentionally no encode/decode stage.
+## Desired steady state
 
-## Avoid
-
-- `MTLTexture.getBytes`
-- `CGImage`
-- `NSImage`
-- `CIContext` on CPU
-- unbounded DispatchQueue work items
-- converting every frame to PNG/JPEG
-- websocket/localhost transport
-- shared-memory memcpy loops if CMIO sink works
-- multiple frames buffered "for smoothness"
-
-## Queue policy
-
-Maximum useful queued video: one frame.
-
-At 30 fps, every queued frame adds ~33 ms latency.
-
-If producer > consumer:
-- drop newest or oldest immediately
-- current MVP drops incoming frames when CMIO queue is full
-
-A later benchmark may prefer replacing pending/latest rather than dropping incoming, but the queue must stay O(1).
-
-## Optimization order
-
-1. correct live video
-2. remove obvious CPU copies
-3. fix resolution mismatch on GPU
-4. remove `waitUntilCompleted()`
-5. only then investigate BGRA → NV12
-
-Do not optimize CMIO internals before an Instruments trace shows a real cost.
+- CPU: low single digits or below
+- memory: small and stable
+- no frame queue growth
+- no per-frame heap churn after warm-up
+- no CPU memcpy of pixel data

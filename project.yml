@@ -1,46 +1,26 @@
-name: SyphonCamera
+name: SyphonUniCamExBridge
 options:
-  minimumXcodeGenVersion: 2.42.0
+  minimumXcodeGenVersion: 2.38.0
   deploymentTarget:
     macOS: "13.0"
 settings:
   base:
-    SWIFT_VERSION: 6.0
-    MACOSX_DEPLOYMENT_TARGET: 13.0
-    DEVELOPMENT_TEAM: YOURTEAMID
-    CODE_SIGN_STYLE: Automatic
-
+    PRODUCT_BUNDLE_IDENTIFIER: local.syphon-unicamex.bridge
+    SWIFT_VERSION: 5.10
 targets:
-  SyphonCameraApp:
+  SyphonUniCamExBridge:
     type: application
     platform: macOS
     sources:
-      - path: SyphonCameraApp
+      - path: BridgeApp/Sources
       - path: Shared
+    resources:
+      - path: BridgeApp/Resources
     settings:
       base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.SyphonCamera
-        PRODUCT_NAME: SyphonCamera
-        INFOPLIST_FILE: SyphonCameraApp/Info.plist
-        CODE_SIGN_ENTITLEMENTS: SyphonCameraApp/SyphonCameraApp.entitlements
-        ENABLE_HARDENED_RUNTIME: YES
+        INFOPLIST_FILE: BridgeApp/Resources/Info.plist
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)/Vendor/Syphon-Framework/DerivedData/Build/Products/Release
     dependencies:
-      - target: SyphonCameraExtension
-        embed: true
-
-  SyphonCameraExtension:
-    type: system-extension
-    platform: macOS
-    sources:
-      - path: SyphonCameraExtension
-      - path: Shared
-        excludes:
-          - MetalFrameConverter.swift
-    settings:
-      base:
-        PRODUCT_BUNDLE_IDENTIFIER: com.example.SyphonCamera.CameraExtension
-        PRODUCT_NAME: SyphonCameraExtension
-        INFOPLIST_FILE: SyphonCameraExtension/Info.plist
-        CODE_SIGN_ENTITLEMENTS: SyphonCameraExtension/SyphonCameraExtension.entitlements
-        SKIP_INSTALL: YES
-        ENABLE_HARDENED_RUNTIME: YES
+      - framework: Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework

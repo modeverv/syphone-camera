@@ -1,15 +1,28 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-if ! command -v xcodegen >/dev/null 2>&1; then
-  echo "xcodegen is required: brew install xcodegen" >&2
-  exit 1
-fi
+ROOT="$(cd "$(dirname "$0")/.." && pwd)"
+VENDOR="$ROOT/Vendor"
+mkdir -p "$VENDOR"
 
-if grep -q 'YOURTEAMID' project.yml; then
-  echo "Edit DEVELOPMENT_TEAM in project.yml before signing." >&2
-fi
+clone_or_update() {
+  local repo_url="$1"
+  local dest="$2"
+  if [[ -d "$dest/.git" ]]; then
+    echo "Updating $(basename "$dest")..."
+    git -C "$dest" pull --ff-only || true
+  else
+    echo "Cloning $repo_url ..."
+    git clone "$repo_url" "$dest" || true
+  fi
+}
 
-xcodegen generate
-echo "Generated SyphonCamera.xcodeproj"
-echo "Open it with: open SyphonCamera.xcodeproj"
+clone_or_update "https://github.com/creativeIKEP/UniCamEx.git" "$VENDOR/UniCamEx"
+clone_or_update "https://github.com/Syphon/Syphon-Framework.git" "$VENDOR/Syphon-Framework"
+
+echo
+echo "Bootstrap complete."
+echo "Next steps:"
+echo "  1. Install UniCamEx release on this Mac if not already installed."
+echo "  2. Verify the UniCamEx camera appears in QuickTime."
+echo "  3. Read Docs/CODEX_HANDOFF.md and use it as the work order."
