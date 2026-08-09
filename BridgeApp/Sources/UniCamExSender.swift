@@ -16,6 +16,8 @@ final class UniCamExSender: UniCamExSending {
     private var droppedCount = 0
     private var latencyTotalMs = 0.0
     private var latencySamples = 0
+    private var networkLatencyTotalMs = 0.0
+    private var networkLatencySamples = 0
     private let ciContext: CIContext?
     private let sRGBColorSpace = CGColorSpace(name: CGColorSpace.sRGB)
     private var pixelBufferPool: CVPixelBufferPool?
@@ -99,7 +101,26 @@ final class UniCamExSender: UniCamExSending {
         CMSimpleQueueEnqueue(streamQueue, element: Unmanaged.passRetained(sampleBuffer).toOpaque())
         PipelineInstrumentation.event("UniCamExEnqueue")
         sendCount += 1
-        if sendCount == 1 { print("UniCamExSender: enqueued first sample buffer") }
+        let presentationTime = CMSampleBufferGetPresentationTimeStamp(sampleBuffer)
+        if presentationTime.timescale == 1_000_000_000, presentationTime.value > 0 {
+            let now = DispatchTime.now().uptimeNanoseconds
+            let sentAt = UInt64(presentationTime.value)
+            if now >= sentAt {
+                let latency = Double(now - sentAt) / 1_000_000
+                networkLatencyTotalMs += latency
+                networkLatencySamples += 1
+                if networkLatencySamples == 1 {
+                    os_log("Network loopback sender-to-UniCamEx-enqueue latency_ms=%{public}.2f", latency)
+                }
+            }
+        }
+        if sendCount == 1 {
+            os_log("UniCamExSender: enqueued first sample buffer")
+        }
+        if sendCount % 150 == 0, networkLatencySamples > 0 {
+            os_log("Network loopback enqueue latency avg_ms=%{public}.2f samples=%{public}d",
+                   networkLatencyTotalMs / Double(networkLatencySamples), networkLatencySamples)
+        }
     }
 
     deinit {

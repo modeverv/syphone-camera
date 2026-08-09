@@ -8,11 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		0AE6CCC58AAB25FF6C87E895 /* BridgeEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 100A257E589780A332053A6B /* BridgeEngine.swift */; };
+		2716E52706F2F0D218A41953 /* NetworkFrameSender.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45DB10D3EB6B1E148391DEA /* NetworkFrameSender.swift */; };
 		40A0B14ADE2E39DC3A7DC1D1 /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CB4996FD51CCC869B882CD5 /* AppModel.swift */; };
 		43CD49189E4934907247A690 /* Syphon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07FC50A8060819497A441E /* Syphon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4E8DF4CB840A03AC939EF522 /* SampleBufferFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */; };
 		59F991F5FB656977CA9B94D2 /* SyphonUniCamExBridgeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E8EF8E27C66D04FDB51B5E /* SyphonUniCamExBridgeApp.swift */; };
 		944CED3E61F25A651E52F500 /* LatestFrameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CE82D0919AF0C575DC8DCFD /* LatestFrameStore.swift */; };
+		9A012E11432D2E9CCA12B312 /* NetworkFrameSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F51E1319C19E6DF67C9AAC60 /* NetworkFrameSource.swift */; };
+		A23B79DD4C88CD1522D435C1 /* VideoToolboxCodec.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A4F03DE48D6C1B3CCEED64 /* VideoToolboxCodec.swift */; };
 		A76A7BBBF858B0E757F9CE31 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A07FC50A8060819497A441E /* Syphon.framework */; };
 		A8A257E6E3F3FAE52B4D7EA8 /* TestPatternFrameSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A2C9AEA70D0C6A8FD2D2C9B /* TestPatternFrameSource.swift */; };
 		BE325D55E86146E434C7FC58 /* PipelineInstrumentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 688E33A6DBEE6333E4CF94D3 /* PipelineInstrumentation.swift */; };
@@ -46,9 +49,12 @@
 		8CB4996FD51CCC869B882CD5 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		9A07FC50A8060819497A441E /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = "Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework"; sourceTree = "<group>"; };
 		AA7AA51D00C30E9A0C5E0F6C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B45DB10D3EB6B1E148391DEA /* NetworkFrameSender.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFrameSender.swift; sourceTree = "<group>"; };
 		B554AC4AA90E5EA4AC8F7E42 /* FrameContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FrameContracts.swift; sourceTree = "<group>"; };
 		C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleBufferFactory.swift; sourceTree = "<group>"; };
 		E7BE78100F565DFEBDD06D5C /* SyphonUniCamExBridge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyphonUniCamExBridge.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		E9A4F03DE48D6C1B3CCEED64 /* VideoToolboxCodec.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoToolboxCodec.swift; sourceTree = "<group>"; };
+		F51E1319C19E6DF67C9AAC60 /* NetworkFrameSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkFrameSource.swift; sourceTree = "<group>"; };
 		FCEBD6EF3F2D5BF92CD1CF3B /* SyphonFrameSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphonFrameSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -71,6 +77,7 @@
 				2CE82D0919AF0C575DC8DCFD /* LatestFrameStore.swift */,
 				688E33A6DBEE6333E4CF94D3 /* PipelineInstrumentation.swift */,
 				C3A4499F8FF9D14080369321 /* SampleBufferFactory.swift */,
+				E9A4F03DE48D6C1B3CCEED64 /* VideoToolboxCodec.swift */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -81,6 +88,8 @@
 				8CB4996FD51CCC869B882CD5 /* AppModel.swift */,
 				100A257E589780A332053A6B /* BridgeEngine.swift */,
 				AA7AA51D00C30E9A0C5E0F6C /* ContentView.swift */,
+				B45DB10D3EB6B1E148391DEA /* NetworkFrameSender.swift */,
+				F51E1319C19E6DF67C9AAC60 /* NetworkFrameSource.swift */,
 				FCEBD6EF3F2D5BF92CD1CF3B /* SyphonFrameSource.swift */,
 				26E8EF8E27C66D04FDB51B5E /* SyphonUniCamExBridgeApp.swift */,
 				8A2C9AEA70D0C6A8FD2D2C9B /* TestPatternFrameSource.swift */,
@@ -178,12 +187,15 @@
 				C1AD7C5476E0CE2E93BD3F2A /* ContentView.swift in Sources */,
 				C7ED8FCCF8FC0CAFE2C331D3 /* FrameContracts.swift in Sources */,
 				944CED3E61F25A651E52F500 /* LatestFrameStore.swift in Sources */,
+				2716E52706F2F0D218A41953 /* NetworkFrameSender.swift in Sources */,
+				9A012E11432D2E9CCA12B312 /* NetworkFrameSource.swift in Sources */,
 				BE325D55E86146E434C7FC58 /* PipelineInstrumentation.swift in Sources */,
 				4E8DF4CB840A03AC939EF522 /* SampleBufferFactory.swift in Sources */,
 				EF58CB090576B7667F470FE2 /* SyphonFrameSource.swift in Sources */,
 				59F991F5FB656977CA9B94D2 /* SyphonUniCamExBridgeApp.swift in Sources */,
 				A8A257E6E3F3FAE52B4D7EA8 /* TestPatternFrameSource.swift in Sources */,
 				C75D134E8A594DF2BF741DEE /* UniCamExSender.swift in Sources */,
+				A23B79DD4C88CD1522D435C1 /* VideoToolboxCodec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

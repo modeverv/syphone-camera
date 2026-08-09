@@ -5,3 +5,4 @@ xcuserdata/
 SyphonCamera.xcodeproj/
 Vendor/
 .DS_Store
+/build

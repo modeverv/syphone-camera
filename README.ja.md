@@ -44,6 +44,36 @@ UniCamExのソースチェックアウトは開発用の参照であり、仮想
 
 Webcam Motion Captureを使う場合はSyphon出力を有効にし、ブリッジでSyphonソースを選択します。通常は `Webcam Motion Receiver/Webcam Motion Receiver` が検出されます。その後、QuickTime、Chrome、またはGoogle Meetで `UniCamEx` を選択します。Syphonサーバー停止時は診断パターンへフォールバックします。
 
+## ネットワーク H.264 転送（実験的）
+
+別 Mac から映像を送る場合、送信側と受信側を別プロセスとして起動できます。既定は UDP/5001 です。送信側は現在テストパターンを入力にするため、リモート Syphon 入力の接続は次段階の作業です。
+
+受信側（UniCamEx をインストールした Mac）:
+
+```bash
+make run-receiver NETWORK_PORT=5001
+```
+
+送信側:
+
+```bash
+make run-sender NETWORK_HOST=192.168.1.42 NETWORK_PORT=5001
+```
+
+同一 Mac で送受信を同時に確認するには次を実行します。
+
+```bash
+make run-network
+```
+
+TCP はデバッグ比較用として残しています。
+
+```bash
+make run-network NETWORK_TRANSPORT=tcp
+```
+
+UDP は H.264 フレームを最大 1,200 byte の datagram に分割し、1 秒以内に揃わないフレームを破棄します。これにより Wi-Fi/LAN でのパケット損失時にも古いフレームの再送待ちを避けます。一方、現時点では暗号化・認証・輻輳制御・FEC/NACK・適応ビットレートを持たないため、信頼できる LAN 専用です。インターネット越しの運用には WebRTC への置換が必要です。
+
 ## ビルドオプション
 
 Makefileはデフォルトでローカル用の未署名ビルドを行います。
@@ -65,7 +95,9 @@ UniCamEx v1.2.0経路ではIOSurface対応の1920x1080 BGRAピクセルバッフ
 
 ## 性能メモ
 
-基準測定では、30 fps時のブリッジCPU使用率は約16.8〜18.8%、RSSは約100 MB、Syphon公開からブリッジdispatchまでの平均時間は8.66 msでした。詳細は[`Docs/PERFORMANCE.md`](Docs/PERFORMANCE.md)と[`Docs/ZERO_COPY_AUDIT.md`](Docs/ZERO_COPY_AUDIT.md)を参照してください。
+既存の Syphon 経路の基準測定では、30 fps時のブリッジCPU使用率は約16.8〜18.8%、RSSは約100 MB、Syphon公開からブリッジdispatchまでの平均時間は8.66 msでした。
+
+2026-08-09 に同一 Mac で測定した UDP H.264 loopback（1920x1080 / 30 fps / テストパターン）は、送信から UniCamEx enqueue まで平均 **10.5 ms**、実効 **30.3 fps**、**0.5〜0.7 Mbps** でした。receiver は約18% CPU、sender は約100% CPU・約109 MB RSSでした。sender CPU はCPUベースの1080pテストパターン生成を含むため、Syphon 入力の性能値ではありません。TCP 比較では約22 msでした。いずれも環境依存の参考値です。詳細は[`Docs/PERFORMANCE.md`](Docs/PERFORMANCE.md)と[`Docs/ZERO_COPY_AUDIT.md`](Docs/ZERO_COPY_AUDIT.md)を参照してください。
 
 ## ドキュメント
 
@@ -73,6 +105,7 @@ UniCamEx v1.2.0経路ではIOSurface対応の1920x1080 BGRAピクセルバッフ
 - [`Docs/DESIGN.md`](Docs/DESIGN.md) — アーキテクチャとトレードオフ
 - [`Docs/RUNTIME_NOTES.md`](Docs/RUNTIME_NOTES.md) — 確認済み環境のメモ
 - [`Docs/TEST_PLAN.md`](Docs/TEST_PLAN.md) — 受け入れ確認項目
+- [`Docs/ADR-001-network-transport.md`](Docs/ADR-001-network-transport.md) — リモート Syphon 転送方式とフレーム契約
 
 ## トラブルシューティング
 
@@ -80,6 +113,7 @@ UniCamEx v1.2.0経路ではIOSurface対応の1920x1080 BGRAピクセルバッフ
 - **Syphonが見つからない:** `Vendor/Syphon-Framework`をビルドし、`project.yml`のパスを確認します。
 - **UniCamExが表示されない:** UniCamExをインストール・承認し、カメラクライアントを再起動します。
 - **黒いプレビュー:** ソースのフレーム生成、IOSurface、1920x1080 BGRA形式を確認します。
+- **リモート映像が出ない:** 受信側で UDP/5001 を許可し、`NETWORK_HOST` が受信Macの LAN IP であること、両側の `NETWORK_TRANSPORT` が一致することを確認します。
 
 ## コントリビューション
 

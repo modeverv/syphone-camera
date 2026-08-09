@@ -12,8 +12,19 @@ struct ContentView: View {
             Picker("Source", selection: $model.selectedSource) {
                 Text("Test Pattern").tag(SourceKind.testPattern)
                 Text("Syphon").tag(SourceKind.syphon)
+                Text("Network").tag(SourceKind.network)
             }
             .pickerStyle(.segmented)
+
+            if model.selectedSource == .network {
+                HStack {
+                    TextField("Sender host", text: $model.networkHost)
+                        .textFieldStyle(.roundedBorder)
+                    TextField("Port", text: $model.networkPort)
+                        .textFieldStyle(.roundedBorder)
+                        .frame(width: 80)
+                }
+            }
 
             HStack {
                 Button(model.isRunning ? "Stop" : "Start") {
@@ -23,6 +34,10 @@ struct ContentView: View {
 
                 Button("Send Single Diagnostic Frame") {
                     model.sendSingleDiagnosticFrame()
+                }
+
+                Button("Run Network Loopback") {
+                    model.runNetworkLoopback()
                 }
             }
 

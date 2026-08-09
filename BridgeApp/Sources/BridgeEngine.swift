@@ -1,18 +1,20 @@
 import Foundation
 import Metal
 import CoreMedia
+import os
 
 final class BridgeEngine {
     private var source: FrameSource?
     private let sender: UniCamExSending
     private let timerQueue = DispatchQueue(label: "local.syphon-unicamex.bridge.timer")
     private var timer: DispatchSourceTimer?
+    private var loggedSampleEnqueue = false
 
     init(sender: UniCamExSending = UniCamExSender()) {
         self.sender = sender
     }
 
-    func start(source kind: SourceKind, width: Int, height: Int, fps: Int) throws {
+    func start(source kind: SourceKind, width: Int, height: Int, fps: Int, networkPort: UInt16 = 5000, networkTransport: NetworkTransport = .tcp) throws {
         stop()
 
         let newSource: FrameSource
@@ -21,6 +23,8 @@ final class BridgeEngine {
             newSource = TestPatternFrameSource(width: width, height: height, fps: fps)
         case .syphon:
             newSource = SyphonFrameSource(width: width, height: height, fps: fps)
+        case .network:
+            newSource = NetworkFrameSource(width: width, height: height, fps: fps, port: networkPort, transport: networkTransport)
         }
 
         try newSource.start()
@@ -68,10 +72,14 @@ final class BridgeEngine {
             }
             if let sampleBuffer = source.latestSampleBuffer() {
                 try sender.send(sampleBuffer: sampleBuffer)
+                if !loggedSampleEnqueue {
+                    loggedSampleEnqueue = true
+                    os_log("BridgeEngine offered first decoded sample buffer to UniCamEx")
+                }
                 return
             }
         } catch {
-            // Intentionally quiet in scaffold. Codex should add logging/signposts.
+            os_log("BridgeEngine frame submission failed: %{public}@", error.localizedDescription)
         }
     }
 }

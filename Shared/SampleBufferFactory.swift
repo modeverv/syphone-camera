@@ -5,7 +5,8 @@ import CoreVideo
 final class SampleBufferFactory {
     static func makeSampleBuffer(from pixelBuffer: CVPixelBuffer,
                                  formatDescription: CMVideoFormatDescription? = nil,
-                                 hostTime: UInt64 = mach_absolute_time()) throws -> CMSampleBuffer {
+                                 hostTime: UInt64 = mach_absolute_time(),
+                                 presentationTime: CMTime? = nil) throws -> CMSampleBuffer {
         let fmt: CMVideoFormatDescription
         if let formatDescription {
             fmt = formatDescription
@@ -24,7 +25,7 @@ final class SampleBufferFactory {
         mach_timebase_info(&timebase)
         let hostNanoseconds = UInt64(hostTime) * UInt64(timebase.numer) / UInt64(timebase.denom)
         var timing = CMSampleTimingInfo(duration: CMTime(value: 1, timescale: 30),
-                                        presentationTimeStamp: CMTime(value: Int64(hostNanoseconds), timescale: 1_000_000_000),
+                                        presentationTimeStamp: presentationTime ?? CMTime(value: Int64(hostNanoseconds), timescale: 1_000_000_000),
                                         decodeTimeStamp: .invalid)
         var sampleBuffer: CMSampleBuffer?
         let status = CMSampleBufferCreateReadyWithImageBuffer(allocator: kCFAllocatorDefault,

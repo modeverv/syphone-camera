@@ -88,6 +88,43 @@ To use Webcam Motion Capture:
 If the Syphon server disappears, the bridge falls back to the diagnostic
 pattern instead of blocking on an empty source.
 
+## Experimental network H.264 transport
+
+The sender and receiver can run as separate app processes. UDP on port 5001 is
+the default. The current sender uses the diagnostic pattern as its input; a
+remote Syphon input is a subsequent integration step.
+
+On the receiving Mac (with UniCamEx installed):
+
+```bash
+make run-receiver NETWORK_PORT=5001
+```
+
+On the sending Mac:
+
+```bash
+make run-sender NETWORK_HOST=192.168.1.42 NETWORK_PORT=5001
+```
+
+For a same-Mac loopback test:
+
+```bash
+make run-network
+```
+
+TCP remains available for debugging and comparison:
+
+```bash
+make run-network NETWORK_TRANSPORT=tcp
+```
+
+The UDP sender fragments each H.264 frame into datagrams of at most 1,200
+bytes. The receiver drops an incomplete frame after one second, preferring a
+newer frame over retransmission delay. This is appropriate only on a trusted
+LAN: it currently has no authentication, encryption, congestion control,
+FEC/NACK, or adaptive bitrate. Use WebRTC before exposing this path to the
+public internet.
+
 ## Build options
 
 The Makefile defaults to an unsigned local build:
@@ -143,6 +180,14 @@ dependent measurements, not performance guarantees. See
 [`Docs/PERFORMANCE.md`](Docs/PERFORMANCE.md) and
 [`Docs/ZERO_COPY_AUDIT.md`](Docs/ZERO_COPY_AUDIT.md).
 
+On 2026-08-09, a same-Mac UDP H.264 loopback at 1920x1080 / 30 fps with the
+diagnostic pattern measured 10.5 ms average sender-to-UniCamEx enqueue latency,
+30.3 effective fps, and 0.5–0.7 Mbps. Receiver CPU was about 18%; sender CPU
+was about 100% with about 109 MB RSS. The sender result includes CPU-based
+1080p diagnostic-pattern generation and is not a Syphon-input measurement.
+The corresponding TCP comparison was about 22 ms. These are local reference
+measurements, not guarantees for a two-Mac network.
+
 ## Documentation
 
 - [`Docs/BUILD_AND_RUN.md`](Docs/BUILD_AND_RUN.md) — build and runtime checks
@@ -164,6 +209,9 @@ dependent measurements, not performance guarantees. See
 - **Signed distribution questions:** local unsigned builds and a distributable
   camera extension are different cases; configure a suitable Apple Developer
   team and entitlements before attempting distribution.
+- **No remote video:** allow UDP/5001 on the receiver, confirm that
+  `NETWORK_HOST` is the receiver's LAN address, and use the same
+  `NETWORK_TRANSPORT` on both endpoints.
 
 ## Contributing
 
