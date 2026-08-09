@@ -17,7 +17,8 @@ Webcam Motion Capture -> Syphon -> 本ブリッジ -> UniCamEx -> Chrome / Googl
 - macOS 13以降
 - XcodeおよびCommand Line Tools
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen)（`brew install xcodegen`）
-- [UniCamEx](https://github.com/creativeIKEP/UniCamEx)
+- [UniCamEx](https://github.com/creativeIKEP/UniCamEx)の**リリースバイナリ**
+  （ブリッジのビルド・実行前に別途インストールが必要）
 - [Syphon Framework](https://github.com/Syphon/Syphon-Framework)
 - Webcam Motion Captureなど、Syphon出力に対応したアプリ
 
@@ -33,6 +34,11 @@ xcodegen generate
 make build
 make run
 ```
+
+ブリッジをビルドまたは実行する前に、対象MacへUniCamExのリリースバイナリを
+インストールし、必要な承認手続きを完了してください。`bootstrap.sh`が用意する
+UniCamExのソースチェックアウトは開発用の参照であり、仮想カメラをインストール
+または有効化するものではありません。
 
 初期状態では動く診断パターンが選択されます。QuickTime Playerで **ファイル > 新規ムービー収録** を開き、`UniCamEx`を選択してください。
 

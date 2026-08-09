@@ -35,8 +35,8 @@ UniCamEx, Syphon, Xcode, or macOS releases.
 - Apple Silicon or Intel Mac supported by the installed toolchain
 - Xcode and command-line tools
 - [XcodeGen](https://github.com/yonaskolb/XcodeGen) (`brew install xcodegen`)
-- [UniCamEx](https://github.com/creativeIKEP/UniCamEx), installed separately
-  from its signed release when possible
+- [UniCamEx](https://github.com/creativeIKEP/UniCamEx) **release binary**, installed
+  separately before building or running this bridge
 - [Syphon Framework](https://github.com/Syphon/Syphon-Framework)
 - A Syphon-producing application, for example Webcam Motion Capture
 
@@ -54,6 +54,11 @@ git clone <repository-url>
 cd syphon-camera
 ./scripts/bootstrap.sh
 ```
+
+Before building or running the bridge, install the UniCamEx release binary on
+the target Mac and complete any required approval steps. The UniCamEx source
+checkout prepared by `bootstrap.sh` is only a development reference; it does
+not install or activate the virtual camera.
 
 Generate the Xcode project and build the bridge:
 
