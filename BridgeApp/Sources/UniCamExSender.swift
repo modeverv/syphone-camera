@@ -25,6 +25,7 @@ final class UniCamExSender: UniCamExSending {
     private let metalDevice: MTLDevice?
     private let metalCommandQueue: MTLCommandQueue?
     private let metalTextureCache: CVMetalTextureCache?
+    private let flipPipelineState: MTLComputePipelineState?
     private let sRGBColorSpace = CGColorSpace(name: CGColorSpace.sRGB)
     private var pixelBufferPool: CVPixelBufferPool?
     private var didLogTextureCompatibility = false
@@ -33,6 +34,29 @@ final class UniCamExSender: UniCamExSending {
 
     private let outputWidth = 1920
     private let outputHeight = 1080
+
+    /// Reads the source texture with its row order reversed and writes it straight through.
+    /// Metal/IOSurface textures are top-left-origin row-major, but the Syphon-published texture
+    /// and the UniCamEx-side pooled IOSurface disagree on which end row 0 represents, so a raw
+    /// `MTLBlitCommandEncoder.copy` (used previously) produced a vertically flipped frame. Doing
+    /// the flip in a compute kernel keeps everything on the GPU in a single dispatch, so it costs
+    /// about the same as the blit it replaces while avoiding CIContext.render's much heavier
+    /// filter-graph/color-management overhead.
+    private static let flipShaderSource = """
+    #include <metal_stdlib>
+    using namespace metal;
+
+    kernel void flipCopyBGRA(texture2d<float, access::read> src [[texture(0)]],
+                              texture2d<float, access::write> dst [[texture(1)]],
+                              uint2 gid [[thread_position_in_grid]]) {
+        if (gid.x >= dst.get_width() || gid.y >= dst.get_height()) {
+            return;
+        }
+        uint srcY = src.get_height() - 1 - gid.y;
+        float4 color = src.read(uint2(gid.x, srcY));
+        dst.write(color, gid);
+    }
+    """
 
     init() {
         let device = MTLCreateSystemDefaultDevice()
@@ -44,12 +68,20 @@ final class UniCamExSender: UniCamExSending {
         }
         metalTextureCache = textureCache
         ciContext = device.map { CIContext(mtlDevice: $0) }
+        if let device,
+           let library = try? device.makeLibrary(source: Self.flipShaderSource, options: nil),
+           let function = library.makeFunction(name: "flipCopyBGRA") {
+            flipPipelineState = try? device.makeComputePipelineState(function: function)
+        } else {
+            flipPipelineState = nil
+        }
         var pool: CVPixelBufferPool?
         let attributes: [String: Any] = [
             kCVPixelBufferIOSurfacePropertiesKey as String: [:],
             kCVPixelBufferPixelFormatTypeKey as String: Int(kCVPixelFormatType_32BGRA),
             kCVPixelBufferWidthKey as String: outputWidth,
             kCVPixelBufferHeightKey as String: outputHeight,
+            kCVPixelBufferMetalCompatibilityKey as String: true,
         ]
         let poolAttributes: [String: Any] = [
             kCVPixelBufferPoolMinimumBufferCountKey as String: 3,
@@ -81,7 +113,7 @@ final class UniCamExSender: UniCamExSending {
            texture.pixelFormat == .bgra8Unorm,
            blit(texture: texture, into: pixelBuffer) {
             metalBlitCount += 1
-            reportPathOnce("METAL_BLIT")
+            reportPathOnce("METAL_FLIP_BLIT")
             enqueue(pixelBuffer: pixelBuffer, streamQueue: streamQueue)
             return
         }
@@ -127,13 +159,18 @@ final class UniCamExSender: UniCamExSending {
     }
 
     private func blit(texture: MTLTexture, into pixelBuffer: CVPixelBuffer) -> Bool {
-        guard let metalDevice, let metalCommandQueue, let metalTextureCache else { return false }
+        guard let metalDevice, let metalCommandQueue, let metalTextureCache, let flipPipelineState else { return false }
         var cvTexture: CVMetalTexture?
+        // Request shaderRead/shaderWrite explicitly: the previous blit-encoder path didn't need
+        // texture usage bits (the blit engine bypasses them), but the compute kernel below does.
+        let textureAttributes: [String: Any] = [
+            kCVMetalTextureUsage as String: MTLTextureUsage([.shaderRead, .shaderWrite]).rawValue,
+        ]
         let status = CVMetalTextureCacheCreateTextureFromImage(
             kCFAllocatorDefault,
             metalTextureCache,
             pixelBuffer,
-            nil,
+            textureAttributes as CFDictionary,
             .bgra8Unorm,
             outputWidth,
             outputHeight,
@@ -145,21 +182,24 @@ final class UniCamExSender: UniCamExSending {
               let destination = CVMetalTextureGetTexture(cvTexture),
               destination.device === metalDevice,
               let commandBuffer = metalCommandQueue.makeCommandBuffer(),
-              let encoder = commandBuffer.makeBlitCommandEncoder() else { return false }
-        PipelineInstrumentation.begin("MetalBlit")
-        encoder.copy(from: texture,
-                     sourceSlice: 0,
-                     sourceLevel: 0,
-                     sourceOrigin: MTLOrigin(x: 0, y: 0, z: 0),
-                     sourceSize: MTLSize(width: outputWidth, height: outputHeight, depth: 1),
-                     to: destination,
-                     destinationSlice: 0,
-                     destinationLevel: 0,
-                     destinationOrigin: MTLOrigin(x: 0, y: 0, z: 0))
+              let encoder = commandBuffer.makeComputeCommandEncoder() else { return false }
+        PipelineInstrumentation.begin("MetalFlipBlit")
+        encoder.setComputePipelineState(flipPipelineState)
+        encoder.setTexture(texture, index: 0)
+        encoder.setTexture(destination, index: 1)
+        let threadWidth = flipPipelineState.threadExecutionWidth
+        let threadHeight = max(1, flipPipelineState.maxTotalThreadsPerThreadgroup / threadWidth)
+        let threadsPerThreadgroup = MTLSize(width: threadWidth, height: threadHeight, depth: 1)
+        let threadgroups = MTLSize(
+            width: (outputWidth + threadWidth - 1) / threadWidth,
+            height: (outputHeight + threadHeight - 1) / threadHeight,
+            depth: 1
+        )
+        encoder.dispatchThreadgroups(threadgroups, threadsPerThreadgroup: threadsPerThreadgroup)
         encoder.endEncoding()
         commandBuffer.commit()
         commandBuffer.waitUntilCompleted()
-        PipelineInstrumentation.end("MetalBlit")
+        PipelineInstrumentation.end("MetalFlipBlit")
         return commandBuffer.status == .completed
     }
 
