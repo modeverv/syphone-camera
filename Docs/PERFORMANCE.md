@@ -34,3 +34,9 @@ Copy audit and optimization.
 - no frame queue growth
 - no per-frame heap churn after warm-up
 - no CPU memcpy of pixel data
+
+## Baseline and current implementation
+
+Environment recorded in `Docs/RUNTIME_NOTES.md`: arm64 macOS 26.5.1, Xcode 26.6, UniCamEx v1.2.0, WMC Syphon source at 1920x1080. Existing sustained observations were approximately 16.5–18.8% bridge CPU, 97,312 KB RSS, 300 accepted frames with 0 observed sink-pressure drops, and 8.66 ms average Syphon-publication-to-dispatch latency over the recorded run.
+
+The 2026-08-11 live verification used WMC's `Webcam Motion Receiver/Webcam Motion Receiver` server at 1920x1080 and the workspace Debug bridge for over 60 seconds. The direct IOSurface probe failed at stage 2 (`CVPixelBufferCreateWithIOSurface`: `-6661 invalid-argument`), while the production route selected `METAL_BLIT`. The bridge reported `enqueued=3900 dropped=1 metal_blit=3900 ci_render=0`, with 8.66-8.71 ms average texture-to-enqueue latency. `mactop` samples near the end reported about 20.5-21.5% bridge CPU, 96,032 KB RSS, and 10.2-13.0 ms/s process GPU time; thermal state remained normal. This is a live WMC bridge measurement, not an end-to-end Meet display measurement.

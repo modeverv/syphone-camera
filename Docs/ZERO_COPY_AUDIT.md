@@ -1,8 +1,8 @@
 # Zero-copy audit
 
-Status: Phase 2 implementation audit, 2026-08-09.
+Status: optimization work in progress, 2026-08-11.
 
-The current path is functional and avoids CPU pixel-plane readback, but it is not zero-copy. UniCamEx v1.2.0 exposes a fixed 1920x1080 BGRA sink stream, while WMC may publish another texture size, so a GPU conversion is currently required.
+The current production path is a GPU conversion and is not zero-copy. For exact 1920x1080 BGRA input, the bridge now tries a one-time direct IOSurface probe, then a persistent Metal texture-cache plus blit path before using CI. A one-time runtime probe records the direct IOSurface contract stages without retrying the operation per frame.
 
 ## Boundary classification
 
@@ -10,7 +10,7 @@ The current path is functional and avoids CPU pixel-plane readback, but it is no
 | --- | --- | --- |
 | WMC Syphon server -> `SyphonMetalClient` | reference only / IOSurface share, external-owned | `newFrameImage()` returns an `MTLTexture`; no CPU readback or pixel-plane memcpy in this project. Exact IOSurface ownership is external to the bridge. |
 | `SyphonMetalClient` texture -> bridge | reference only | `LatestFrameStore` retains only the newest texture under a lock; no queue is accumulated. |
-| bridge texture -> UniCamEx pixel buffer | GPU conversion / GPU blit | Syphon texture is 1920x1080 BGRA and IOSurface-backed, but an experiment with `CVPixelBufferCreateWithIOSurface` failed on the installed UniCamEx/CoreMediaIO path. `CIContext.render(_:to:)` remains the compatible handoff into a new IOSurface-backed `CVPixelBuffer`. |
+| bridge texture -> UniCamEx pixel buffer | GPU blit or GPU conversion | Exact `.bgra8Unorm` input uses `CVMetalTextureCache` plus one `MTLBlitCommandEncoder.copy`; other inputs use the CI compatibility path. Direct IOSurface enqueue/consumer validation is still disabled. |
 | pixel buffer -> `CMSampleBuffer` | reference only | `CMSampleBufferCreateReadyWithImageBuffer` wraps the image buffer and format description; it does not copy pixel planes. |
 | sample buffer -> UniCamEx sink queue | reference only / external-owned | `Unmanaged.passRetained` transfers the sample-buffer reference to the CoreMediaIO queue. UniCamEx consumes it asynchronously. |
 | UniCamEx -> visible camera feed | unknown / external-owned | Implemented by the signed UniCamEx system extension; verified visually in QuickTime and Meet. |
@@ -24,7 +24,7 @@ The current path is functional and avoids CPU pixel-plane readback, but it is no
 - Per-frame `CIContext`: removed; one context is created during `UniCamExSender` initialization.
 - Pixel-buffer allocation: `CVPixelBufferPool` with a minimum warm-up count of 3 is used. The pool may allocate during warm-up or pressure, but the bridge does not call `CVPixelBufferCreate` per frame.
 - Sample-buffer allocation: CoreMedia creates a wrapper per submitted frame. This is an API-owned object and cannot be eliminated with the current sink-stream contract.
-- Remaining GPU work: one CI render into the UniCamEx-sized IOSurface for each accepted frame. Direct IOSurface wrapping was tested and rejected after runtime failure.
+- Remaining GPU work: one Metal blit for exact `.bgra8Unorm` input, or one CI render for the compatibility path. Direct IOSurface wrapping is probed once but is not used until asynchronous sink/lifetime validation exists.
 
 ## Verification
 
@@ -46,8 +46,17 @@ The current path is functional and avoids CPU pixel-plane readback, but it is no
 3. Add `os_signpost` timing around Syphon receipt, CI render, queue enqueue, and sink consumption.
 4. Recheck pool pressure and effective queue depth under dropped-frame conditions.
 
-The direct IOSurface wrap probe was removed after verification so the steady-state path does not pay for a failed per-frame attempt.
+The direct IOSurface wrap probe is not part of the steady-state path: it runs once after the first compatible texture and never retries per frame.
+
+## 2026-08-11 probe and routing update
+
+- Exact 1920x1080 input: `CIImage` is rendered directly; no scale, fit, letterbox, or translation calculation is performed.
+- Non-exact input: existing scale-and-center compatibility behavior is retained.
+- Runtime report includes texture dimensions, Metal pixel format/storage/usage, IOSurface presence, IOSurface dimensions/stride/element size/allocation/pixel format/plane count/seed, and equivalent pooled-buffer properties.
+- The selected path is explicitly logged once as `METAL_BLIT` or `CORE_IMAGE_FALLBACK`; `METAL_BLIT` means one GPU copy, not zero-copy.
+- Live WMC verification selected `METAL_BLIT`: 3900 blits, 0 CI renders, 1 sink-pressure drop over the sustained run. The direct IOSurface probe stopped at stage 2 with `-6661 invalid-argument`; stages 3-7 remain intentionally unattempted, so direct sharing is not claimed.
+- The exact-size Metal blit path is now the production route for compatible WMC textures; CI remains the compatibility fallback.
 
 ## Baseline interpretation
 
-The original high CPU level was not caused only by CI render: the fallback diagnostic generator was running concurrently with the live Syphon client. That was fixed and verified. The remaining ~17-19% CPU includes the required CI render and external sink path. The Syphon texture is IOSurface-backed, but direct `CVPixelBufferCreateWithIOSurface` wrapping failed at runtime, so the GPU conversion remains an explicitly justified conversion for this implementation.
+The original high CPU level was not caused only by CI render: the fallback diagnostic generator was running concurrently with the live Syphon client. That was fixed and verified. The remaining ~17-19% CPU includes the required CI render and external sink path. The probe now records the exact wrap/format/sample stages on the current runtime; until enqueue and consumer validation also pass, the GPU conversion remains the justified production implementation.
