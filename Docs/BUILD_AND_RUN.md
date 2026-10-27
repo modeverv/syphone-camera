@@ -1,5 +1,10 @@
 # Build and run notes
 
+This page describes the original UniCamEx bridge. For the separate native camera
+(1080p/30 by default, optional 720p/30), use the
+[NativeCamera build guide](../NativeCamera/README.md) and
+[operation notes](NATIVE_CAMERA_30FPS.md).
+
 ## Assumptions
 
 - macOS target machine with Xcode installed

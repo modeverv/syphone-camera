@@ -1,5 +1,11 @@
 # Codex work order: UniCamEx-first architecture
 
+Historical work order for the UniCamEx bridge. The restrictions below apply to
+that earlier route, not to the separate NativeCamera backend added on 2026-10-27.
+For its current 1080p/30 default, optional 720p/30 output, and measured limits,
+see [Native Camera operation](NATIVE_CAMERA_30FPS.md) and the
+[current audit](ZERO_COPY_AUDIT.md).
+
 ## Goal
 
 Build a tiny macOS bridge that sends frames to the installed **UniCamEx** virtual camera so that Google Meet / Chrome can use Webcam Motion Capture output without running OBS.

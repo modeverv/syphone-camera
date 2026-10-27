@@ -1,0 +1,56 @@
+name: CameraExtensionProbe
+options:
+  deploymentTarget:
+    macOS: '13.0'
+  bundleIdPrefix: com.dream-jack.syphoncamera
+settings:
+  base:
+    DEVELOPMENT_TEAM: 85LT3DSJ3L
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
+    SWIFT_VERSION: '5.0'
+    MACOSX_DEPLOYMENT_TARGET: '13.0'
+    CURRENT_PROJECT_VERSION: '1'
+    MARKETING_VERSION: '1.0'
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_APP_SANDBOX: YES
+    REGISTER_APP_GROUPS: YES
+targets:
+  CameraExtensionProbe:
+    type: application
+    platform: macOS
+    sources:
+      - Host
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dream-jack.syphoncamera.probe
+        PRODUCT_NAME: CameraExtensionProbe
+        INFOPLIST_FILE: Host/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Host/Host.entitlements
+    dependencies:
+      - sdk: SystemExtensions.framework
+      - target: CameraExtensionProbeCamera
+        embed: true
+        codeSign: true
+  CameraExtensionProbeCamera:
+    type: system-extension
+    platform: macOS
+    sources:
+      - Extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dream-jack.syphoncamera.probe.camera
+        PRODUCT_NAME: com.dream-jack.syphoncamera.probe.camera
+        INFOPLIST_FILE: Extension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Extension/Camera.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - sdk: CoreMediaIO.framework
+      - sdk: IOKit.framework
+schemes:
+  CameraExtensionProbe:
+    build:
+      targets:
+        CameraExtensionProbe: all
+    run:
+      config: Debug

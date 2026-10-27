@@ -1,0 +1,63 @@
+name: SyphonZeroCopyCamera
+options:
+  deploymentTarget:
+    macOS: '13.0'
+settings:
+  base:
+    DEVELOPMENT_TEAM: 85LT3DSJ3L
+    CODE_SIGN_STYLE: Automatic
+    CODE_SIGN_IDENTITY: Apple Development
+    SWIFT_VERSION: '5.0'
+    MACOSX_DEPLOYMENT_TARGET: '13.0'
+    CURRENT_PROJECT_VERSION: '4'
+    MARKETING_VERSION: '0.1.0'
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_APP_SANDBOX: YES
+    REGISTER_APP_GROUPS: YES
+targets:
+  SyphonZeroCopyCamera:
+    type: application
+    platform: macOS
+    sources:
+      - Host
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dream-jack.syphoncamera.probe
+        PRODUCT_NAME: SyphonZeroCopyCamera
+        CURRENT_PROJECT_VERSION: '6'
+        ENABLE_APP_SANDBOX: NO
+        INFOPLIST_FILE: Host/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Host/Host.entitlements
+        FRAMEWORK_SEARCH_PATHS:
+          - $(inherited)
+          - $(PROJECT_DIR)/../Vendor/Syphon-Framework/DerivedData/Build/Products/Release
+    dependencies:
+      - sdk: SystemExtensions.framework
+      - sdk: CoreMediaIO.framework
+      - sdk: Metal.framework
+      - framework: ../Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework
+        embed: true
+        codeSign: true
+      - target: NativeCameraExtension
+        embed: true
+        codeSign: true
+  NativeCameraExtension:
+    type: system-extension
+    platform: macOS
+    sources:
+      - Extension
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.dream-jack.syphoncamera.probe.camera
+        PRODUCT_NAME: com.dream-jack.syphoncamera.probe.camera
+        INFOPLIST_FILE: Extension/Info.plist
+        CODE_SIGN_ENTITLEMENTS: Extension/Camera.entitlements
+        SKIP_INSTALL: YES
+    dependencies:
+      - sdk: CoreMediaIO.framework
+      - sdk: IOKit.framework
+schemes:
+  SyphonZeroCopyCamera:
+    build:
+      targets:
+        SyphonZeroCopyCamera: all

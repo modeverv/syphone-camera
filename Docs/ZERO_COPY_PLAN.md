@@ -1,5 +1,9 @@
 # Zero-copy plan
 
+This is the original UniCamEx-oriented plan, not a verification report. The
+native Camera Extension's implemented copy boundaries and measured evidence are
+recorded in [the current audit](ZERO_COPY_AUDIT.md).
+
 ## Definitions
 
 ### Level 0

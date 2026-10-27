@@ -1,0 +1,21 @@
+{"allocation":1228800,"elementBytes":4,"event":"surface","height":480,"id":418,"label":"synthetic_missing_format","pixelFormat":0,"pixelFormatText":"\u0000\u0000\u0000\u0000","planeCount":0,"rowBytes":2560,"seed":0,"width":640}
+{"attributes":"nil","event":"wrap","label":"synthetic_missing_format","status":-6680}
+{"attributes":"explicit_bgra","event":"wrap","label":"synthetic_missing_format","status":-6680}
+{"attributes":"explicit_bgra_dimensions","event":"wrap","label":"synthetic_missing_format","status":-6680}
+{"attributes":"metal","event":"wrap","label":"synthetic_missing_format","status":-6680}
+{"attributes":"explicit_bgra_metal","event":"wrap","label":"synthetic_missing_format","status":-6680}
+{"allocation":1228800,"elementBytes":4,"event":"surface","height":480,"id":418,"label":"synthetic_bgra","pixelFormat":1111970369,"pixelFormatText":"BGRA","planeCount":0,"rowBytes":2560,"seed":0,"width":640}
+{"attributes":"nil","event":"wrap","formatStatus":0,"label":"synthetic_bgra","pixelFormat":1111970369,"sameSurfaceID":true,"status":0}
+{"attributes":"explicit_bgra","event":"wrap","formatStatus":0,"label":"synthetic_bgra","pixelFormat":1111970369,"sameSurfaceID":true,"status":0}
+{"attributes":"explicit_bgra_dimensions","event":"wrap","formatStatus":0,"label":"synthetic_bgra","pixelFormat":1111970369,"sameSurfaceID":true,"status":0}
+{"attributes":"metal","event":"wrap","formatStatus":0,"label":"synthetic_bgra","pixelFormat":1111970369,"sameSurfaceID":true,"status":0}
+{"attributes":"explicit_bgra_metal","event":"wrap","formatStatus":0,"label":"synthetic_bgra","pixelFormat":1111970369,"sameSurfaceID":true,"status":0}
+{"event":"discovery","serverCount":1,"servers":[{"app":"Webcam Motion Receiver","name":"Webcam Motion Receiver"}]}
+{"event":"texture","height":1080,"label":"Webcam Motion Receiver\/Webcam Motion Receiver","pixelFormat":80,"width":1920}
+{"allocation":8306688,"elementBytes":4,"event":"surface","height":1080,"id":934,"label":"Webcam Motion Receiver\/Webcam Motion Receiver","pixelFormat":0,"pixelFormatText":"\u0000\u0000\u0000\u0000","planeCount":0,"rowBytes":7680,"seed":9508,"width":1920}
+{"attributes":"nil","event":"wrap","label":"Webcam Motion Receiver\/Webcam Motion Receiver","status":-6680}
+{"attributes":"explicit_bgra","event":"wrap","label":"Webcam Motion Receiver\/Webcam Motion Receiver","status":-6680}
+{"attributes":"explicit_bgra_dimensions","event":"wrap","label":"Webcam Motion Receiver\/Webcam Motion Receiver","status":-6680}
+{"attributes":"metal","event":"wrap","label":"Webcam Motion Receiver\/Webcam Motion Receiver","status":-6680}
+{"attributes":"explicit_bgra_metal","event":"wrap","label":"Webcam Motion Receiver\/Webcam Motion Receiver","status":-6680}
+{"event":"retained_texture_observation","finalSeed":9657,"frameCount":150,"initialSeed":9508,"label":"Webcam Motion Receiver\/Webcam Motion Receiver","retainedSurfaceID":934,"seedChangedWhileRetained":true,"surfaceIDs":[934]}

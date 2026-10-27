@@ -1,0 +1,239 @@
+{
+  "schemaVersion": 1,
+  "date": "2026-10-27",
+  "environment": {
+    "macOS": "27.0.1",
+    "macOSBuild": "26A434",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "SIP": "enabled"
+  },
+  "verifiedBoundary": "native Metal final IOSurface-backed CVPixelBuffer -> CMIO sink -> same-sample Camera Extension -> device-native AVFoundation verification consumer",
+  "excluded": "stock WMC upstream and unrelated consumer conversions; diagnostic pixel readback is outside production transport",
+  "runs": [
+    {
+      "launchedAt": "2026-10-27T04:51:37Z",
+      "finishedAt": "2026-10-27T04:52:38Z",
+      "receivedFrames": 1815,
+      "captureDurationSeconds": 60.57025487499777,
+      "droppedFrames": 0,
+      "invalidStampFrames": 0,
+      "missingIOSurfaceFrames": 0,
+      "retentionHoldMilliseconds": 1000,
+      "maximumHeldBuffers": 3,
+      "retentionMutations": 0,
+      "uniqueSurfaceIDs": [
+        1045,
+        1063,
+        1078,
+        1081,
+        1095
+      ],
+      "status": "passed",
+      "name": "sustained",
+      "retentionChecks": 165,
+      "sourceCorrelation": {
+        "duplicateSurfacePTSKeys": 0,
+        "malformedSourceLines": 0,
+        "matchedFrames": 1815,
+        "matchingRule": "same IOSurface ID and exactly equal rational PTS",
+        "path": "build/native-zero-copy-20261027/sustained2-source-trace.jsonl",
+        "requested": true,
+        "sameSurfaceAndPTSConfirmed": true,
+        "sourceRecords": 2060,
+        "stampSequenceMismatches": 0,
+        "unmatchedFrames": 0
+      },
+      "evidenceFiles": [
+        {
+          "path": "build/native-zero-copy-20261027/capture-sustained-verified.json",
+          "sha256": "f4a5fd8372c16f45b5601512e3359d49ff92da3ada8df0ae3d2cbdb5ff5e0812"
+        },
+        {
+          "path": "build/native-zero-copy-20261027/sustained2-source-trace.jsonl",
+          "sha256": "d63f41c98134144d65a836ea92e9b09a9601688455abd1b330c9290866a97d7f"
+        },
+        {
+          "path": "build/native-zero-copy-20261027/sustained2-extension-telemetry.json",
+          "sha256": "19a11d0a78407db71b0c39e1f5aadba2f95e906ce5d5cb53786d86a22e06adfb"
+        }
+      ],
+      "extensionThreeWayMatches": 128,
+      "extensionRecentFrames": 128,
+      "extensionCounters": {
+        "consumeErrors": 1,
+        "rejected": 0,
+        "forwarded": 2131,
+        "generation": 3,
+        "extensionPixelCopyOperations": 0
+      }
+    },
+    {
+      "launchedAt": "2026-10-27T04:54:19Z",
+      "finishedAt": "2026-10-27T04:55:15Z",
+      "receivedFrames": 1389,
+      "captureDurationSeconds": 55.12795300001744,
+      "droppedFrames": 0,
+      "invalidStampFrames": 0,
+      "missingIOSurfaceFrames": 0,
+      "retentionHoldMilliseconds": 1000,
+      "maximumHeldBuffers": 3,
+      "retentionMutations": 0,
+      "uniqueSurfaceIDs": [
+        800,
+        1043,
+        1045,
+        1063,
+        1070,
+        1072,
+        1078,
+        1081
+      ],
+      "status": "passed",
+      "name": "restart",
+      "retentionChecks": 129,
+      "sourceCorrelation": {
+        "duplicateSurfacePTSKeys": 0,
+        "malformedSourceLines": 0,
+        "matchedFrames": 1389,
+        "matchingRule": "same IOSurface ID and exactly equal rational PTS",
+        "path": "build/native-zero-copy-20261027/restart-combined-source-trace.jsonl",
+        "requested": true,
+        "sameSurfaceAndPTSConfirmed": true,
+        "sourceRecords": 1436,
+        "stampSequenceMismatches": 0,
+        "unmatchedFrames": 0
+      },
+      "evidenceFiles": [
+        {
+          "path": "build/native-zero-copy-20261027/capture-restart-verified.json",
+          "sha256": "502f627afac949ee5e6e6a6c526f5df2b80143a11e7d825aa3af4a4ce9a51fb1"
+        },
+        {
+          "path": "build/native-zero-copy-20261027/restart-combined-source-trace.jsonl",
+          "sha256": "cae502a09c91b843cbd17c18b88fc99d585bda4a9d1c5264b774cf17b28f1022"
+        },
+        {
+          "path": "build/native-zero-copy-20261027/restart-final-extension-telemetry.json",
+          "sha256": "a7d35715620a147d44106ad648565f77b927cae5ad26fa7956ccfd6a904a5162"
+        }
+      ],
+      "extensionThreeWayMatches": 128,
+      "extensionRecentFrames": 128,
+      "extensionCounters": {
+        "consumeErrors": 1,
+        "rejected": 0,
+        "forwarded": 3526,
+        "generation": 9,
+        "extensionPixelCopyOperations": 0
+      }
+    },
+    {
+      "launchedAt": "2026-10-27T04:54:25Z",
+      "finishedAt": "2026-10-27T04:54:38Z",
+      "receivedFrames": 252,
+      "captureDurationSeconds": 12.798019541660324,
+      "droppedFrames": 0,
+      "invalidStampFrames": 0,
+      "missingIOSurfaceFrames": 0,
+      "retentionHoldMilliseconds": 1000,
+      "maximumHeldBuffers": 3,
+      "retentionMutations": 0,
+      "uniqueSurfaceIDs": [
+        800,
+        1043,
+        1045,
+        1063,
+        1070,
+        1072,
+        1078,
+        1081
+      ],
+      "status": "passed",
+      "name": "second-consumer",
+      "retentionChecks": 24,
+      "sourceCorrelation": {
+        "duplicateSurfacePTSKeys": 0,
+        "malformedSourceLines": 0,
+        "matchedFrames": 252,
+        "matchingRule": "same IOSurface ID and exactly equal rational PTS",
+        "path": "build/native-zero-copy-20261027/restart-combined-source-trace.jsonl",
+        "requested": true,
+        "sameSurfaceAndPTSConfirmed": true,
+        "sourceRecords": 1436,
+        "stampSequenceMismatches": 0,
+        "unmatchedFrames": 0
+      },
+      "evidenceFiles": [
+        {
+          "path": "build/native-zero-copy-20261027/capture-second-consumer-verified.json",
+          "sha256": "be54b478b0981c4082e316c00888b6fc83bbbea7cf894f4560d45d0866029c14"
+        },
+        {
+          "path": "build/native-zero-copy-20261027/restart-combined-source-trace.jsonl",
+          "sha256": "cae502a09c91b843cbd17c18b88fc99d585bda4a9d1c5264b774cf17b28f1022"
+        }
+      ]
+    }
+  ],
+  "restart": {
+    "stopStartCyclesDuringCapture": 2,
+    "poolIDsIdenticalAcrossCycles": true,
+    "poolLimit": 8,
+    "poolPressureDrops": 1,
+    "cmioStopResults": [
+      0,
+      0
+    ]
+  },
+  "finalState": {
+    "producerRunning": false,
+    "extension": {
+      "sinkActive": false,
+      "sourceClients": 0,
+      "consumePending": false,
+      "rejected": 0,
+      "consumeErrors": 1,
+      "generation": 10
+    }
+  },
+  "currentSources": [
+    {
+      "path": "NativeCamera/Extension/ZeroCopyCameraProvider.swift",
+      "sha256": "2eb5164ec5250f8ff40c686a6fded46d5f903468f57dc4c903b52a62038cfbc2"
+    },
+    {
+      "path": "NativeCamera/Extension/main.swift",
+      "sha256": "5226ae3521a5d729ba67179f991245a9330aff6de64b99faf69b7c603037821c"
+    },
+    {
+      "path": "NativeCamera/Host/NativeCameraApp.swift",
+      "sha256": "15029d8ff9cda4511069b9cac46793337f9af4aa3c14375b6449beac26140ee9"
+    },
+    {
+      "path": "NativeCamera/Host/NativeCameraEngine.swift",
+      "sha256": "c70eccf04dc4e796d4d8cc5e2fdf66fa763e1ec20cb5351b000c9d5fd60de6f9"
+    },
+    {
+      "path": "NativeCamera/Host/NativeCameraSink.swift",
+      "sha256": "87e7aa8f28ea04a8bd6029fea979dffd1337f28e0c1cfbd1d70ef5cdf2d1e409"
+    },
+    {
+      "path": "NativeCamera/Host/SurfacePatternRenderer.swift",
+      "sha256": "0ce4993875b5d2cee7aedcd8a3d765369ec76667c2b394677711626bfa85fa2c"
+    },
+    {
+      "path": "NativeCamera/Host/SyphonDirectSource.swift",
+      "sha256": "d288f40d6493331eca9b9367418929617681a4200bb59e5737b69c9b3b10e202"
+    }
+  ],
+  "installedHost": {
+    "path": "/Applications/SyphonCameraExtensionProbe.app",
+    "sha256": "8e84fe7d10c97806edef5c1a421550f3cb8cf40d0da42ffec754aa4dfebd9669"
+  },
+  "notes": [
+    "Sustained run preceded pool-preservation/stop-status changes; restart and second-consumer runs used the final installed build.",
+    "One historical OSStatus -7 consume error occurred during an earlier abrupt host quit; consumeErrors remained1 across successful sustained/restart runs.",
+    "Intentional producer pauses are included in restart wall time; native receiver droppedFrames excludes frames deliberately not generated."
+  ],
+  "artifactPathBase": "repository-root"
+}

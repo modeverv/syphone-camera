@@ -1,5 +1,10 @@
 # Performance notes
 
+These are the earlier UniCamEx bridge's targets and measurements. Current native
+camera results are in the [30 fps resolution comparison](NATIVE_CAMERA_MEET_PERFORMANCE.md)
+and the separate [native GPU-copy comparison](NATIVE_ZERO_COPY_PERFORMANCE.md).
+The desired values below are goals from that earlier work, not new measurements.
+
 ## Measurement priorities
 
 1. CPU percent of the bridge app

@@ -1,6 +1,75 @@
 # Zero-copy audit
 
-Status: optimization work in progress, 2026-08-11.
+## 2026-10-27: native Camera Extension added
+
+The company-team signing barrier is resolved on this Mac. Dream Jack Inc.
+(`85LT3DSJ3L`) obtained a macOS development profile with system-extension
+installation entitlement, signed the host and extension, and activated the
+minimal camera with SIP enabled. The earlier Personal Team-only assumption is
+no longer a reason to stop implementing a Camera Extension. This is development
+activation evidence, not notarized distribution evidence; see the
+[account/profile verification record](CAMERA_EXTENSION_PROBE.md).
+
+The new [NativeCamera backend](../NativeCamera/README.md) is separate from the
+existing UniCamEx bridge. Its Metal diagnostic source renders directly into a
+final IOSurface-backed CVPixelBuffer, the host submits a metadata sample wrapper
+to CMIO, and the extension forwards the received CMSampleBuffer itself to its
+source stream. The bounded pool has an allocation threshold of eight; consumers'
+CoreVideo/IOSurface lifetimes govern reuse, and pressure causes drops instead of
+overwriting a held frame. The implemented boundary is the native producer's
+final image through this camera to a device-native AVFoundation consumer.
+Source/consumer ID + PTS correlation and retained-frame checks are required for
+an end-to-end verification claim; implementation counters alone are insufficient.
+See the [verification consumer](../Tools/ZeroCopyVerification/README.md).
+
+Live verification passed for 1,815 sustained frames, 1,389 frames across two
+producer stop/start cycles, and 252 frames in a concurrent second consumer.
+Every received frame matched source IOSurface ID, exact rational PTS, and the
+rendered sequence stamp. All 318 one-second retention checks detected no mutation.
+See [the measured results and evidence](NATIVE_ZERO_COPY_VERIFICATION.md) for
+the tested boundary, build differences, pressure behavior, and recorded failures.
+The subsequent [controlled performance comparison](NATIVE_ZERO_COPY_PERFORMANCE.md)
+measured lower GPU command time and host physical footprint, with only a small
+change in total CPU across host, extension, and consumer. It is not a stock-WMC benchmark.
+
+Host build 6 / extension build 4 provides a separate stock-WMC input route,
+defaulting to 1920×1080 at 30 fps, with optional 1280×720 at 30 fps.
+Admission and sink-capacity checks precede texture retrieval.
+One GPU compute pass samples the latest Syphon texture, resizes and vertically
+flips it into the final IOSurface-backed CVPixelBuffer. The bounded pool and
+extension forwarding apply to that final buffer; there is no intermediate
+image, CPU pixel readback, or additional image copy inside the extension.
+This WMC input route is **not source-to-consumer zero-copy**. The source may
+still mutate while the GPU samples it; retaining a texture is not a producer
+immutability guarantee. The native Metal diagnostic source remains available.
+See [30 fps operation and validation](NATIVE_CAMERA_30FPS.md) for the resolution
+switch procedure, Host sandbox configuration, and actual WMC capture evidence.
+The [resolution comparison](NATIVE_CAMERA_MEET_PERFORMANCE.md) found shorter
+host GPU command time and lower host physical footprint at 720p, but no CPU
+reduction. Its primary CPU windows lack matching RTP evidence; the separate
+1080p-input reference confirms 720p actual sending, not a two-condition network
+comparison. The earlier diagnostic-source benchmark does not establish these results.
+
+The distributed Webcam Motion Receiver is **not** integrated into the direct
+immutable-source path. Its live surface has pixel format 0 and direct wrapping returned -6680
+under every tested attribute dictionary. Retaining its first texture across
+150 frames still exposed the same surface with a changing seed. Its IL2CPP app
+does not provide a replaceable managed DLL; the inspected KlakSyphon source
+caches the native texture once and performs Blit + CopyTexture upstream.
+The producer source is unavailable in this workspace. A native plugin swap
+alone cannot safely rotate its render targets or establish frame immutability.
+Exact evidence and limits are in the [WMC diagnostic report](../Tools/ZeroCopyDiagnostics/README.md).
+
+The existing `BridgeApp/Sources/UniCamExSender.swift` remains unchanged by this
+native implementation: its compatible WMC path is currently `METAL_FLIP_BLIT`
+(one GPU compute copy with vertical flip), with Core Image fallback. That path
+continues to support stock WMC and is not zero-copy. Older `METAL_BLIT` names and
+-6661 results below are historical measurements, not the present native backend
+or the new live -6680 diagnostic result.
+
+## Historical baseline: 2026-08-11
+
+The following sections record the implementation and measurements from that date.
 
 The current production path is a GPU conversion and is not zero-copy. For exact 1920x1080 BGRA input, the bridge now tries a one-time direct IOSurface probe, then a persistent Metal texture-cache plus blit path before using CI. A one-time runtime probe records the direct IOSurface contract stages without retrying the operation per frame.
 

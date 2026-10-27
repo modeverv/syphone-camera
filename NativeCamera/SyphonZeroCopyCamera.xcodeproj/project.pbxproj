@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0B9B9CE1825C57C5ED55A091 /* NativeCameraApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C058AEA75B636186AC1ACC5 /* NativeCameraApp.swift */; };
+		27AE84CA030A9171495E1BD3 /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C4F96D1A3F3509CE1224CCE2 /* Metal.framework */; };
+		4756B1980F720C067B80191A /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B046B6A45C034D0190C05B /* CoreMediaIO.framework */; };
+		56EFE11B70F79E883B538FEC /* SyphonResizingSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5CF9A03B98A28A79AB796AD /* SyphonResizingSource.swift */; };
+		5A95A43314F343E5738E6F49 /* SyphonDirectSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1D3F368BF4540B81F7784D4 /* SyphonDirectSource.swift */; };
+		6B3777C9B79A8F0DF969A354 /* ZeroCopyCameraProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E17F5F8583AFD06C310309E /* ZeroCopyCameraProvider.swift */; };
+		713357797398927CE5D53C1D /* NativeCameraEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = C413C4BF8DA3E7627E06A551 /* NativeCameraEngine.swift */; };
+		729D4EEC5C3BF8338685C088 /* Syphon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07A4C1FF32AF119F9AA57C17 /* Syphon.framework */; };
+		943C2CF7CD52F4E1E3BA033F /* NativeCameraSink.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9C20EC15EF55CF27D48400D /* NativeCameraSink.swift */; };
+		9724DAAE909CDA6FC5E0CE59 /* NativeCameraExtension.systemextension in Embed System Extensions */ = {isa = PBXBuildFile; fileRef = 8B4598C1DDC9A93A9D92A40F /* NativeCameraExtension.systemextension */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		98079BB6D4A3F4DEA5E7212C /* SystemExtensions.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A2D10F5D53D13B01DD90134 /* SystemExtensions.framework */; };
+		B41671B8D11410C134747EDE /* CoreMediaIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 62B046B6A45C034D0190C05B /* CoreMediaIO.framework */; };
+		BB7B0058B1ED96E250A80B40 /* SurfacePatternRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56F00FB016FB92323E1511D1 /* SurfacePatternRenderer.swift */; };
+		CB04F3755E74C260849BE768 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C1B927E5C91FDD511AF5D16 /* main.swift */; };
+		DA279FFADB8FA67382C03C2F /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68944B44F76CD0FA51DC9BF8 /* IOKit.framework */; };
+		FF0202A7F1E884AA6ED55AE6 /* Syphon.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 07A4C1FF32AF119F9AA57C17 /* Syphon.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		42F4CBECC134B56208573562 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 07040D5DEC9185028AE54201 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6328603160FFA5D5012B0D76;
+			remoteInfo = NativeCameraExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C113EBE2DC9BBB7B96D7C294 /* Embed System Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(SYSTEM_EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				9724DAAE909CDA6FC5E0CE59 /* NativeCameraExtension.systemextension in Embed System Extensions */,
+			);
+			name = "Embed System Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8DF3832CF8EE6D6EF226F77 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				FF0202A7F1E884AA6ED55AE6 /* Syphon.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		07A4C1FF32AF119F9AA57C17 /* Syphon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Syphon.framework; path = "../Vendor/Syphon-Framework/DerivedData/Build/Products/Release/Syphon.framework"; sourceTree = "<group>"; };
+		1A2D10F5D53D13B01DD90134 /* SystemExtensions.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemExtensions.framework; path = System/Library/Frameworks/SystemExtensions.framework; sourceTree = SDKROOT; };
+		28B29B99E1CE8FCA6B8C582D /* SyphonZeroCopyCamera.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SyphonZeroCopyCamera.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C1B927E5C91FDD511AF5D16 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2FB383FDE6498DF01B2B5F31 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		55766DD5D8DBC3E7D0EC3C84 /* Host.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Host.entitlements; sourceTree = "<group>"; };
+		56F00FB016FB92323E1511D1 /* SurfacePatternRenderer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SurfacePatternRenderer.swift; sourceTree = "<group>"; };
+		62B046B6A45C034D0190C05B /* CoreMediaIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMediaIO.framework; path = System/Library/Frameworks/CoreMediaIO.framework; sourceTree = SDKROOT; };
+		68944B44F76CD0FA51DC9BF8 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		8B4598C1DDC9A93A9D92A40F /* NativeCameraExtension.systemextension */ = {isa = PBXFileReference; explicitFileType = "wrapper.system-extension"; includeInIndex = 0; path = NativeCameraExtension.systemextension; sourceTree = BUILT_PRODUCTS_DIR; };
+		8C058AEA75B636186AC1ACC5 /* NativeCameraApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCameraApp.swift; sourceTree = "<group>"; };
+		8E17F5F8583AFD06C310309E /* ZeroCopyCameraProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ZeroCopyCameraProvider.swift; sourceTree = "<group>"; };
+		916C72265A4AD86B7EA0311B /* Camera.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Camera.entitlements; sourceTree = "<group>"; };
+		B9C20EC15EF55CF27D48400D /* NativeCameraSink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCameraSink.swift; sourceTree = "<group>"; };
+		C413C4BF8DA3E7627E06A551 /* NativeCameraEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NativeCameraEngine.swift; sourceTree = "<group>"; };
+		C4F96D1A3F3509CE1224CCE2 /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
+		F082F1DEF29E30211A837797 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F1D3F368BF4540B81F7784D4 /* SyphonDirectSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphonDirectSource.swift; sourceTree = "<group>"; };
+		F5CF9A03B98A28A79AB796AD /* SyphonResizingSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyphonResizingSource.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2B84E4D423D546E7FBA6C37A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4756B1980F720C067B80191A /* CoreMediaIO.framework in Frameworks */,
+				DA279FFADB8FA67382C03C2F /* IOKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4AFF359A9B9D399CEE6A0ABE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				98079BB6D4A3F4DEA5E7212C /* SystemExtensions.framework in Frameworks */,
+				B41671B8D11410C134747EDE /* CoreMediaIO.framework in Frameworks */,
+				27AE84CA030A9171495E1BD3 /* Metal.framework in Frameworks */,
+				729D4EEC5C3BF8338685C088 /* Syphon.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20BF1D8BD5FC955AF3B9CBED /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				916C72265A4AD86B7EA0311B /* Camera.entitlements */,
+				2FB383FDE6498DF01B2B5F31 /* Info.plist */,
+				2C1B927E5C91FDD511AF5D16 /* main.swift */,
+				8E17F5F8583AFD06C310309E /* ZeroCopyCameraProvider.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		71CEA9457576C78C204F29AD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8B4598C1DDC9A93A9D92A40F /* NativeCameraExtension.systemextension */,
+				28B29B99E1CE8FCA6B8C582D /* SyphonZeroCopyCamera.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		960A6DAEE437303AF38E6385 /* Host */ = {
+			isa = PBXGroup;
+			children = (
+				55766DD5D8DBC3E7D0EC3C84 /* Host.entitlements */,
+				F082F1DEF29E30211A837797 /* Info.plist */,
+				8C058AEA75B636186AC1ACC5 /* NativeCameraApp.swift */,
+				C413C4BF8DA3E7627E06A551 /* NativeCameraEngine.swift */,
+				B9C20EC15EF55CF27D48400D /* NativeCameraSink.swift */,
+				56F00FB016FB92323E1511D1 /* SurfacePatternRenderer.swift */,
+				F1D3F368BF4540B81F7784D4 /* SyphonDirectSource.swift */,
+				F5CF9A03B98A28A79AB796AD /* SyphonResizingSource.swift */,
+			);
+			path = Host;
+			sourceTree = "<group>";
+		};
+		9BA5859ADB14EC72443A21A4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				62B046B6A45C034D0190C05B /* CoreMediaIO.framework */,
+				68944B44F76CD0FA51DC9BF8 /* IOKit.framework */,
+				C4F96D1A3F3509CE1224CCE2 /* Metal.framework */,
+				07A4C1FF32AF119F9AA57C17 /* Syphon.framework */,
+				1A2D10F5D53D13B01DD90134 /* SystemExtensions.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A54D6A6AAF3FFFBAA0F7BF35 = {
+			isa = PBXGroup;
+			children = (
+				20BF1D8BD5FC955AF3B9CBED /* Extension */,
+				960A6DAEE437303AF38E6385 /* Host */,
+				9BA5859ADB14EC72443A21A4 /* Frameworks */,
+				71CEA9457576C78C204F29AD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6328603160FFA5D5012B0D76 /* NativeCameraExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 95CAB45819B8A3589462E26F /* Build configuration list for PBXNativeTarget "NativeCameraExtension" */;
+			buildPhases = (
+				AFB13FE3F565A20CAD2AECB9 /* Sources */,
+				2B84E4D423D546E7FBA6C37A /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NativeCameraExtension;
+			packageProductDependencies = (
+			);
+			productName = NativeCameraExtension;
+			productReference = 8B4598C1DDC9A93A9D92A40F /* NativeCameraExtension.systemextension */;
+			productType = "com.apple.product-type.system-extension";
+		};
+		E590963EAAB2128F8582D146 /* SyphonZeroCopyCamera */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B7A08DC001F0FD4CBF125648 /* Build configuration list for PBXNativeTarget "SyphonZeroCopyCamera" */;
+			buildPhases = (
+				6F6BFC687C13787888B21DCB /* Sources */,
+				4AFF359A9B9D399CEE6A0ABE /* Frameworks */,
+				C113EBE2DC9BBB7B96D7C294 /* Embed System Extensions */,
+				D8DF3832CF8EE6D6EF226F77 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2CEE3E595752FB380BFA58B1 /* PBXTargetDependency */,
+			);
+			name = SyphonZeroCopyCamera;
+			packageProductDependencies = (
+			);
+			productName = SyphonZeroCopyCamera;
+			productReference = 28B29B99E1CE8FCA6B8C582D /* SyphonZeroCopyCamera.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		07040D5DEC9185028AE54201 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					6328603160FFA5D5012B0D76 = {
+						DevelopmentTeam = 85LT3DSJ3L;
+						ProvisioningStyle = Automatic;
+					};
+					E590963EAAB2128F8582D146 = {
+						DevelopmentTeam = 85LT3DSJ3L;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 365002842A6DE57F7CA85192 /* Build configuration list for PBXProject "SyphonZeroCopyCamera" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = A54D6A6AAF3FFFBAA0F7BF35;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 71CEA9457576C78C204F29AD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E590963EAAB2128F8582D146 /* SyphonZeroCopyCamera */,
+				6328603160FFA5D5012B0D76 /* NativeCameraExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6F6BFC687C13787888B21DCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0B9B9CE1825C57C5ED55A091 /* NativeCameraApp.swift in Sources */,
+				713357797398927CE5D53C1D /* NativeCameraEngine.swift in Sources */,
+				943C2CF7CD52F4E1E3BA033F /* NativeCameraSink.swift in Sources */,
+				BB7B0058B1ED96E250A80B40 /* SurfacePatternRenderer.swift in Sources */,
+				5A95A43314F343E5738E6F49 /* SyphonDirectSource.swift in Sources */,
+				56EFE11B70F79E883B538FEC /* SyphonResizingSource.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AFB13FE3F565A20CAD2AECB9 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B3777C9B79A8F0DF969A354 /* ZeroCopyCameraProvider.swift in Sources */,
+				CB04F3755E74C260849BE768 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2CEE3E595752FB380BFA58B1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6328603160FFA5D5012B0D76 /* NativeCameraExtension */;
+			targetProxy = 42F4CBECC134B56208573562 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1863FA49D746A043C95B20AB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Camera.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-jack.syphoncamera.probe.camera";
+				PRODUCT_NAME = "com.dream-jack.syphoncamera.probe.camera";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		3AB8BBD60199C805571784FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 85LT3DSJ3L;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		62DF0B6CE769DEB586B3F35B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 4;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 85LT3DSJ3L;
+				ENABLE_APP_SANDBOX = YES;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 13.0;
+				MARKETING_VERSION = 0.1.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				REGISTER_APP_GROUPS = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		7629EA5FF7A3CBE947C733AC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Host/Host.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 6;
+				ENABLE_APP_SANDBOX = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Vendor/Syphon-Framework/DerivedData/Build/Products/Release",
+					"\"../Vendor/Syphon-Framework/DerivedData/Build/Products/Release\"",
+				);
+				INFOPLIST_FILE = Host/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-jack.syphoncamera.probe";
+				PRODUCT_NAME = SyphonZeroCopyCamera;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		7A50DFBED7FFDA9B3A5E03D2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Host/Host.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 6;
+				ENABLE_APP_SANDBOX = NO;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/../Vendor/Syphon-Framework/DerivedData/Build/Products/Release",
+					"\"../Vendor/Syphon-Framework/DerivedData/Build/Products/Release\"",
+				);
+				INFOPLIST_FILE = Host/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-jack.syphoncamera.probe";
+				PRODUCT_NAME = SyphonZeroCopyCamera;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B534F3D67F8715C3E9E99CCC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = Extension/Camera.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = Extension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dream-jack.syphoncamera.probe.camera";
+				PRODUCT_NAME = "com.dream-jack.syphoncamera.probe.camera";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		365002842A6DE57F7CA85192 /* Build configuration list for PBXProject "SyphonZeroCopyCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				62DF0B6CE769DEB586B3F35B /* Debug */,
+				3AB8BBD60199C805571784FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		95CAB45819B8A3589462E26F /* Build configuration list for PBXNativeTarget "NativeCameraExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1863FA49D746A043C95B20AB /* Debug */,
+				B534F3D67F8715C3E9E99CCC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		B7A08DC001F0FD4CBF125648 /* Build configuration list for PBXNativeTarget "SyphonZeroCopyCamera" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7A50DFBED7FFDA9B3A5E03D2 /* Debug */,
+				7629EA5FF7A3CBE947C733AC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 07040D5DEC9185028AE54201 /* Project object */;
+}

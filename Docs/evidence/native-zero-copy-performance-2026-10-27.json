@@ -1,0 +1,2751 @@
+{
+  "schemaVersion": 1,
+  "status": "complete",
+  "createdAt": "2026-10-27T05:27:59.879753+00:00",
+  "comparisonDirectory": "build/zero-copy-benchmark-20261027/comparison-activity",
+  "manifest": {
+    "order": [
+      "gpu-copy",
+      "zero-copy",
+      "zero-copy",
+      "gpu-copy",
+      "zero-copy",
+      "gpu-copy",
+      "gpu-copy",
+      "zero-copy"
+    ],
+    "warmupSeconds": 8.0,
+    "measurementSeconds": 40.0,
+    "checkOnly": false,
+    "runs": [
+      {
+        "index": 1,
+        "mode": "gpu-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy",
+        "pids": {
+          "host": 98046,
+          "consumer": 98355,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 2,
+        "mode": "zero-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy",
+        "pids": {
+          "host": 6117,
+          "consumer": 6239,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 3,
+        "mode": "zero-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy",
+        "pids": {
+          "host": 13688,
+          "consumer": 13880,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 4,
+        "mode": "gpu-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy",
+        "pids": {
+          "host": 21088,
+          "consumer": 21274,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 5,
+        "mode": "zero-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy",
+        "pids": {
+          "host": 29333,
+          "consumer": 29654,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 6,
+        "mode": "gpu-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy",
+        "pids": {
+          "host": 36586,
+          "consumer": 36689,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 7,
+        "mode": "gpu-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy",
+        "pids": {
+          "host": 43981,
+          "consumer": 44231,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      },
+      {
+        "index": 8,
+        "mode": "zero-copy",
+        "directory": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy",
+        "pids": {
+          "host": 51181,
+          "consumer": 51444,
+          "extension": 30973,
+          "camera_service": 346,
+          "background_wmc": 66392
+        }
+      }
+    ]
+  },
+  "expectedRuns": 8,
+  "completedRuns": 8,
+  "cpuConvention": "one CPU core fully busy =100%; target sum=host+extension+consumer",
+  "runs": [
+    {
+      "index": 1,
+      "mode": "gpu-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.441131655424225,
+        "cpu.host.msPerReceivedFrame": 1.4805673266666668,
+        "rss.host.medianMiB": 87.609375,
+        "footprint.host.medianMiB": 198.59468841552734,
+        "cpu.extension.percent": 4.848034248403565,
+        "cpu.extension.msPerReceivedFrame": 1.6166666666666667,
+        "rss.extension.medianMiB": 14.953125,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.5914390668205507,
+        "cpu.consumer.msPerReceivedFrame": 0.8639250691666667,
+        "rss.consumer.medianMiB": 129.578125,
+        "footprint.consumer.medianMiB": 107.84475708007812,
+        "cpu.camera_service.percent": 0.024989867259812188,
+        "cpu.camera_service.msPerReceivedFrame": 0.008333333333333333,
+        "rss.camera_service.medianMiB": 23.78125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 45.54836065871432,
+        "cpu.background_wmc.msPerReceivedFrame": 15.184760625,
+        "rss.background_wmc.medianMiB": 1129.828125,
+        "footprint.background_wmc.medianMiB": 1795.8778533935547,
+        "cpu.pipeline.percent": 11.88060497064834,
+        "cpu.pipeline.msPerReceivedFrame": 3.9611590625,
+        "gpu.command.msPerFrame": 0.11561593753867783,
+        "render.wall.msPerFrame": 0.9042392713793864,
+        "source.fps": 30.00002053126759,
+        "receiver.fps": 29.996182548576783,
+        "receiver.postRenderLatency.meanMs": 4.837755011297607,
+        "receiver.postRenderLatency.p50Ms": 4.170479020103812,
+        "receiver.postRenderLatency.p95Ms": 10.341549688018857,
+        "receiver.ptsGap.p95Ms": 34.0510000125505,
+        "receiver.ptsGap.maxMs": 34.56999995978549,
+        "observer.cpu.percent": 1.1523858421055684
+      },
+      "processes": {
+        "host": {
+          "pid": 98046,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.441131655424225,
+          "cpuSeconds": 1.776680792,
+          "cpuWindowSeconds": 40.00513675,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4805673266666668,
+          "residentMedianMiB": 87.609375,
+          "physicalFootprintMedianMiB": 198.59468841552734
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 4.848034248403565,
+          "cpuSeconds": 1.94,
+          "cpuWindowSeconds": 40.016218958,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.6166666666666667,
+          "residentMedianMiB": 14.953125,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 98355,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.5914390668205507,
+          "cpuSeconds": 1.036710083,
+          "cpuWindowSeconds": 40.005188479,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.8639250691666667,
+          "residentMedianMiB": 129.578125,
+          "physicalFootprintMedianMiB": 107.84475708007812
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.024989867259812188,
+          "cpuSeconds": 0.01,
+          "cpuWindowSeconds": 40.016218958,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.008333333333333333,
+          "residentMedianMiB": 23.78125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 45.54836065871432,
+          "cpuSeconds": 18.22171275,
+          "cpuWindowSeconds": 40.005199938,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.184760625,
+          "residentMedianMiB": 1129.828125,
+          "physicalFootprintMedianMiB": 1795.8778533935547
+        }
+      },
+      "pipelineCPUSeconds": 4.753390875,
+      "windows": {
+        "samplerStartHostSeconds": 275417.77593625,
+        "samplerEndHostSeconds": 275457.781026833,
+        "samplerSeconds": 40.0050905829994,
+        "producerStartHostSeconds": 275417.401447083,
+        "producerEndHostSeconds": 275457.401419708,
+        "producerSeconds": 39.99997262499528,
+        "producerSnapshotStartLagSeconds": 0.37448916700668633,
+        "producerSnapshotEndLagSeconds": 0.37960712501080707,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.1387391250464134,
+        "renderWallSecondsTotal": 1.0850871256552637,
+        "transportPixelCopies": 1200,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 8294400,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.020329999999999994,
+        "psChildrenCPUSeconds": 0.44068299999999994,
+        "cpuPercentOneCore": 1.1523858421055684,
+        "meanReadMilliseconds": 55.81393966666666
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/processes.json",
+          "sha256": "c137b82c3979cf3026318abf5a16b85673b6c55491020a9448653a80ef2225aa"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/producer-before.json",
+          "sha256": "542cee1d972141490120bb1d848ed220b4e588ee0e8bd90815843a750e8a513d"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/producer-after.json",
+          "sha256": "96fbce7f86ea666284368cb60441304374a9df801ff600aeb83daab1603d9848"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/extension-before.json",
+          "sha256": "d92cc478b5aecd66182da54a419bb212a8a1a21cf2655fac3f9217d9a9209d57"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/extension-after.json",
+          "sha256": "287886e8f4f338d15a1ab109876ae20e601d46aed9556fafc71ab6718c554aa7"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/01-gpu-copy/capture.json",
+          "sha256": "a43fd8f0dcb999ba38e53042ac24fe28879fef320426bd8646f0e1ac4d2943f4"
+        }
+      ]
+    },
+    {
+      "index": 2,
+      "mode": "zero-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.351336189487272,
+        "cpu.host.msPerReceivedFrame": 1.4506306591666667,
+        "rss.host.medianMiB": 89.8125,
+        "footprint.host.medianMiB": 190.20406341552734,
+        "cpu.extension.percent": 5.222465608204748,
+        "cpu.extension.msPerReceivedFrame": 1.7416666666666667,
+        "rss.extension.medianMiB": 14.953125,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.814968993861879,
+        "cpu.consumer.msPerReceivedFrame": 0.9384438891666668,
+        "rss.consumer.medianMiB": 132.546875,
+        "footprint.consumer.medianMiB": 108.11040496826172,
+        "cpu.camera_service.percent": 0.0,
+        "cpu.camera_service.msPerReceivedFrame": 0.0,
+        "rss.camera_service.medianMiB": 23.8125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 46.42839485905735,
+        "cpu.background_wmc.msPerReceivedFrame": 15.47813066,
+        "rss.background_wmc.medianMiB": 1129.88671875,
+        "footprint.background_wmc.medianMiB": 1795.8974075317383,
+        "cpu.pipeline.percent": 12.388770791553899,
+        "cpu.pipeline.msPerReceivedFrame": 4.130741215,
+        "gpu.command.msPerFrame": 0.05298770838029062,
+        "render.wall.msPerFrame": 0.7713286461754857,
+        "source.fps": 30.000462663350085,
+        "receiver.fps": 29.996203948910136,
+        "receiver.postRenderLatency.meanMs": 5.037597667784818,
+        "receiver.postRenderLatency.p50Ms": 5.1503124996088445,
+        "receiver.postRenderLatency.p95Ms": 8.261881268117577,
+        "receiver.ptsGap.p95Ms": 33.75999996205792,
+        "receiver.ptsGap.maxMs": 34.660000004805624,
+        "observer.cpu.percent": 1.3277769684304792
+      },
+      "processes": {
+        "host": {
+          "pid": 6117,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.351336189487272,
+          "cpuSeconds": 1.740756791,
+          "cpuWindowSeconds": 40.005109125,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4506306591666667,
+          "residentMedianMiB": 89.8125,
+          "physicalFootprintMedianMiB": 190.20406341552734
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.222465608204748,
+          "cpuSeconds": 2.09,
+          "cpuWindowSeconds": 40.019411458,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.7416666666666667,
+          "residentMedianMiB": 14.953125,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 6239,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.814968993861879,
+          "cpuSeconds": 1.126132667,
+          "cpuWindowSeconds": 40.005153501,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.9384438891666668,
+          "residentMedianMiB": 132.546875,
+          "physicalFootprintMedianMiB": 108.11040496826172
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.0,
+          "cpuSeconds": 0.0,
+          "cpuWindowSeconds": 40.019411458,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.0,
+          "residentMedianMiB": 23.8125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 46.42839485905735,
+          "cpuSeconds": 18.573756792,
+          "cpuWindowSeconds": 40.00516677,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.47813066,
+          "residentMedianMiB": 1129.88671875,
+          "physicalFootprintMedianMiB": 1795.8974075317383
+        }
+      },
+      "pipelineCPUSeconds": 4.956889458,
+      "windows": {
+        "samplerStartHostSeconds": 275478.778835416,
+        "samplerEndHostSeconds": 275518.783897458,
+        "samplerSeconds": 40.00506204197882,
+        "producerStartHostSeconds": 275478.290392708,
+        "producerEndHostSeconds": 275518.289775833,
+        "producerSeconds": 39.999383125046734,
+        "producerSnapshotStartLagSeconds": 0.4884427080396563,
+        "producerSnapshotEndLagSeconds": 0.49412162497173995,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.06358525005634874,
+        "renderWallSecondsTotal": 0.9255943754105829,
+        "transportPixelCopies": 0,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 0,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.030928000000000004,
+        "psChildrenCPUSeconds": 0.50025,
+        "cpuPercentOneCore": 1.3277769684304792,
+        "meanReadMilliseconds": 68.02700011111111
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/processes.json",
+          "sha256": "f7ea7a3d37554fb0ee7e02f2b305ae76e7e8f83737cd47c69056d91d9ff0f4ff"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/producer-before.json",
+          "sha256": "aa25b131e39f125b60ea512041d103cc6d3d32058db124144bee34aa136f5912"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/producer-after.json",
+          "sha256": "4e6d3b2e0cac1031535c91feca5a3f996284172fcbd6d174e7915e395a69f7d6"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/extension-before.json",
+          "sha256": "2a03a14cb3533517b1c436f058df45c6e0e4e8a5fb90ee6346892e0397cd9e17"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/extension-after.json",
+          "sha256": "5cdacb5888dfd17e8a78d042124d57ab474255ea1f095e420ab4a648dcd36cb0"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/02-zero-copy/capture.json",
+          "sha256": "cded1b09225f21bd220399c75e20e6cc4a809517e5da5356737b3931e8664ece"
+        }
+      ]
+    },
+    {
+      "index": 3,
+      "mode": "zero-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.066746281525267,
+        "cpu.host.msPerReceivedFrame": 1.3546250349708577,
+        "rss.host.medianMiB": 89.796875,
+        "footprint.host.medianMiB": 190.14156341552734,
+        "cpu.extension.percent": 5.024466396393013,
+        "cpu.extension.msPerReceivedFrame": 1.6736053288925894,
+        "rss.extension.medianMiB": 14.953125,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.6918707259058077,
+        "cpu.consumer.msPerReceivedFrame": 0.8966573338884263,
+        "rss.consumer.medianMiB": 132.140625,
+        "footprint.consumer.medianMiB": 107.71973419189453,
+        "cpu.camera_service.percent": 0.024997345255686632,
+        "cpu.camera_service.msPerReceivedFrame": 0.00832639467110741,
+        "rss.camera_service.medianMiB": 23.8125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 47.11409480308038,
+        "cpu.background_wmc.msPerReceivedFrame": 15.693622884263112,
+        "rss.background_wmc.medianMiB": 1129.9296875,
+        "footprint.background_wmc.medianMiB": 1795.6474075317383,
+        "cpu.pipeline.percent": 11.783083403824088,
+        "cpu.pipeline.msPerReceivedFrame": 3.9248876977518736,
+        "gpu.command.msPerFrame": 0.05319989655011644,
+        "render.wall.msPerFrame": 0.9581219792501846,
+        "source.fps": 29.99718991950687,
+        "receiver.fps": 30.02122445575633,
+        "receiver.postRenderLatency.meanMs": 6.0214171747616545,
+        "receiver.postRenderLatency.p50Ms": 5.2436249679885805,
+        "receiver.postRenderLatency.p95Ms": 10.831875028088689,
+        "receiver.ptsGap.p95Ms": 34.19049997755792,
+        "receiver.ptsGap.maxMs": 39.769999973941594,
+        "observer.cpu.percent": 1.2248209634535836
+      },
+      "processes": {
+        "host": {
+          "pid": 13688,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.066746281525267,
+          "cpuSeconds": 1.626904667,
+          "cpuWindowSeconds": 40.005069271,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.3546250349708577,
+          "residentMedianMiB": 89.796875,
+          "physicalFootprintMedianMiB": 190.14156341552734
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.024466396393013,
+          "cpuSeconds": 2.01,
+          "cpuWindowSeconds": 40.004248042,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.6736053288925894,
+          "residentMedianMiB": 14.953125,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 13880,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.6918707259058077,
+          "cpuSeconds": 1.076885458,
+          "cpuWindowSeconds": 40.005095625,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.8966573338884263,
+          "residentMedianMiB": 132.140625,
+          "physicalFootprintMedianMiB": 107.71973419189453
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.024997345255686632,
+          "cpuSeconds": 0.01,
+          "cpuWindowSeconds": 40.004248042,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.00832639467110741,
+          "residentMedianMiB": 23.8125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 47.11409480308038,
+          "cpuSeconds": 18.848041084,
+          "cpuWindowSeconds": 40.00510073,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.693622884263112,
+          "residentMedianMiB": 1129.9296875,
+          "physicalFootprintMedianMiB": 1795.6474075317383
+        }
+      },
+      "pipelineCPUSeconds": 4.713790125,
+      "windows": {
+        "samplerStartHostSeconds": 275539.409013375,
+        "samplerEndHostSeconds": 275579.414043875,
+        "samplerSeconds": 40.00503050000407,
+        "producerStartHostSeconds": 275539.0391655,
+        "producerEndHostSeconds": 275579.042912625,
+        "producerSeconds": 40.0037471249816,
+        "producerSnapshotStartLagSeconds": 0.36984787497203797,
+        "producerSnapshotEndLagSeconds": 0.3711312499945052,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1201,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.06383987586013973,
+        "renderWallSecondsTotal": 1.1497463751002215,
+        "transportPixelCopies": 0,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 0,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.02628500000000001,
+        "psChildrenCPUSeconds": 0.4637049999999999,
+        "cpuPercentOneCore": 1.2248209634535836,
+        "meanReadMilliseconds": 59.51792588888889
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/processes.json",
+          "sha256": "c312226e57ef4aea36226cdb33c1496308c9de5028413b1e9c70cdddfc80db8c"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/producer-before.json",
+          "sha256": "90ab37bc4a32d9323b62a3aa2c956eec23aa8fb386b820fda80e204dfaf46d35"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/producer-after.json",
+          "sha256": "086ba22bd61f756d67832f10d89835dd13ef2e91cce24e273cb414c02cd45c4e"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/extension-before.json",
+          "sha256": "c4ee3afcb87784976b83f2317de29508fb4851d7835081e7c057c310f031930a"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/extension-after.json",
+          "sha256": "b2e5ead9c68c881ac72716f743fa3f4f7736e511bad1a6fa2da720d0413d7e1e"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/03-zero-copy/capture.json",
+          "sha256": "c7aa5f31550de4fbe912646fb52ccf272ff191b320803d6a5c2cff4311769788"
+        }
+      ]
+    },
+    {
+      "index": 4,
+      "mode": "gpu-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.4532982599262985,
+        "cpu.host.msPerReceivedFrame": 1.4845977433333333,
+        "rss.host.medianMiB": 89.875,
+        "footprint.host.medianMiB": 198.42279052734375,
+        "cpu.extension.percent": 5.0987878348302385,
+        "cpu.extension.msPerReceivedFrame": 1.7,
+        "rss.extension.medianMiB": 14.96875,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.682648367860529,
+        "cpu.consumer.msPerReceivedFrame": 0.8943160075000001,
+        "rss.consumer.medianMiB": 132.4375,
+        "footprint.consumer.medianMiB": 107.93850708007812,
+        "cpu.camera_service.percent": 0.0,
+        "cpu.camera_service.msPerReceivedFrame": 0.0,
+        "rss.camera_service.medianMiB": 23.8125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 49.032521207986626,
+        "cpu.background_wmc.msPerReceivedFrame": 16.34600184,
+        "rss.background_wmc.medianMiB": 1129.8984375,
+        "footprint.background_wmc.medianMiB": 1795.5497741699219,
+        "cpu.pipeline.percent": 12.234734462617066,
+        "cpu.pipeline.msPerReceivedFrame": 4.078913750833333,
+        "gpu.command.msPerFrame": 0.13156131928553805,
+        "render.wall.msPerFrame": 0.8109124652886143,
+        "source.fps": 29.99762250094391,
+        "receiver.fps": 29.99668905317541,
+        "receiver.postRenderLatency.meanMs": 6.4987233449452715,
+        "receiver.postRenderLatency.p50Ms": 6.824854004662484,
+        "receiver.postRenderLatency.p95Ms": 8.653513956232928,
+        "receiver.ptsGap.p95Ms": 34.40000000409782,
+        "receiver.ptsGap.maxMs": 35.96000000834465,
+        "observer.cpu.percent": 1.1605519016757073
+      },
+      "processes": {
+        "host": {
+          "pid": 21088,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.4532982599262985,
+          "cpuSeconds": 1.781517292,
+          "cpuWindowSeconds": 40.004445874,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4845977433333333,
+          "residentMedianMiB": 89.875,
+          "physicalFootprintMedianMiB": 198.42279052734375
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.0987878348302385,
+          "cpuSeconds": 2.04,
+          "cpuWindowSeconds": 40.009509438,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.7,
+          "residentMedianMiB": 14.96875,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 21274,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.682648367860529,
+          "cpuSeconds": 1.073179209,
+          "cpuWindowSeconds": 40.004468042,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.8943160075000001,
+          "residentMedianMiB": 132.4375,
+          "physicalFootprintMedianMiB": 107.93850708007812
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.0,
+          "cpuSeconds": 0.0,
+          "cpuWindowSeconds": 40.009509438,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.0,
+          "residentMedianMiB": 23.8125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 49.032521207986626,
+          "cpuSeconds": 19.615202208,
+          "cpuWindowSeconds": 40.00447402,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 16.34600184,
+          "residentMedianMiB": 1129.8984375,
+          "physicalFootprintMedianMiB": 1795.5497741699219
+        }
+      },
+      "pipelineCPUSeconds": 4.894696501,
+      "windows": {
+        "samplerStartHostSeconds": 275600.314535875,
+        "samplerEndHostSeconds": 275640.318950958,
+        "samplerSeconds": 40.00441508303629,
+        "producerStartHostSeconds": 275599.813148041,
+        "producerEndHostSeconds": 275639.816318291,
+        "producerSeconds": 40.00317024998367,
+        "producerSnapshotStartLagSeconds": 0.5013878339668736,
+        "producerSnapshotEndLagSeconds": 0.5026326670194976,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.15787358314264566,
+        "renderWallSecondsTotal": 0.9730949583463371,
+        "transportPixelCopies": 1200,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 8294400,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.019433999999999986,
+        "psChildrenCPUSeconds": 0.444838,
+        "cpuPercentOneCore": 1.1605519016757073,
+        "meanReadMilliseconds": 54.94242111111111
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/processes.json",
+          "sha256": "2cbcb9d8dfc5fc605086ab23c368607b1442d3209729b6eb22b4adc16f2a9a12"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/producer-before.json",
+          "sha256": "0051879958f0a83a9ba618e55d3a174ca611c62d2a077e9bc80c73d8133f16ed"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/producer-after.json",
+          "sha256": "df4845efbb498f8cbe4aa2dd472711fb987bc48b25da9dedbfd2965f7cb775e6"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/extension-before.json",
+          "sha256": "09d170ee3c2a3d211ac13b03beff91dfa676bc3ec22cfd66476b8f096b7e33f6"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/extension-after.json",
+          "sha256": "226e2ed204738891331ba683b519f63db86ffa72ff2fd46e32a0cac6e80f6be9"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/04-gpu-copy/capture.json",
+          "sha256": "b4bc56d30e3ce2b3d81670cabeea154a8b592dfe352f087872cae6c2cd7551f2"
+        }
+      ]
+    },
+    {
+      "index": 5,
+      "mode": "zero-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.267821396911412,
+        "cpu.host.msPerReceivedFrame": 1.4229451741666668,
+        "rss.host.medianMiB": 89.953125,
+        "footprint.host.medianMiB": 190.28214263916016,
+        "cpu.extension.percent": 5.047666487506858,
+        "cpu.extension.msPerReceivedFrame": 1.6833333333333333,
+        "rss.extension.medianMiB": 15.015625,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.64344575519923,
+        "cpu.consumer.msPerReceivedFrame": 0.8813604508333333,
+        "rss.consumer.medianMiB": 132.4375,
+        "footprint.consumer.medianMiB": 108.00100708007812,
+        "cpu.camera_service.percent": 0.024988447957954744,
+        "cpu.camera_service.msPerReceivedFrame": 0.008333333333333333,
+        "rss.camera_service.medianMiB": 23.78125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 46.748655468147504,
+        "cpu.background_wmc.msPerReceivedFrame": 15.586639722500001,
+        "rss.background_wmc.medianMiB": 1129.9296875,
+        "footprint.background_wmc.medianMiB": 1795.5810241699219,
+        "cpu.pipeline.percent": 11.9589336396175,
+        "cpu.pipeline.msPerReceivedFrame": 3.9876389583333336,
+        "gpu.command.msPerFrame": 0.05305555425972367,
+        "render.wall.msPerFrame": 0.817346284360004,
+        "source.fps": 29.999127712362284,
+        "receiver.fps": 29.992953498960308,
+        "receiver.postRenderLatency.meanMs": 5.164825056078068,
+        "receiver.postRenderLatency.p50Ms": 5.486832989845425,
+        "receiver.postRenderLatency.p95Ms": 7.980553479865193,
+        "receiver.ptsGap.p95Ms": 34.25000002607703,
+        "receiver.ptsGap.maxMs": 34.7499999916181,
+        "observer.cpu.percent": 1.336975892822355
+      },
+      "processes": {
+        "host": {
+          "pid": 29333,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.267821396911412,
+          "cpuSeconds": 1.707534209,
+          "cpuWindowSeconds": 40.009504855,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4229451741666668,
+          "residentMedianMiB": 89.953125,
+          "physicalFootprintMedianMiB": 190.28214263916016
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.047666487506858,
+          "cpuSeconds": 2.02,
+          "cpuWindowSeconds": 40.018491812,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.6833333333333333,
+          "residentMedianMiB": 15.015625,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 29654,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.64344575519923,
+          "cpuSeconds": 1.057632541,
+          "cpuWindowSeconds": 40.009617709,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.8813604508333333,
+          "residentMedianMiB": 132.4375,
+          "physicalFootprintMedianMiB": 108.00100708007812
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.024988447957954744,
+          "cpuSeconds": 0.01,
+          "cpuWindowSeconds": 40.018491812,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.008333333333333333,
+          "residentMedianMiB": 23.78125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 46.748655468147504,
+          "cpuSeconds": 18.703967667,
+          "cpuWindowSeconds": 40.009637667,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.586639722500001,
+          "residentMedianMiB": 1129.9296875,
+          "physicalFootprintMedianMiB": 1795.5810241699219
+        }
+      },
+      "pipelineCPUSeconds": 4.78516675,
+      "windows": {
+        "samplerStartHostSeconds": 275661.098443708,
+        "samplerEndHostSeconds": 275701.10784125,
+        "samplerSeconds": 40.00939754204592,
+        "producerStartHostSeconds": 275660.621808666,
+        "producerEndHostSeconds": 275700.62297175,
+        "producerSeconds": 40.001163084001746,
+        "producerSnapshotStartLagSeconds": 0.47663504199590534,
+        "producerSnapshotEndLagSeconds": 0.4848695000400767,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1755,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.06366666511166841,
+        "renderWallSecondsTotal": 0.9808155412320048,
+        "transportPixelCopies": 0,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 0,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.030664999999999994,
+        "psChildrenCPUSeconds": 0.504251,
+        "cpuPercentOneCore": 1.336975892822355,
+        "meanReadMilliseconds": 67.34963877777777
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/processes.json",
+          "sha256": "3bbf552ae81f238bcbfaf785801a70a27e206eaca9aa99441d82f590f0147e6f"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/producer-before.json",
+          "sha256": "722de3fe1f2271d99a53a6a174e661e7488e303058e21d39c2f8faf9990d3c5a"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/producer-after.json",
+          "sha256": "802c9400c11373da02a67bee4d4d7c55ce89f7fae65f85f2a9543520b8a89f5d"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/extension-before.json",
+          "sha256": "04e3827af6e88d45e234828340924114768976e13ce77109d73fcfa3c82d6caa"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/extension-after.json",
+          "sha256": "d38c9d4729a9597307da077c2e0e1de65df0c2a2a80bd4b59682a97f3496c7f1"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/05-zero-copy/capture.json",
+          "sha256": "6b4a4d49fb29947c04a1c443c93404d7a14a2697396a020e794c737043f4c974"
+        }
+      ]
+    },
+    {
+      "index": 6,
+      "mode": "gpu-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.495493462743532,
+        "cpu.host.msPerReceivedFrame": 1.4986336808333334,
+        "rss.host.medianMiB": 89.734375,
+        "footprint.host.medianMiB": 198.09468841552734,
+        "cpu.extension.percent": 5.024562993909396,
+        "cpu.extension.msPerReceivedFrame": 1.6749999999999998,
+        "rss.extension.medianMiB": 15.03125,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.6746451897091013,
+        "cpu.consumer.msPerReceivedFrame": 0.8916297225000002,
+        "rss.consumer.medianMiB": 132.171875,
+        "footprint.consumer.medianMiB": 107.70413208007812,
+        "cpu.camera_service.percent": 0.0,
+        "cpu.camera_service.msPerReceivedFrame": 0.0,
+        "rss.camera_service.medianMiB": 23.8125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 47.53601411997936,
+        "cpu.background_wmc.msPerReceivedFrame": 15.846785486666668,
+        "rss.background_wmc.medianMiB": 1129.89453125,
+        "footprint.background_wmc.medianMiB": 1795.6708679199219,
+        "cpu.pipeline.percent": 12.194701646362029,
+        "cpu.pipeline.msPerReceivedFrame": 4.065263403333334,
+        "gpu.command.msPerFrame": 0.11592683983811487,
+        "render.wall.msPerFrame": 0.8519821883722519,
+        "source.fps": 30.00001050003997,
+        "receiver.fps": 29.99731074108743,
+        "receiver.postRenderLatency.meanMs": 6.7215809543752885,
+        "receiver.postRenderLatency.p50Ms": 6.51574952644296,
+        "receiver.postRenderLatency.p95Ms": 12.433855596464126,
+        "receiver.ptsGap.p95Ms": 33.999999990919605,
+        "receiver.ptsGap.maxMs": 34.88000005017966,
+        "observer.cpu.percent": 1.1814315846584353
+      },
+      "processes": {
+        "host": {
+          "pid": 36586,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.495493462743532,
+          "cpuSeconds": 1.798360417,
+          "cpuWindowSeconds": 40.003626563,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4986336808333334,
+          "residentMedianMiB": 89.734375,
+          "physicalFootprintMedianMiB": 198.09468841552734
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.024562993909396,
+          "cpuSeconds": 2.01,
+          "cpuWindowSeconds": 40.003478958,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.6749999999999998,
+          "residentMedianMiB": 15.03125,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 36689,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.6746451897091013,
+          "cpuSeconds": 1.069955667,
+          "cpuWindowSeconds": 40.00364875,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.8916297225000002,
+          "residentMedianMiB": 132.171875,
+          "physicalFootprintMedianMiB": 107.70413208007812
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.0,
+          "cpuSeconds": 0.0,
+          "cpuWindowSeconds": 40.003478958,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.0,
+          "residentMedianMiB": 23.8125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 47.53601411997936,
+          "cpuSeconds": 19.016142584,
+          "cpuWindowSeconds": 40.003653937,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.846785486666668,
+          "residentMedianMiB": 1129.89453125,
+          "physicalFootprintMedianMiB": 1795.6708679199219
+        }
+      },
+      "pipelineCPUSeconds": 4.878316084,
+      "windows": {
+        "samplerStartHostSeconds": 275721.795806041,
+        "samplerEndHostSeconds": 275761.799392041,
+        "samplerSeconds": 40.00358600000618,
+        "producerStartHostSeconds": 275721.306941875,
+        "producerEndHostSeconds": 275761.306927875,
+        "producerSeconds": 39.999985999951605,
+        "producerSnapshotStartLagSeconds": 0.48886416596360505,
+        "producerSnapshotEndLagSeconds": 0.49246416601818055,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1755,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.13911220780573785,
+        "renderWallSecondsTotal": 1.0223786260467023,
+        "transportPixelCopies": 1200,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 8294400,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.023861,
+        "psChildrenCPUSeconds": 0.448754,
+        "cpuPercentOneCore": 1.1814315846584353,
+        "meanReadMilliseconds": 60.05567144444445
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/processes.json",
+          "sha256": "c5a8f6ee5a102f1ab8a9967221deb5d4a0708a0d73332dddd45960624ad11a81"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/producer-before.json",
+          "sha256": "e0af12f1e3535c53c1ea496348e57bd2928a0fd8cbeb4aaa620cfb7a21f1675b"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/producer-after.json",
+          "sha256": "38a4d0758ba10e0b189977d13f799319456a8be0cc59f2160a2d5b805a810b6a"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/extension-before.json",
+          "sha256": "e489c29f6626fb54b2a7044902bb93924ef1991bc3e5800f68f9a90ca5b232de"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/extension-after.json",
+          "sha256": "a3a962fd6b504bcb2e876dd2291789f5d78d31af69a067d96b56491f6b029685"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/06-gpu-copy/capture.json",
+          "sha256": "01207cd48029f13520124653b11b6bb7152d9344f83c8a63de80f241ab69cc5c"
+        }
+      ]
+    },
+    {
+      "index": 7,
+      "mode": "gpu-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.741194291131567,
+        "cpu.host.msPerReceivedFrame": 1.580518125,
+        "rss.host.medianMiB": 90.328125,
+        "footprint.host.medianMiB": 198.56343841552734,
+        "cpu.extension.percent": 5.249112932721326,
+        "cpu.extension.msPerReceivedFrame": 1.75,
+        "rss.extension.medianMiB": 15.046875,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.842318882136857,
+        "cpu.consumer.msPerReceivedFrame": 0.9475119441666667,
+        "rss.consumer.medianMiB": 131.703125,
+        "footprint.consumer.medianMiB": 107.42290496826172,
+        "cpu.camera_service.percent": 0.02499577587010155,
+        "cpu.camera_service.msPerReceivedFrame": 0.008333333333333333,
+        "rss.camera_service.medianMiB": 23.78125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 48.03182200510548,
+        "cpu.background_wmc.msPerReceivedFrame": 16.011831145833334,
+        "rss.background_wmc.medianMiB": 1129.96875,
+        "footprint.background_wmc.medianMiB": 1795.7216491699219,
+        "cpu.pipeline.percent": 12.83262610598975,
+        "cpu.pipeline.msPerReceivedFrame": 4.278030069166666,
+        "gpu.command.msPerFrame": 0.11773274275280225,
+        "render.wall.msPerFrame": 0.924891736843468,
+        "source.fps": 29.999505351624663,
+        "receiver.fps": 29.99774198222563,
+        "receiver.postRenderLatency.meanMs": 5.149758860594981,
+        "receiver.postRenderLatency.p50Ms": 5.576083000050858,
+        "receiver.postRenderLatency.p95Ms": 7.969493776909075,
+        "receiver.ptsGap.p95Ms": 34.01000000303611,
+        "receiver.ptsGap.maxMs": 34.56000000005588,
+        "observer.cpu.percent": 1.183165939638963
+      },
+      "processes": {
+        "host": {
+          "pid": 43981,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.741194291131567,
+          "cpuSeconds": 1.89662175,
+          "cpuWindowSeconds": 40.003037917,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.580518125,
+          "residentMedianMiB": 90.328125,
+          "physicalFootprintMedianMiB": 198.56343841552734
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.249112932721326,
+          "cpuSeconds": 2.1,
+          "cpuWindowSeconds": 40.00675975,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.75,
+          "residentMedianMiB": 15.046875,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 44231,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.842318882136857,
+          "cpuSeconds": 1.137014333,
+          "cpuWindowSeconds": 40.003053146,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.9475119441666667,
+          "residentMedianMiB": 131.703125,
+          "physicalFootprintMedianMiB": 107.42290496826172
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.02499577587010155,
+          "cpuSeconds": 0.01,
+          "cpuWindowSeconds": 40.00675975,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.008333333333333333,
+          "residentMedianMiB": 23.78125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 48.03182200510548,
+          "cpuSeconds": 19.214197375,
+          "cpuWindowSeconds": 40.0030575,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 16.011831145833334,
+          "residentMedianMiB": 1129.96875,
+          "physicalFootprintMedianMiB": 1795.7216491699219
+        }
+      },
+      "pipelineCPUSeconds": 5.133636083,
+      "windows": {
+        "samplerStartHostSeconds": 275782.575819083,
+        "samplerEndHostSeconds": 275822.57883,
+        "samplerSeconds": 40.0030109169893,
+        "producerStartHostSeconds": 275782.055627541,
+        "producerEndHostSeconds": 275822.056287083,
+        "producerSeconds": 40.00065954204183,
+        "producerSnapshotStartLagSeconds": 0.5201915420475416,
+        "producerSnapshotEndLagSeconds": 0.5225429169950075,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.1412792913033627,
+        "renderWallSecondsTotal": 1.1098700842121616,
+        "transportPixelCopies": 1200,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 8294400,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.023438,
+        "psChildrenCPUSeconds": 0.44986399999999993,
+        "cpuPercentOneCore": 1.183165939638963,
+        "meanReadMilliseconds": 55.502514
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/processes.json",
+          "sha256": "3774aa0323c977ef9f6ef8a18aee72d8b0839682b9ca2df7b3852bc4f0b5e98e"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/producer-before.json",
+          "sha256": "8745d4fed1e37c2c348fe18cddd8a87590c88e3353e3bb81bd1af50274f79252"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/producer-after.json",
+          "sha256": "99c0a1bfb4eb10e4e16bf6d43e21076bcfb8763bc3417e4be82aa3f8c14bd0a8"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/extension-before.json",
+          "sha256": "a6b52151ca2025feac98822d1fbf9df39c2dfd6a835365fd2c808e1402826c31"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/extension-after.json",
+          "sha256": "f7a32cc0ab24185a0d56d141c2ec683808017360e2f1d4568988a2ea03d1854d"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/07-gpu-copy/capture.json",
+          "sha256": "3b41eca30292d8f4f6da88df4462823914a37aa30fb9b1564b711a0145c7daf6"
+        }
+      ]
+    },
+    {
+      "index": 8,
+      "mode": "zero-copy",
+      "directory": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy",
+      "status": "passed",
+      "validationFailures": [],
+      "warnings": [],
+      "metrics": {
+        "cpu.host.percent": 4.324690005946137,
+        "cpu.host.msPerReceivedFrame": 1.4418893058333333,
+        "rss.host.medianMiB": 90.03125,
+        "footprint.host.medianMiB": 190.36026763916016,
+        "cpu.extension.percent": 5.172732188082754,
+        "cpu.extension.msPerReceivedFrame": 1.725,
+        "rss.extension.medianMiB": 15.046875,
+        "footprint.extension.medianMiB": null,
+        "cpu.consumer.percent": 2.7127420022134614,
+        "cpu.consumer.msPerReceivedFrame": 0.9044528125000001,
+        "rss.consumer.medianMiB": 132.515625,
+        "footprint.consumer.medianMiB": 108.04788208007812,
+        "cpu.camera_service.percent": 0.0,
+        "cpu.camera_service.msPerReceivedFrame": 0.0,
+        "rss.camera_service.medianMiB": 23.8125,
+        "footprint.camera_service.medianMiB": null,
+        "cpu.background_wmc.percent": 47.80520630923469,
+        "cpu.background_wmc.msPerReceivedFrame": 15.938907743333333,
+        "rss.background_wmc.medianMiB": 1129.93359375,
+        "footprint.background_wmc.medianMiB": 1796.0614929199219,
+        "cpu.pipeline.percent": 12.210164196242353,
+        "cpu.pipeline.msPerReceivedFrame": 4.071342118333334,
+        "gpu.command.msPerFrame": 0.053312881694485746,
+        "render.wall.msPerFrame": 0.8308704865824742,
+        "source.fps": 29.99988471941385,
+        "receiver.fps": 29.993253891848678,
+        "receiver.postRenderLatency.meanMs": 4.922428565429679,
+        "receiver.postRenderLatency.p50Ms": 4.854500002693385,
+        "receiver.postRenderLatency.p95Ms": 7.562752012745477,
+        "receiver.ptsGap.p95Ms": 34.03999999864027,
+        "receiver.ptsGap.maxMs": 34.56999995978549,
+        "observer.cpu.percent": 1.1357895372518603
+      },
+      "processes": {
+        "host": {
+          "pid": 51181,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 4.324690005946137,
+          "cpuSeconds": 1.730267167,
+          "cpuWindowSeconds": 40.009044917,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 1.4418893058333333,
+          "residentMedianMiB": 90.03125,
+          "physicalFootprintMedianMiB": 190.36026763916016
+        },
+        "extension": {
+          "pid": 30973,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 5.172732188082754,
+          "cpuSeconds": 2.07,
+          "cpuWindowSeconds": 40.017536666,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 1.725,
+          "residentMedianMiB": 15.046875,
+          "physicalFootprintMedianMiB": null
+        },
+        "consumer": {
+          "pid": 51444,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 2.7127420022134614,
+          "cpuSeconds": 1.085343375,
+          "cpuWindowSeconds": 40.009089479,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 0.9044528125000001,
+          "residentMedianMiB": 132.515625,
+          "physicalFootprintMedianMiB": 108.04788208007812
+        },
+        "camera_service": {
+          "pid": 346,
+          "backend": "ps_cumulative_time",
+          "cpuPercentOneCore": 0.0,
+          "cpuSeconds": 0.0,
+          "cpuWindowSeconds": 40.017536666,
+          "cpuResolutionNanoseconds": 10000000,
+          "cpuMillisecondsPerReceivedFrame": 0.0,
+          "residentMedianMiB": 23.8125,
+          "physicalFootprintMedianMiB": null
+        },
+        "background_wmc": {
+          "pid": 66392,
+          "backend": "proc_pid_rusage",
+          "cpuPercentOneCore": 47.80520630923469,
+          "cpuSeconds": 19.126689292,
+          "cpuWindowSeconds": 40.009636541,
+          "cpuResolutionNanoseconds": 41.666666666666664,
+          "cpuMillisecondsPerReceivedFrame": 15.938907743333333,
+          "residentMedianMiB": 1129.93359375,
+          "physicalFootprintMedianMiB": 1796.0614929199219
+        }
+      },
+      "pipelineCPUSeconds": 4.885610542,
+      "windows": {
+        "samplerStartHostSeconds": 275843.303038666,
+        "samplerEndHostSeconds": 275883.3120355,
+        "samplerSeconds": 40.00899683398893,
+        "producerStartHostSeconds": 275842.830331333,
+        "producerEndHostSeconds": 275882.830485041,
+        "producerSeconds": 40.00015370803885,
+        "producerSnapshotStartLagSeconds": 0.47270733304321766,
+        "producerSnapshotEndLagSeconds": 0.48155045899329707,
+        "hostClocksAligned": true,
+        "captureCoversSamplerWindow": true,
+        "producerWindowNote": "GPU/render/source deltas use the separately recorded producer snapshot window, not the exact CPU window"
+      },
+      "receiver": {
+        "framesInSamplerWindow": 1200,
+        "fullCaptureFrames": 1756,
+        "droppedFramesFullCapture": 0,
+        "nativeOutputRequested": true,
+        "pixelReadbackEnabled": false,
+        "cameraUniqueID": "39E62DD8-C36C-4495-9928-872C6B7B597A",
+        "ptsGapsOver50msInSamplerWindow": 0,
+        "ptsGapsOver50msInFullCapture": 0,
+        "firstGapOver50msSecondsAfterFirstCaptureFrame": null,
+        "latencyScope": "callback host time minus PTS stamped after source GPU completion; excludes source render/copy time"
+      },
+      "producerCounterDeltas": {
+        "submitted": 1200,
+        "renderedFrames": 1200,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "gpuCommandSecondsTotal": 0.06397545803338289,
+        "renderWallSecondsTotal": 0.997044583898969,
+        "transportPixelCopies": 0,
+        "queuePressureDrops": 0,
+        "poolPressureDrops": 0
+      },
+      "extensionCounterDeltas": {
+        "received": 1200,
+        "forwarded": 1200,
+        "rejected": 0,
+        "droppedNoConsumers": 0,
+        "consumeErrors": 0
+      },
+      "scratchBufferBytes": 0,
+      "thermalEndpoints": {
+        "before": {
+          "raw": 0,
+          "name": "nominal"
+        },
+        "after": {
+          "raw": 0,
+          "name": "nominal"
+        }
+      },
+      "observerOverhead": {
+        "samplerCPUSeconds": 0.020085,
+        "psChildrenCPUSeconds": 0.43433299999999997,
+        "cpuPercentOneCore": 1.1357895372518603,
+        "meanReadMilliseconds": 51.689477
+      },
+      "evidence": [
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/processes.json",
+          "sha256": "52fc436307e5a16b9380b2b09c8a3230180d031dfa9a49db7fbe5e68186ec757"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/producer-before.json",
+          "sha256": "0812466634efcee3dfb91780b7e50f2c8d0227922267e32ce72a91ead35eae99"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/producer-after.json",
+          "sha256": "56e4438ca5282811324c6cff2cc25af77e8462a8e66990b8b492008f92f2b8df"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/extension-before.json",
+          "sha256": "7a42ce844aa38ed913d28204fa8e0b07681f34833ce6e3444987dd88bc0983f2"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/extension-after.json",
+          "sha256": "5eb4b1bf6b02af4b43bbf3e13542c2379b8c1be9580066a3766c392339a8949b"
+        },
+        {
+          "path": "build/zero-copy-benchmark-20261027/comparison-activity/08-zero-copy/capture.json",
+          "sha256": "124197ee71951390d75cc7f5bbfb286f38530c35de34edf08b5aa0ba3e12fc12"
+        }
+      ]
+    }
+  ],
+  "modeSummaries": {
+    "zero-copy": {
+      "cpu.background_wmc.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 15.674325252524111,
+        "median": 15.640131303381557,
+        "min": 15.47813066,
+        "max": 15.938907743333333,
+        "sampleSD": 0.19711025962208506
+      },
+      "cpu.background_wmc.percent": {
+        "n": 4,
+        "mean": 47.024087859879984,
+        "median": 46.93137513561394,
+        "min": 46.42839485905735,
+        "max": 47.80520630923469,
+        "sampleSD": 0.5913150416349228
+      },
+      "cpu.camera_service.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 0.004164932001110186,
+        "median": 0.004163197335553705,
+        "min": 0.0,
+        "max": 0.008333333333333333,
+        "sampleSD": 0.004809250058238586
+      },
+      "cpu.camera_service.percent": {
+        "n": 4,
+        "mean": 0.012496448303410344,
+        "median": 0.012494223978977372,
+        "min": 0.0,
+        "max": 0.024997345255686632,
+        "sampleSD": 0.014429656040947782
+      },
+      "cpu.consumer.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 0.9052286215971066,
+        "median": 0.9005550731942131,
+        "min": 0.8813604508333333,
+        "max": 0.9384438891666668,
+        "sampleSD": 0.024131669565574665
+      },
+      "cpu.consumer.percent": {
+        "n": 4,
+        "mean": 2.7157568692950944,
+        "median": 2.7023063640596345,
+        "min": 2.64344575519923,
+        "max": 2.814968993861879,
+        "sampleSD": 0.07223014179776048
+      },
+      "cpu.extension.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 1.7059013322231473,
+        "median": 1.7041666666666666,
+        "min": 1.6736053288925894,
+        "max": 1.7416666666666667,
+        "sampleSD": 0.03264079586307826
+      },
+      "cpu.extension.percent": {
+        "n": 4,
+        "mean": 5.116832670046843,
+        "median": 5.110199337794806,
+        "min": 5.024466396393013,
+        "max": 5.222465608204748,
+        "sampleSD": 0.09591413357159184
+      },
+      "cpu.host.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 1.417522543534381,
+        "median": 1.43241724,
+        "min": 1.3546250349708577,
+        "max": 1.4506306591666667,
+        "sampleSD": 0.0434947810360704
+      },
+      "cpu.host.percent": {
+        "n": 4,
+        "mean": 4.252648468467522,
+        "median": 4.296255701428775,
+        "min": 4.066746281525267,
+        "max": 4.351336189487272,
+        "sampleSD": 0.128736281171796
+      },
+      "cpu.pipeline.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 4.028652497354635,
+        "median": 4.0294905383333335,
+        "min": 3.9248876977518736,
+        "max": 4.130741215,
+        "sampleSD": 0.09072624396030249
+      },
+      "cpu.pipeline.percent": {
+        "n": 4,
+        "mean": 12.08523800780946,
+        "median": 12.084548917929926,
+        "min": 11.783083403824088,
+        "max": 12.388770791553899,
+        "sampleSD": 0.2676993970220739
+      },
+      "footprint.background_wmc.medianMiB": {
+        "n": 4,
+        "mean": 1795.79683303833,
+        "median": 1795.7724075317383,
+        "min": 1795.5810241699219,
+        "max": 1796.0614929199219,
+        "sampleSD": 0.22290620699623484
+      },
+      "footprint.camera_service.medianMiB": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "sampleSD": null
+      },
+      "footprint.consumer.medianMiB": {
+        "n": 4,
+        "mean": 107.96975708007812,
+        "median": 108.02444458007812,
+        "min": 107.71973419189453,
+        "max": 108.11040496826172,
+        "sampleSD": 0.17260103436458168
+      },
+      "footprint.extension.medianMiB": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "sampleSD": null
+      },
+      "footprint.host.medianMiB": {
+        "n": 4,
+        "mean": 190.24700927734375,
+        "median": 190.24310302734375,
+        "min": 190.14156341552734,
+        "max": 190.36026763916016,
+        "sampleSD": 0.09491221638127342
+      },
+      "gpu.command.msPerFrame": {
+        "n": 4,
+        "mean": 0.05313901022115412,
+        "median": 0.053127725404920056,
+        "min": 0.05298770838029062,
+        "max": 0.053312881694485746,
+        "sampleSD": 0.00014582589943717473
+      },
+      "observer.cpu.percent": {
+        "n": 4,
+        "mean": 1.2563408404895695,
+        "median": 1.2762989659420314,
+        "min": 1.1357895372518603,
+        "max": 1.336975892822355,
+        "sampleSD": 0.09509863546265156
+      },
+      "receiver.fps": {
+        "n": 4,
+        "mean": 30.00090894886886,
+        "median": 29.99472892037941,
+        "min": 29.992953498960308,
+        "max": 30.02122445575633,
+        "sampleSD": 0.013622847547852764
+      },
+      "receiver.postRenderLatency.meanMs": {
+        "n": 4,
+        "mean": 5.286567116013555,
+        "median": 5.101211361931443,
+        "min": 4.922428565429679,
+        "max": 6.0214171747616545,
+        "sampleSD": 0.4998027638219129
+      },
+      "receiver.postRenderLatency.p50Ms": {
+        "n": 4,
+        "mean": 5.183817615034059,
+        "median": 5.1969687337987125,
+        "min": 4.854500002693385,
+        "max": 5.486832989845425,
+        "sampleSD": 0.261385997710231
+      },
+      "receiver.postRenderLatency.p95Ms": {
+        "n": 4,
+        "mean": 8.659265447204234,
+        "median": 8.121217373991385,
+        "min": 7.562752012745477,
+        "max": 10.831875028088689,
+        "sampleSD": 1.4766107841153304
+      },
+      "receiver.ptsGap.maxMs": {
+        "n": 4,
+        "mean": 35.9374999825377,
+        "median": 34.70499999821186,
+        "min": 34.56999995978549,
+        "max": 39.769999973941594,
+        "sampleSD": 2.5560565276663745
+      },
+      "receiver.ptsGap.p95Ms": {
+        "n": 4,
+        "mean": 34.060124991083285,
+        "median": 34.115249988099094,
+        "min": 33.75999996205792,
+        "max": 34.25000002607703,
+        "sampleSD": 0.2187313530189081
+      },
+      "render.wall.msPerFrame": {
+        "n": 4,
+        "mean": 0.8444168490920372,
+        "median": 0.8241083854712391,
+        "min": 0.7713286461754857,
+        "max": 0.9581219792501846,
+        "sampleSD": 0.07997304012812473
+      },
+      "rss.background_wmc.medianMiB": {
+        "n": 4,
+        "mean": 1129.919921875,
+        "median": 1129.9296875,
+        "min": 1129.88671875,
+        "max": 1129.93359375,
+        "sampleSD": 0.022211877746395808
+      },
+      "rss.camera_service.medianMiB": {
+        "n": 4,
+        "mean": 23.8046875,
+        "median": 23.8125,
+        "min": 23.78125,
+        "max": 23.8125,
+        "sampleSD": 0.015625
+      },
+      "rss.consumer.medianMiB": {
+        "n": 4,
+        "mean": 132.41015625,
+        "median": 132.4765625,
+        "min": 132.140625,
+        "max": 132.546875,
+        "sampleSD": 0.1854817594075403
+      },
+      "rss.extension.medianMiB": {
+        "n": 4,
+        "mean": 14.9921875,
+        "median": 14.984375,
+        "min": 14.953125,
+        "max": 15.046875,
+        "sampleSD": 0.046875
+      },
+      "rss.host.medianMiB": {
+        "n": 4,
+        "mean": 89.8984375,
+        "median": 89.8828125,
+        "min": 89.796875,
+        "max": 90.03125,
+        "sampleSD": 0.11303403340734743
+      },
+      "source.fps": {
+        "n": 4,
+        "mean": 29.999166253658274,
+        "median": 29.99950621588807,
+        "min": 29.99718991950687,
+        "max": 30.000462663350085,
+        "sampleSD": 0.0014264470127394444
+      }
+    },
+    "gpu-copy": {
+      "cpu.background_wmc.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 15.847344774375,
+        "median": 15.929308316250001,
+        "min": 15.184760625,
+        "max": 16.34600184,
+        "sampleSD": 0.48810268840992815
+      },
+      "cpu.background_wmc.percent": {
+        "n": 4,
+        "mean": 47.53717949794645,
+        "median": 47.783918062542426,
+        "min": 45.54836065871432,
+        "max": 49.032521207986626,
+        "sampleSD": 1.4647092741183467
+      },
+      "cpu.camera_service.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 0.004166666666666667,
+        "median": 0.004166666666666667,
+        "min": 0.0,
+        "max": 0.008333333333333333,
+        "sampleSD": 0.004811252243246881
+      },
+      "cpu.camera_service.percent": {
+        "n": 4,
+        "mean": 0.012496410782478436,
+        "median": 0.012494933629906094,
+        "min": 0.0,
+        "max": 0.02499577587010155,
+        "sampleSD": 0.014429612459956677
+      },
+      "cpu.consumer.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 0.8993456858333334,
+        "median": 0.8929728650000002,
+        "min": 0.8639250691666667,
+        "max": 0.9475119441666667,
+        "sampleSD": 0.034925837051188416
+      },
+      "cpu.consumer.percent": {
+        "n": 4,
+        "mean": 2.6977628766317596,
+        "median": 2.678646778784815,
+        "min": 2.5914390668205507,
+        "max": 2.842318882136857,
+        "sampleSD": 0.10482376811329501
+      },
+      "cpu.extension.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 1.6854166666666666,
+        "median": 1.6875,
+        "min": 1.6166666666666667,
+        "max": 1.75,
+        "sampleSD": 0.05543389456520862
+      },
+      "cpu.extension.percent": {
+        "n": 4,
+        "mean": 5.055124502466131,
+        "median": 5.061675414369818,
+        "min": 4.848034248403565,
+        "max": 5.249112932721326,
+        "sampleSD": 0.1666917082510654
+      },
+      "cpu.host.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 1.5110792189583333,
+        "median": 1.4916157120833333,
+        "min": 1.4805673266666668,
+        "max": 1.580518125,
+        "sampleSD": 0.04693576182393681
+      },
+      "cpu.host.percent": {
+        "n": 4,
+        "mean": 4.532779417306406,
+        "median": 4.474395861334916,
+        "min": 4.441131655424225,
+        "max": 4.741194291131567,
+        "sampleSD": 0.1408824198586856
+      },
+      "cpu.pipeline.msPerReceivedFrame": {
+        "n": 4,
+        "mean": 4.095841571458333,
+        "median": 4.072088577083333,
+        "min": 3.9611590625,
+        "max": 4.278030069166666,
+        "sampleSD": 0.13235508099241183
+      },
+      "cpu.pipeline.percent": {
+        "n": 4,
+        "mean": 12.285666796404296,
+        "median": 12.214718054489548,
+        "min": 11.88060497064834,
+        "max": 12.83262610598975,
+        "sampleSD": 0.3975375580471068
+      },
+      "footprint.background_wmc.medianMiB": {
+        "n": 4,
+        "mean": 1795.70503616333,
+        "median": 1795.6962585449219,
+        "min": 1795.5497741699219,
+        "max": 1795.8778533935547,
+        "sampleSD": 0.13591117504362404
+      },
+      "footprint.camera_service.medianMiB": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "sampleSD": null
+      },
+      "footprint.consumer.medianMiB": {
+        "n": 4,
+        "mean": 107.72757530212402,
+        "median": 107.77444458007812,
+        "min": 107.42290496826172,
+        "max": 107.93850708007812,
+        "sampleSD": 0.22479426225701304
+      },
+      "footprint.extension.medianMiB": {
+        "n": 0,
+        "mean": null,
+        "median": null,
+        "min": null,
+        "max": null,
+        "sampleSD": null
+      },
+      "footprint.host.medianMiB": {
+        "n": 4,
+        "mean": 198.41890144348145,
+        "median": 198.49311447143555,
+        "min": 198.09468841552734,
+        "max": 198.59468841552734,
+        "sampleSD": 0.22870738823346407
+      },
+      "gpu.command.msPerFrame": {
+        "n": 4,
+        "mean": 0.12020920985378325,
+        "median": 0.11682979129545856,
+        "min": 0.11561593753867783,
+        "max": 0.13156131928553805,
+        "sampleSD": 0.007625398817211399
+      },
+      "observer.cpu.percent": {
+        "n": 4,
+        "mean": 1.1693838170196686,
+        "median": 1.1709917431670713,
+        "min": 1.1523858421055684,
+        "max": 1.183165939638963,
+        "sampleSD": 0.015297379827868817
+      },
+      "receiver.fps": {
+        "n": 4,
+        "mean": 29.996981081266313,
+        "median": 29.996999897131417,
+        "min": 29.996182548576783,
+        "max": 29.99774198222563,
+        "sampleSD": 0.000685706625720838
+      },
+      "receiver.postRenderLatency.meanMs": {
+        "n": 4,
+        "mean": 5.801954542803287,
+        "median": 5.824241102770126,
+        "min": 4.837755011297607,
+        "max": 6.7215809543752885,
+        "sampleSD": 0.9462627268974338
+      },
+      "receiver.postRenderLatency.p50Ms": {
+        "n": 4,
+        "mean": 5.771791387815028,
+        "median": 6.045916263246909,
+        "min": 4.170479020103812,
+        "max": 6.824854004662484,
+        "sampleSD": 1.1923251317011507
+      },
+      "receiver.postRenderLatency.p95Ms": {
+        "n": 4,
+        "mean": 9.849603254406246,
+        "median": 9.497531822125893,
+        "min": 7.969493776909075,
+        "max": 12.433855596464126,
+        "sampleSD": 1.9904616480903141
+      },
+      "receiver.ptsGap.maxMs": {
+        "n": 4,
+        "mean": 34.99250000459142,
+        "median": 34.725000004982576,
+        "min": 34.56000000005588,
+        "max": 35.96000000834465,
+        "sampleSD": 0.6618849443796616
+      },
+      "receiver.ptsGap.p95Ms": {
+        "n": 4,
+        "mean": 34.11525000265101,
+        "median": 34.03050000779331,
+        "min": 33.999999990919605,
+        "max": 34.40000000409782,
+        "sampleSD": 0.1911114440798861
+      },
+      "render.wall.msPerFrame": {
+        "n": 4,
+        "mean": 0.8730064154709302,
+        "median": 0.8781107298758192,
+        "min": 0.8109124652886143,
+        "max": 0.924891736843468,
+        "sampleSD": 0.051527515744731474
+      },
+      "rss.background_wmc.medianMiB": {
+        "n": 4,
+        "mean": 1129.8974609375,
+        "median": 1129.896484375,
+        "min": 1129.828125,
+        "max": 1129.96875,
+        "sampleSD": 0.057443129569737274
+      },
+      "rss.camera_service.medianMiB": {
+        "n": 4,
+        "mean": 23.796875,
+        "median": 23.796875,
+        "min": 23.78125,
+        "max": 23.8125,
+        "sampleSD": 0.018042195912175804
+      },
+      "rss.consumer.medianMiB": {
+        "n": 4,
+        "mean": 131.47265625,
+        "median": 131.9375,
+        "min": 129.578125,
+        "max": 132.4375,
+        "sampleSD": 1.2989989510155824
+      },
+      "rss.extension.medianMiB": {
+        "n": 4,
+        "mean": 15.0,
+        "median": 15.0,
+        "min": 14.953125,
+        "max": 15.046875,
+        "sampleSD": 0.0459987545121242
+      },
+      "rss.host.medianMiB": {
+        "n": 4,
+        "mean": 89.38671875,
+        "median": 89.8046875,
+        "min": 87.609375,
+        "max": 90.328125,
+        "sampleSD": 1.2116765218033991
+      },
+      "source.fps": {
+        "n": 4,
+        "mean": 29.99928972096903,
+        "median": 29.999757925832316,
+        "min": 29.99762250094391,
+        "max": 30.00002053126759,
+        "sampleSD": 0.0011372078897315416
+      }
+    }
+  },
+  "pairs": [
+    {
+      "indices": [
+        1,
+        2
+      ],
+      "copyRun": 1,
+      "zeroRun": 2,
+      "bothRunsValid": true,
+      "copyMinusZero": {
+        "cpu.background_wmc.msPerReceivedFrame": -0.2933700350000006,
+        "cpu.background_wmc.percent": -0.8800342003430259,
+        "cpu.camera_service.msPerReceivedFrame": 0.008333333333333333,
+        "cpu.camera_service.percent": 0.024989867259812188,
+        "cpu.consumer.msPerReceivedFrame": -0.0745188200000001,
+        "cpu.consumer.percent": -0.22352992704132824,
+        "cpu.extension.msPerReceivedFrame": -0.125,
+        "cpu.extension.percent": -0.37443135980118303,
+        "cpu.host.msPerReceivedFrame": 0.029936667500000125,
+        "cpu.host.percent": 0.08979546593695265,
+        "cpu.pipeline.msPerReceivedFrame": -0.16958215249999942,
+        "cpu.pipeline.percent": -0.5081658209055586,
+        "footprint.background_wmc.medianMiB": -0.01955413818359375,
+        "footprint.consumer.medianMiB": -0.26564788818359375,
+        "footprint.host.medianMiB": 8.390625,
+        "gpu.command.msPerFrame": 0.0626282291583872,
+        "observer.cpu.percent": -0.17539112632491083,
+        "receiver.fps": -2.140033335251701e-05,
+        "receiver.postRenderLatency.meanMs": -0.19984265648721156,
+        "receiver.postRenderLatency.p50Ms": -0.9798334795050323,
+        "receiver.postRenderLatency.p95Ms": 2.07966841990128,
+        "receiver.ptsGap.maxMs": -0.09000004502013326,
+        "receiver.ptsGap.p95Ms": 0.2910000504925847,
+        "render.wall.msPerFrame": 0.13291062520390073,
+        "rss.background_wmc.medianMiB": -0.05859375,
+        "rss.camera_service.medianMiB": -0.03125,
+        "rss.consumer.medianMiB": -2.96875,
+        "rss.extension.medianMiB": 0.0,
+        "rss.host.medianMiB": -2.203125,
+        "source.fps": -0.0004421320824938846
+      }
+    },
+    {
+      "indices": [
+        3,
+        4
+      ],
+      "copyRun": 4,
+      "zeroRun": 3,
+      "bothRunsValid": true,
+      "copyMinusZero": {
+        "cpu.background_wmc.msPerReceivedFrame": 0.6523789557368875,
+        "cpu.background_wmc.percent": 1.9184264049062492,
+        "cpu.camera_service.msPerReceivedFrame": -0.00832639467110741,
+        "cpu.camera_service.percent": -0.024997345255686632,
+        "cpu.consumer.msPerReceivedFrame": -0.0023413263884262125,
+        "cpu.consumer.percent": -0.0092223580452786,
+        "cpu.extension.msPerReceivedFrame": 0.02639467110741056,
+        "cpu.extension.percent": 0.0743214384372255,
+        "cpu.host.msPerReceivedFrame": 0.12997270836247554,
+        "cpu.host.percent": 0.38655197840103117,
+        "cpu.pipeline.msPerReceivedFrame": 0.15402605308145967,
+        "cpu.pipeline.percent": 0.4516510587929776,
+        "footprint.background_wmc.medianMiB": -0.09763336181640625,
+        "footprint.consumer.medianMiB": 0.21877288818359375,
+        "footprint.host.medianMiB": 8.281227111816406,
+        "gpu.command.msPerFrame": 0.0783614227354216,
+        "observer.cpu.percent": -0.06426906177787628,
+        "receiver.fps": -0.024535402580919907,
+        "receiver.postRenderLatency.meanMs": 0.477306170183617,
+        "receiver.postRenderLatency.p50Ms": 1.5812290366739035,
+        "receiver.postRenderLatency.p95Ms": -2.178361071855761,
+        "receiver.ptsGap.maxMs": -3.809999965596944,
+        "receiver.ptsGap.p95Ms": 0.2095000265398994,
+        "render.wall.msPerFrame": -0.14720951396157034,
+        "rss.background_wmc.medianMiB": -0.03125,
+        "rss.camera_service.medianMiB": 0.0,
+        "rss.consumer.medianMiB": 0.296875,
+        "rss.extension.medianMiB": 0.015625,
+        "rss.host.medianMiB": 0.078125,
+        "source.fps": 0.000432581437038948
+      }
+    },
+    {
+      "indices": [
+        5,
+        6
+      ],
+      "copyRun": 6,
+      "zeroRun": 5,
+      "bothRunsValid": true,
+      "copyMinusZero": {
+        "cpu.background_wmc.msPerReceivedFrame": 0.26014576416666735,
+        "cpu.background_wmc.percent": 0.7873586518318589,
+        "cpu.camera_service.msPerReceivedFrame": -0.008333333333333333,
+        "cpu.camera_service.percent": -0.024988447957954744,
+        "cpu.consumer.msPerReceivedFrame": 0.010269271666666913,
+        "cpu.consumer.percent": 0.03119943450987117,
+        "cpu.extension.msPerReceivedFrame": -0.008333333333333526,
+        "cpu.extension.percent": -0.023103493597462332,
+        "cpu.host.msPerReceivedFrame": 0.0756885066666666,
+        "cpu.host.percent": 0.2276720658321203,
+        "cpu.pipeline.msPerReceivedFrame": 0.0776244450000001,
+        "cpu.pipeline.percent": 0.2357680067445287,
+        "footprint.background_wmc.medianMiB": 0.08984375,
+        "footprint.consumer.medianMiB": -0.296875,
+        "footprint.host.medianMiB": 7.8125457763671875,
+        "gpu.command.msPerFrame": 0.0628712855783912,
+        "observer.cpu.percent": -0.15554430816391962,
+        "receiver.fps": 0.004357242127120742,
+        "receiver.postRenderLatency.meanMs": 1.5567558982972205,
+        "receiver.postRenderLatency.p50Ms": 1.028916536597535,
+        "receiver.postRenderLatency.p95Ms": 4.453302116598932,
+        "receiver.ptsGap.maxMs": 0.1300000585615635,
+        "receiver.ptsGap.p95Ms": -0.2500000351574272,
+        "render.wall.msPerFrame": 0.03463590401224792,
+        "rss.background_wmc.medianMiB": -0.03515625,
+        "rss.camera_service.medianMiB": 0.03125,
+        "rss.consumer.medianMiB": -0.265625,
+        "rss.extension.medianMiB": 0.015625,
+        "rss.host.medianMiB": -0.21875,
+        "source.fps": 0.0008827876776855703
+      }
+    },
+    {
+      "indices": [
+        7,
+        8
+      ],
+      "copyRun": 7,
+      "zeroRun": 8,
+      "bothRunsValid": true,
+      "copyMinusZero": {
+        "cpu.background_wmc.msPerReceivedFrame": 0.07292340250000073,
+        "cpu.background_wmc.percent": 0.226615695870791,
+        "cpu.camera_service.msPerReceivedFrame": 0.008333333333333333,
+        "cpu.camera_service.percent": 0.02499577587010155,
+        "cpu.consumer.msPerReceivedFrame": 0.04305913166666664,
+        "cpu.consumer.percent": 0.12957687992339562,
+        "cpu.extension.msPerReceivedFrame": 0.02499999999999991,
+        "cpu.extension.percent": 0.07638074463857247,
+        "cpu.host.msPerReceivedFrame": 0.1386288191666667,
+        "cpu.host.percent": 0.4165042851854297,
+        "cpu.pipeline.msPerReceivedFrame": 0.20668795083333258,
+        "cpu.pipeline.percent": 0.6224619097473969,
+        "footprint.background_wmc.medianMiB": -0.33984375,
+        "footprint.consumer.medianMiB": -0.6249771118164062,
+        "footprint.host.medianMiB": 8.203170776367188,
+        "gpu.command.msPerFrame": 0.06441986105831651,
+        "observer.cpu.percent": 0.047376402387102834,
+        "receiver.fps": 0.004488090376952414,
+        "receiver.postRenderLatency.meanMs": 0.22733029516530223,
+        "receiver.postRenderLatency.p50Ms": 0.7215829973574728,
+        "receiver.postRenderLatency.p95Ms": 0.40674176416359753,
+        "receiver.ptsGap.maxMs": -0.009999959729611874,
+        "receiver.ptsGap.p95Ms": -0.029999995604157448,
+        "render.wall.msPerFrame": 0.09402125026099384,
+        "rss.background_wmc.medianMiB": 0.03515625,
+        "rss.camera_service.medianMiB": -0.03125,
+        "rss.consumer.medianMiB": -0.8125,
+        "rss.extension.medianMiB": 0.0,
+        "rss.host.medianMiB": 0.296875,
+        "source.fps": -0.0003793677891863467
+      }
+    }
+  ],
+  "pairedDifferenceSummaries": {
+    "cpu.background_wmc.msPerReceivedFrame": {
+      "n": 4,
+      "mean": 0.17301952185088876,
+      "median": 0.16653458333333404,
+      "min": -0.2933700350000006,
+      "max": 0.6523789557368875,
+      "sampleSD": 0.39366436668997157
+    },
+    "cpu.background_wmc.percent": {
+      "n": 4,
+      "mean": 0.5130916380664683,
+      "median": 0.506987173851325,
+      "min": -0.8800342003430259,
+      "max": 1.9184264049062492,
+      "sampleSD": 1.1651975896572884
+    },
+    "cpu.camera_service.msPerReceivedFrame": {
+      "n": 4,
+      "mean": 1.7346655564807849e-06,
+      "median": 3.4693311129615698e-06,
+      "min": -0.008333333333333333,
+      "max": 0.008333333333333333,
+      "sampleSD": 0.009620501884276808
+    },
+    "cpu.camera_service.percent": {
+      "n": 4,
+      "mean": -3.7520931909194866e-08,
+      "median": 7.096509287221608e-07,
+      "min": -0.024997345255686632,
+      "max": 0.02499577587010155,
+      "sampleSD": 0.028859268171508693
+    },
+    "cpu.consumer.msPerReceivedFrame": {
+      "n": 4,
+      "mean": -0.005882935763773189,
+      "median": 0.00396397263912035,
+      "min": -0.0745188200000001,
+      "max": 0.04305913166666664,
+      "sampleSD": 0.04959720210891595
+    },
+    "cpu.consumer.percent": {
+      "n": 4,
+      "mean": -0.017993992663335012,
+      "median": 0.010988538232296285,
+      "min": -0.22352992704132824,
+      "max": 0.12957687992339562,
+      "sampleSD": 0.148906142259212
+    },
+    "cpu.extension.msPerReceivedFrame": {
+      "n": 4,
+      "mean": -0.020484665556480763,
+      "median": 0.008333333333333193,
+      "min": -0.125,
+      "max": 0.02639467110741056,
+      "sampleSD": 0.07150206760523162
+    },
+    "cpu.extension.percent": {
+      "n": 4,
+      "mean": -0.06170816758071185,
+      "median": 0.02560897241988158,
+      "min": -0.37443135980118303,
+      "max": 0.07638074463857247,
+      "sampleSD": 0.21358738820228065
+    },
+    "cpu.host.msPerReceivedFrame": {
+      "n": 4,
+      "mean": 0.09355667542395224,
+      "median": 0.10283060751457107,
+      "min": 0.029936667500000125,
+      "max": 0.1386288191666667,
+      "sampleSD": 0.050742495207094736
+    },
+    "cpu.host.percent": {
+      "n": 4,
+      "mean": 0.28013094883888345,
+      "median": 0.30711202211657573,
+      "min": 0.08979546593695265,
+      "max": 0.4165042851854297,
+      "sampleSD": 0.15155048977946173
+    },
+    "cpu.pipeline.msPerReceivedFrame": {
+      "n": 4,
+      "mean": 0.06718907410369823,
+      "median": 0.11582524904072988,
+      "min": -0.16958215249999942,
+      "max": 0.20668795083333258,
+      "sampleSD": 0.16650336156764406
+    },
+    "cpu.pipeline.percent": {
+      "n": 4,
+      "mean": 0.20042878859483615,
+      "median": 0.34370953276875316,
+      "min": -0.5081658209055586,
+      "max": 0.6224619097473969,
+      "sampleSD": 0.4981899789390016
+    },
+    "footprint.background_wmc.medianMiB": {
+      "n": 4,
+      "mean": -0.091796875,
+      "median": -0.05859375,
+      "min": -0.33984375,
+      "max": 0.08984375,
+      "sampleSD": 0.18236743719639104
+    },
+    "footprint.camera_service.medianMiB": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null,
+      "sampleSD": null
+    },
+    "footprint.consumer.medianMiB": {
+      "n": 4,
+      "mean": -0.24218177795410156,
+      "median": -0.2812614440917969,
+      "min": -0.6249771118164062,
+      "max": 0.21877288818359375,
+      "sampleSD": 0.34763653371873526
+    },
+    "footprint.extension.medianMiB": {
+      "n": 0,
+      "mean": null,
+      "median": null,
+      "min": null,
+      "max": null,
+      "sampleSD": null
+    },
+    "footprint.host.medianMiB": {
+      "n": 4,
+      "mean": 8.171892166137695,
+      "median": 8.242198944091797,
+      "min": 7.8125457763671875,
+      "max": 8.390625,
+      "sampleSD": 0.25159912708843507
+    },
+    "gpu.command.msPerFrame": {
+      "n": 4,
+      "mean": 0.06707019963262913,
+      "median": 0.06364557331835385,
+      "min": 0.0626282291583872,
+      "max": 0.0783614227354216,
+      "sampleSD": 0.007569191824856816
+    },
+    "observer.cpu.percent": {
+      "n": 4,
+      "mean": -0.08695702346990097,
+      "median": -0.10990668497089795,
+      "min": -0.17539112632491083,
+      "max": 0.047376402387102834,
+      "sampleSD": 0.10179230337258108
+    },
+    "receiver.fps": {
+      "n": 4,
+      "mean": -0.003927867602549817,
+      "median": 0.0021679208968841124,
+      "min": -0.024535402580919907,
+      "max": 0.004488090376952414,
+      "sampleSD": 0.013897270431700914
+    },
+    "receiver.postRenderLatency.meanMs": {
+      "n": 4,
+      "mean": 0.515387426789732,
+      "median": 0.3523182326744596,
+      "min": -0.19984265648721156,
+      "max": 1.5567558982972205,
+      "sampleSD": 0.7484271192883071
+    },
+    "receiver.postRenderLatency.p50Ms": {
+      "n": 4,
+      "mean": 0.5879737727809697,
+      "median": 0.8752497669775039,
+      "min": -0.9798334795050323,
+      "max": 1.5812290366739035,
+      "sampleSD": 1.1040618257787516
+    },
+    "receiver.postRenderLatency.p95Ms": {
+      "n": 4,
+      "mean": 1.190337807202012,
+      "median": 1.2432050920324387,
+      "min": -2.178361071855761,
+      "max": 4.453302116598932,
+      "sampleSD": 2.7928480039506107
+    },
+    "receiver.ptsGap.maxMs": {
+      "n": 4,
+      "mean": -0.9449999779462814,
+      "median": -0.050000002374872565,
+      "min": -3.809999965596944,
+      "max": 0.1300000585615635,
+      "sampleSD": 1.912162817954149
+    },
+    "receiver.ptsGap.p95Ms": {
+      "n": 4,
+      "mean": 0.05512501156772487,
+      "median": 0.08975001546787098,
+      "min": -0.2500000351574272,
+      "max": 0.2910000504925847,
+      "sampleSD": 0.24482390965787532
+    },
+    "render.wall.msPerFrame": {
+      "n": 4,
+      "mean": 0.02858956637889304,
+      "median": 0.06432857713662088,
+      "min": -0.14720951396157034,
+      "max": 0.13291062520390073,
+      "sampleSD": 0.1239705118396402
+    },
+    "rss.background_wmc.medianMiB": {
+      "n": 4,
+      "mean": -0.0224609375,
+      "median": -0.033203125,
+      "min": -0.05859375,
+      "max": 0.03515625,
+      "sampleSD": 0.04026470337517247
+    },
+    "rss.camera_service.medianMiB": {
+      "n": 4,
+      "mean": -0.0078125,
+      "median": -0.015625,
+      "min": -0.03125,
+      "max": 0.03125,
+      "sampleSD": 0.029919597117385566
+    },
+    "rss.consumer.medianMiB": {
+      "n": 4,
+      "mean": -0.9375,
+      "median": -0.5390625,
+      "min": -2.96875,
+      "max": 0.296875,
+      "sampleSD": 1.4279004655729102
+    },
+    "rss.extension.medianMiB": {
+      "n": 4,
+      "mean": 0.0078125,
+      "median": 0.0078125,
+      "min": 0.0,
+      "max": 0.015625,
+      "sampleSD": 0.009021097956087902
+    },
+    "rss.host.medianMiB": {
+      "n": 4,
+      "mean": -0.51171875,
+      "median": -0.0703125,
+      "min": -2.203125,
+      "max": 0.296875,
+      "sampleSD": 1.1472322190049042
+    },
+    "source.fps": {
+      "n": 4,
+      "mean": 0.00012346731076107176,
+      "median": 2.660682392630065e-05,
+      "min": -0.0004421320824938846,
+      "max": 0.0008827876776855703,
+      "sampleSD": 0.0006441699501633594
+    }
+  },
+  "modeMeanDifferences": {
+    "cpu.background_wmc.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": 0.17301952185088787,
+      "relativeDifferencePercentOfCopy": 1.091788714855619
+    },
+    "cpu.background_wmc.percent": {
+      "copyMeanMinusZeroMean": 0.513091638066463,
+      "relativeDifferencePercentOfCopy": 1.0793480881393647
+    },
+    "cpu.camera_service.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": 1.7346655564803512e-06,
+      "relativeDifferencePercentOfCopy": 0.04163197335552843
+    },
+    "cpu.camera_service.percent": {
+      "copyMeanMinusZeroMean": -3.7520931908327504e-08,
+      "relativeDifferencePercentOfCopy": -0.00030025366932508846
+    },
+    "cpu.consumer.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": -0.005882935763773189,
+      "relativeDifferencePercentOfCopy": -0.6541350958193637
+    },
+    "cpu.consumer.percent": {
+      "copyMeanMinusZeroMean": -0.01799399266333479,
+      "relativeDifferencePercentOfCopy": -0.6669968224116438
+    },
+    "cpu.extension.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": -0.020484665556480763,
+      "relativeDifferencePercentOfCopy": -1.2154066090371776
+    },
+    "cpu.extension.percent": {
+      "copyMeanMinusZeroMean": -0.06170816758071229,
+      "relativeDifferencePercentOfCopy": -1.220705198271736
+    },
+    "cpu.host.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": 0.0935566754239523,
+      "relativeDifferencePercentOfCopy": 6.191381249253487
+    },
+    "cpu.host.percent": {
+      "copyMeanMinusZeroMean": 0.2801309488388837,
+      "relativeDifferencePercentOfCopy": 6.180114297407194
+    },
+    "cpu.pipeline.msPerReceivedFrame": {
+      "copyMeanMinusZeroMean": 0.06718907410369823,
+      "relativeDifferencePercentOfCopy": 1.6404217040986626
+    },
+    "cpu.pipeline.percent": {
+      "copyMeanMinusZeroMean": 0.20042878859483615,
+      "relativeDifferencePercentOfCopy": 1.6314034225109912
+    },
+    "footprint.background_wmc.medianMiB": {
+      "copyMeanMinusZeroMean": -0.091796875,
+      "relativeDifferencePercentOfCopy": -0.0051120241437943225
+    },
+    "footprint.camera_service.medianMiB": {
+      "copyMeanMinusZeroMean": null,
+      "relativeDifferencePercentOfCopy": null
+    },
+    "footprint.consumer.medianMiB": {
+      "copyMeanMinusZeroMean": -0.24218177795410156,
+      "relativeDifferencePercentOfCopy": -0.2248094578151399
+    },
+    "footprint.extension.medianMiB": {
+      "copyMeanMinusZeroMean": null,
+      "relativeDifferencePercentOfCopy": null
+    },
+    "footprint.host.medianMiB": {
+      "copyMeanMinusZeroMean": 8.171892166137695,
+      "relativeDifferencePercentOfCopy": 4.118504893781712
+    },
+    "gpu.command.msPerFrame": {
+      "copyMeanMinusZeroMean": 0.06707019963262913,
+      "relativeDifferencePercentOfCopy": 55.794559929484706
+    },
+    "observer.cpu.percent": {
+      "copyMeanMinusZeroMean": -0.08695702346990086,
+      "relativeDifferencePercentOfCopy": -7.4361404873484975
+    },
+    "receiver.fps": {
+      "copyMeanMinusZeroMean": -0.003927867602548929,
+      "relativeDifferencePercentOfCopy": -0.013094209686993994
+    },
+    "receiver.postRenderLatency.meanMs": {
+      "copyMeanMinusZeroMean": 0.515387426789732,
+      "relativeDifferencePercentOfCopy": 8.88299663479811
+    },
+    "receiver.postRenderLatency.p50Ms": {
+      "copyMeanMinusZeroMean": 0.5879737727809697,
+      "relativeDifferencePercentOfCopy": 10.187023980496864
+    },
+    "receiver.postRenderLatency.p95Ms": {
+      "copyMeanMinusZeroMean": 1.1903378072020114,
+      "relativeDifferencePercentOfCopy": 12.085134562851664
+    },
+    "receiver.ptsGap.maxMs": {
+      "copyMeanMinusZeroMean": -0.9449999779462814,
+      "relativeDifferencePercentOfCopy": -2.700578632056259
+    },
+    "receiver.ptsGap.p95Ms": {
+      "copyMeanMinusZeroMean": 0.05512501156772487,
+      "relativeDifferencePercentOfCopy": 0.16158466247042377
+    },
+    "render.wall.msPerFrame": {
+      "copyMeanMinusZeroMean": 0.028589566378892983,
+      "relativeDifferencePercentOfCopy": 3.2748403530884445
+    },
+    "rss.background_wmc.medianMiB": {
+      "copyMeanMinusZeroMean": -0.0224609375,
+      "relativeDifferencePercentOfCopy": -0.001987873968790379
+    },
+    "rss.camera_service.medianMiB": {
+      "copyMeanMinusZeroMean": -0.0078125,
+      "relativeDifferencePercentOfCopy": -0.03282994090610637
+    },
+    "rss.consumer.medianMiB": {
+      "copyMeanMinusZeroMean": -0.9375,
+      "relativeDifferencePercentOfCopy": -0.7130760317318834
+    },
+    "rss.extension.medianMiB": {
+      "copyMeanMinusZeroMean": 0.0078125,
+      "relativeDifferencePercentOfCopy": 0.052083333333333336
+    },
+    "rss.host.medianMiB": {
+      "copyMeanMinusZeroMean": -0.51171875,
+      "relativeDifferencePercentOfCopy": -0.572477384958266
+    },
+    "source.fps": {
+      "copyMeanMinusZeroMean": 0.00012346731075751904,
+      "relativeDifferencePercentOfCopy": 0.0004115674467826395
+    }
+  },
+  "equalThroughputGateFPS": {
+    "minimum": 29.5,
+    "maximum": 30.5
+  },
+  "excludedSeries": [
+    {
+      "directory": "build/zero-copy-benchmark-20261027/comparison",
+      "reason": "Earlier series aborted because producer/receiver throughput differed from the30fps target; its CPU comparison is invalid. Artifacts remain separate and were not merged into this series."
+    }
+  ],
+  "interpretation": [
+    "Controlled synthetic source through the same native camera and consumer. Not a before/after result for stock WMC, UniCamEx, or Meet.",
+    "All complete runs contribute to summaries; no outlier or unfavorable run is silently discarded. Invalid status blocks a comparison conclusion.",
+    "A source or receiver rate outside29.5..30.5fps invalidates the CPU comparison; per-frame normalization is diagnostic and does not waive this equal-throughput gate.",
+    "Run-level mean/min/max and adjacent paired differences are descriptive;1s/5s intervals are not independent repeated experiments and no significance claim is made.",
+    "Positive copy-minus-zero values indicate lower zero-copy cost for CPU/time/memory metrics; the sign has a different meaning for fps.",
+    "GPU command time includes source rendering and the optional copy. It is elapsed command execution time, not whole-GPU utilization, energy, or isolated blit timing.",
+    "Source GPU/render means use producer cumulative counters after warm-up; their snapshot window may be offset by up to2s from CPU sampling.",
+    "Post-render receive latency is callback host time minus a PTS stamped after source GPU completion. It excludes source rendering/copy and is not full end-to-end latency.",
+    "Consumer droppedFrames is for the full capture, not only the CPU window; pressure/reject counts use producer/extension snapshot deltas.",
+    "Thermal values are endpoint snapshots, not proof of the entire interval's thermal state. Observer overhead is measured separately, not subtracted from target CPU.",
+    "footprint.* is the OS-charged physical footprint of that individual process, where proc_pid_rusage exposes it. It is not a sum of shared RSS or a whole-machine physical-memory saving."
+  ],
+  "measuredBuild": {
+    "hostSHA256": "5a0096c564c90139849ef1508244b75c988a03c156a604a3ce0141ef6e49e329",
+    "sources": {
+      "NativeCamera/Host/SurfacePatternRenderer.swift": "ef111b018462d05f780682d7ea0eb53ab5fbd59b975b8c890241ed824fa89da9",
+      "NativeCamera/Host/NativeCameraSink.swift": "87e7aa8f28ea04a8bd6029fea979dffd1337f28e0c1cfbd1d70ef5cdf2d1e409",
+      "NativeCamera/Host/NativeCameraApp.swift": "ebd54598eabba872e2496e7e8d72d2e99d27ebdb0a6e81a35d06c3ab68156360",
+      "NativeCamera/Host/NativeCameraEngine.swift": "d5b4d6632432f8e465b5458a4ff7ed64c8227c0ee0b65b23da6b06d1432b678f",
+      "NativeCamera/Host/SyphonDirectSource.swift": "d288f40d6493331eca9b9367418929617681a4200bb59e5737b69c9b3b10e202",
+      "NativeCamera/Extension/ZeroCopyCameraProvider.swift": "2eb5164ec5250f8ff40c686a6fded46d5f903468f57dc4c903b52a62038cfbc2",
+      "NativeCamera/Extension/main.swift": "5226ae3521a5d729ba67179f991245a9330aff6de64b99faf69b7c603037821c"
+    },
+    "configuration": "Release",
+    "buildVersion": 3,
+    "activity": "userInitiatedAllowingIdleSystemSleep while streaming"
+  },
+  "environment": {
+    "macOS": "27.0.1",
+    "macOSBuild": "26A434",
+    "machine": "Apple M4 Max",
+    "xcode": "Xcode 26.6\nBuild version 17F113",
+    "SIP": "System Integrity Protection status: enabled."
+  },
+  "correctnessPreflight": {
+    "01-zero-copy": {
+      "status": "passed",
+      "matchedFrames": 191,
+      "invalidStampFrames": 0,
+      "path": "build/zero-copy-benchmark-20261027/preflight2/01-zero-copy/verified.json",
+      "sha256": "07c924dfb2b0c696a7bd70e2b317e356a394df7fb9eebc9ea043934b12ebe147"
+    },
+    "02-gpu-copy": {
+      "status": "passed",
+      "matchedFrames": 191,
+      "invalidStampFrames": 0,
+      "path": "build/zero-copy-benchmark-20261027/preflight2/02-gpu-copy/verified.json",
+      "sha256": "6ae62e57bb560a45120b070c63d10df26a196621a7a8bedcc3fec3be67a3ea60"
+    }
+  },
+  "benchmarkToolSHA256": {
+    "Tools/ZeroCopyBenchmark/analyze.py": "7b835c7570f9f365f820b4300f2abd823fd85a9c656945711f6d8bc28636ed51",
+    "Tools/ZeroCopyBenchmark/run-comparison.py": "8af6af8d66ac9dc54e59f1db9280d78cfbea25d0f3b0d5b5bc0a9bdef31dfc95",
+    "Tools/ZeroCopyBenchmark/sample-processes.py": "d9c5677108b7668150cabffac875a5024f2316873731b1831cee36ff2bf1f248"
+  },
+  "artifactPathBase": "repository-root"
+}

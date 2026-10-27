@@ -1,5 +1,11 @@
 # Codex Work Order: Syphon → UniCamEx Bridge Further Optimization
 
+Historical optimization work order for the UniCamEx bridge. Its instruction not
+to implement a Camera Extension describes that earlier task; it does not apply
+to the separate NativeCamera backend added on 2026-10-27. Current implementation
+and verification are recorded in [the audit](ZERO_COPY_AUDIT.md) and
+[Native Camera operation](NATIVE_CAMERA_30FPS.md).
+
 Repository: https://github.com/modeverv/syphone-camera
 
 ## 1. Goal

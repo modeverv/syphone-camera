@@ -1,0 +1,1521 @@
+{
+  "actualNetworkSendingVerified": false,
+  "build": {
+    "extensionBinarySHA256": null,
+    "extensionBinarySHA256Availability": "Not recorded in the frozen comparison manifest; extension build and source hashes are recorded.",
+    "extensionBuild": "4",
+    "frozenManifest": {
+      "repositoryRelativePath": "build/meet-30fps-20261027/measured-fixed-sampling-build.json",
+      "sha256": "570a3ba66561ed46445ab788b086065d56abd92f1e8dc85f562afe0c9f9781c1"
+    },
+    "hostBuild": "6",
+    "installedHostBinarySHA256": "4ee311cdd4ea9c3112884149d2393aed71d60036177843a78aa01d0d1e6bb15b",
+    "recordedAtUTC": "2026-10-27T07:50:58.999224+00:00",
+    "sourceHashValidationScope": "Compares repository files with the frozen manifest; does not revalidate a running executable.",
+    "sourceHashesMatchAtPublicSummaryCreation": true,
+    "sourceSHA256": {
+      "NativeCamera/Extension/Camera.entitlements": "119282291e2c52c7cbbc494c26ce0da9088ee1f64f91d3a131a65e679b1c6f47",
+      "NativeCamera/Extension/ZeroCopyCameraProvider.swift": "15b008b84fa772fb1f288f078cc88ffee77d06ba426ee0a20493a8b36a408467",
+      "NativeCamera/Extension/main.swift": "5226ae3521a5d729ba67179f991245a9330aff6de64b99faf69b7c603037821c",
+      "NativeCamera/Host/Host.entitlements": "56c6cfa4e289b9fc3b493af85b2570fe3cb28bb6226e9bfdb3b7fdb5d4f95d37",
+      "NativeCamera/Host/NativeCameraApp.swift": "4b6c7e85d45b8715729c6791fc09dc362a06652a46d4a3480bd71655aa6ed82f",
+      "NativeCamera/Host/NativeCameraEngine.swift": "24ec0c0d166d09926d6b4ecbaf60245dced101e1c57abf9c919ae23f33fa6166",
+      "NativeCamera/Host/NativeCameraSink.swift": "df11b51918a37f3d4f064cf00f5dc4ba4baae5ee60c898f9f4cd6c1bec964ff3",
+      "NativeCamera/Host/SurfacePatternRenderer.swift": "b102be4e24e3ddc08f34a7e7938640b703e13fe1943512a01d3610462b4dccb2",
+      "NativeCamera/Host/SyphonDirectSource.swift": "d288f40d6493331eca9b9367418929617681a4200bb59e5737b69c9b3b10e202",
+      "NativeCamera/Host/SyphonResizingSource.swift": "37303fd34de61e7476a980f8761b8c5a9d8adc13f8a900ee3f73d7ff969d6440",
+      "NativeCamera/project.yml": "873a73227bd1a4b66a4148b260cff41f754506a2ef1e3de24b1c0cddf701dde6"
+    }
+  },
+  "conditionMeanReductions": {
+    "cpu_chrome_core": {
+      "reduction1080Minus720": -0.0700127100047645,
+      "relativeReductionPercent": -0.2399147356229215
+    },
+    "cpu_extension": {
+      "reduction1080Minus720": 0.23743064978616069,
+      "relativeReductionPercent": 5.135599624718019
+    },
+    "cpu_host": {
+      "reduction1080Minus720": -0.05141930985536902,
+      "relativeReductionPercent": -1.0186623857827226
+    },
+    "cpu_meet_a": {
+      "reduction1080Minus720": -1.2052980876511263,
+      "relativeReductionPercent": -4.923779799242135
+    },
+    "cpu_meet_and_chrome_core": {
+      "reduction1080Minus720": -1.2498826690938003,
+      "relativeReductionPercent": -2.0728189370793806
+    },
+    "cpu_meet_b": {
+      "reduction1080Minus720": 0.0254281285620932,
+      "relativeReductionPercent": 0.3831131245079633
+    },
+    "cpu_meet_renderers": {
+      "reduction1080Minus720": -1.1798699590890322,
+      "relativeReductionPercent": -3.7917994071264522
+    },
+    "cpu_selected_with_wmc": {
+      "reduction1080Minus720": -1.2071641985916273,
+      "relativeReductionPercent": -1.030879917132173
+    },
+    "cpu_selected_without_wmc": {
+      "reduction1080Minus720": -1.0888616585669695,
+      "relativeReductionPercent": -1.5561913789303412
+    },
+    "cpu_wmc": {
+      "reduction1080Minus720": -0.11830254002464358,
+      "relativeReductionPercent": -0.2510094037828254
+    },
+    "fresh_conversion_fps": {
+      "reduction1080Minus720": -0.00012802927502519879,
+      "relativeReductionPercent": -0.00042676246245396197
+    },
+    "gpu_ms_per_fresh_frame": {
+      "reduction1080Minus720": 0.014066219789934789,
+      "relativeReductionPercent": 21.84271416474786
+    },
+    "gpu_ms_per_output_frame": {
+      "reduction1080Minus720": 0.014066219789934789,
+      "relativeReductionPercent": 21.84271416474786
+    },
+    "gpu_ms_per_second": {
+      "reduction1080Minus720": 0.4219820427043597,
+      "relativeReductionPercent": 21.84238533199198
+    },
+    "host_physical_footprint_mib": {
+      "reduction1080Minus720": 8.21875,
+      "relativeReductionPercent": 3.897432906594541
+    },
+    "output_fps": {
+      "reduction1080Minus720": -0.00012802927502519879,
+      "relativeReductionPercent": -0.00042676246245396197
+    },
+    "repeat_percent": {
+      "reduction1080Minus720": 0.0,
+      "relativeReductionPercent": null
+    },
+    "repeated_output_fps": {
+      "reduction1080Minus720": 0.0,
+      "relativeReductionPercent": null
+    },
+    "system_cpu_busy_all_cores": {
+      "reduction1080Minus720": -0.3879270380113091,
+      "relativeReductionPercent": -1.4622210125764545
+    },
+    "system_cpu_busy_one_core_equivalent": {
+      "reduction1080Minus720": -6.206832608180946,
+      "relativeReductionPercent": -1.4622210125764545
+    }
+  },
+  "conditionMetrics": {
+    "1080p": {
+      "cpu_chrome_core": {
+        "count": 2,
+        "maximum": 29.29807141527613,
+        "mean": 29.182330056960232,
+        "minimum": 29.06658869864433,
+        "values": [
+          29.29807141527613,
+          29.06658869864433
+        ]
+      },
+      "cpu_extension": {
+        "count": 2,
+        "maximum": 4.7727290609389135,
+        "mean": 4.623231309609681,
+        "minimum": 4.473733558280448,
+        "values": [
+          4.7727290609389135,
+          4.473733558280448
+        ]
+      },
+      "cpu_host": {
+        "count": 2,
+        "maximum": 5.174525406174398,
+        "mean": 5.0477283320772965,
+        "minimum": 4.920931257980195,
+        "values": [
+          5.174525406174398,
+          4.920931257980195
+        ]
+      },
+      "cpu_meet_a": {
+        "count": 2,
+        "maximum": 25.141070307122718,
+        "mean": 24.479122478967174,
+        "minimum": 23.81717465081163,
+        "values": [
+          25.141070307122718,
+          23.81717465081163
+        ]
+      },
+      "cpu_meet_and_chrome_core": {
+        "count": 2,
+        "maximum": 61.30724557166425,
+        "mean": 60.29869019118937,
+        "minimum": 59.2901348107145,
+        "values": [
+          61.30724557166425,
+          59.2901348107145
+        ]
+      },
+      "cpu_meet_b": {
+        "count": 2,
+        "maximum": 6.8681038492653945,
+        "mean": 6.637237655261965,
+        "minimum": 6.406371461258536,
+        "values": [
+          6.8681038492653945,
+          6.406371461258536
+        ]
+      },
+      "cpu_meet_renderers": {
+        "count": 2,
+        "maximum": 32.00917415638811,
+        "mean": 31.11636013422914,
+        "minimum": 30.223546112070167,
+        "values": [
+          32.00917415638811,
+          30.223546112070167
+        ]
+      },
+      "cpu_selected_with_wmc": {
+        "count": 2,
+        "maximum": 118.56292721387776,
+        "mean": 117.10037013329965,
+        "minimum": 115.63781305272154,
+        "values": [
+          118.56292721387776,
+          115.63781305272154
+        ]
+      },
+      "cpu_selected_without_wmc": {
+        "count": 2,
+        "maximum": 71.25450003877755,
+        "mean": 69.96964983287634,
+        "minimum": 68.68479962697513,
+        "values": [
+          71.25450003877755,
+          68.68479962697513
+        ]
+      },
+      "cpu_wmc": {
+        "count": 2,
+        "maximum": 47.3084271751002,
+        "mean": 47.130720300423306,
+        "minimum": 46.953013425746406,
+        "values": [
+          47.3084271751002,
+          46.953013425746406
+        ]
+      },
+      "fresh_conversion_fps": {
+        "count": 2,
+        "maximum": 30.000611293197053,
+        "mean": 30.000125664522393,
+        "minimum": 29.999640035847733,
+        "values": [
+          29.999640035847733,
+          30.000611293197053
+        ]
+      },
+      "gpu_ms_per_fresh_frame": {
+        "count": 2,
+        "maximum": 0.06472052934359972,
+        "mean": 0.06439776524034901,
+        "minimum": 0.0640750011370983,
+        "values": [
+          0.0640750011370983,
+          0.06472052934359972
+        ]
+      },
+      "gpu_ms_per_output_frame": {
+        "count": 2,
+        "maximum": 0.06472052934359972,
+        "mean": 0.06439776524034901,
+        "minimum": 0.0640750011370983,
+        "values": [
+          0.0640750011370983,
+          0.06472052934359972
+        ]
+      },
+      "gpu_ms_per_second": {
+        "count": 2,
+        "maximum": 1.9416554435272888,
+        "mean": 1.931941206468386,
+        "minimum": 1.9222269694094831,
+        "values": [
+          1.9222269694094831,
+          1.9416554435272888
+        ]
+      },
+      "host_physical_footprint_mib": {
+        "count": 2,
+        "maximum": 211.50098419189453,
+        "mean": 210.87598419189453,
+        "minimum": 210.25098419189453,
+        "values": [
+          210.25098419189453,
+          211.50098419189453
+        ]
+      },
+      "output_fps": {
+        "count": 2,
+        "maximum": 30.000611293197053,
+        "mean": 30.000125664522393,
+        "minimum": 29.999640035847733,
+        "values": [
+          29.999640035847733,
+          30.000611293197053
+        ]
+      },
+      "repeat_percent": {
+        "count": 2,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "repeated_output_fps": {
+        "count": 2,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "system_cpu_busy_all_cores": {
+        "count": 2,
+        "maximum": 27.59323735140052,
+        "mean": 26.529986552975057,
+        "minimum": 25.466735754549592,
+        "values": [
+          27.59323735140052,
+          25.466735754549592
+        ]
+      },
+      "system_cpu_busy_one_core_equivalent": {
+        "count": 2,
+        "maximum": 441.49179762240834,
+        "mean": 424.4797848476009,
+        "minimum": 407.4677720727935,
+        "values": [
+          441.49179762240834,
+          407.4677720727935
+        ]
+      }
+    },
+    "720p": {
+      "cpu_chrome_core": {
+        "count": 2,
+        "maximum": 29.334223657248103,
+        "mean": 29.252342766964997,
+        "minimum": 29.17046187668189,
+        "values": [
+          29.17046187668189,
+          29.334223657248103
+        ]
+      },
+      "cpu_extension": {
+        "count": 2,
+        "maximum": 4.423034537137915,
+        "mean": 4.38580065982352,
+        "minimum": 4.348566782509124,
+        "values": [
+          4.423034537137915,
+          4.348566782509124
+        ]
+      },
+      "cpu_host": {
+        "count": 2,
+        "maximum": 5.174451119333064,
+        "mean": 5.099147641932666,
+        "minimum": 5.023844164532268,
+        "values": [
+          5.174451119333064,
+          5.023844164532268
+        ]
+      },
+      "cpu_meet_a": {
+        "count": 2,
+        "maximum": 25.7788640126322,
+        "mean": 25.6844205666183,
+        "minimum": 25.5899771206044,
+        "values": [
+          25.7788640126322,
+          25.5899771206044
+        ]
+      },
+      "cpu_meet_and_chrome_core": {
+        "count": 2,
+        "maximum": 61.82065049000169,
+        "mean": 61.54857286028317,
+        "minimum": 61.27649523056465,
+        "values": [
+          61.82065049000169,
+          61.27649523056465
+        ]
+      },
+      "cpu_meet_b": {
+        "count": 2,
+        "maximum": 6.871324600687596,
+        "mean": 6.611809526699872,
+        "minimum": 6.352294452712147,
+        "values": [
+          6.871324600687596,
+          6.352294452712147
+        ]
+      },
+      "cpu_meet_renderers": {
+        "count": 2,
+        "maximum": 32.6501886133198,
+        "mean": 32.29623009331817,
+        "minimum": 31.942271573316546,
+        "values": [
+          32.6501886133198,
+          31.942271573316546
+        ]
+      },
+      "cpu_selected_with_wmc": {
+        "count": 2,
+        "maximum": 118.71850791686333,
+        "mean": 118.30753433189128,
+        "minimum": 117.8965607469192,
+        "values": [
+          118.71850791686333,
+          117.8965607469192
+        ]
+      },
+      "cpu_selected_without_wmc": {
+        "count": 2,
+        "maximum": 71.44312504216272,
+        "mean": 71.05851149144331,
+        "minimum": 70.6738979407239,
+        "values": [
+          71.44312504216272,
+          70.6738979407239
+        ]
+      },
+      "cpu_wmc": {
+        "count": 2,
+        "maximum": 47.27538287470061,
+        "mean": 47.24902284044795,
+        "minimum": 47.222662806195295,
+        "values": [
+          47.27538287470061,
+          47.222662806195295
+        ]
+      },
+      "fresh_conversion_fps": {
+        "count": 2,
+        "maximum": 30.00059098086804,
+        "mean": 30.00025369379742,
+        "minimum": 29.999916406726797,
+        "values": [
+          29.999916406726797,
+          30.00059098086804
+        ]
+      },
+      "gpu_ms_per_fresh_frame": {
+        "count": 2,
+        "maximum": 0.05042479155235924,
+        "mean": 0.050331545450414225,
+        "minimum": 0.050238299348469205,
+        "values": [
+          0.050238299348469205,
+          0.05042479155235924
+        ]
+      },
+      "gpu_ms_per_output_frame": {
+        "count": 2,
+        "maximum": 0.05042479155235924,
+        "mean": 0.050331545450414225,
+        "minimum": 0.050238299348469205,
+        "values": [
+          0.050238299348469205,
+          0.05042479155235924
+        ]
+      },
+      "gpu_ms_per_second": {
+        "count": 2,
+        "maximum": 1.5127735466578596,
+        "mean": 1.5099591637640264,
+        "minimum": 1.5071447808701932,
+        "values": [
+          1.5071447808701932,
+          1.5127735466578596
+        ]
+      },
+      "host_physical_footprint_mib": {
+        "count": 2,
+        "maximum": 202.67285919189453,
+        "mean": 202.65723419189453,
+        "minimum": 202.64160919189453,
+        "values": [
+          202.67285919189453,
+          202.64160919189453
+        ]
+      },
+      "output_fps": {
+        "count": 2,
+        "maximum": 30.00059098086804,
+        "mean": 30.00025369379742,
+        "minimum": 29.999916406726797,
+        "values": [
+          29.999916406726797,
+          30.00059098086804
+        ]
+      },
+      "repeat_percent": {
+        "count": 2,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "repeated_output_fps": {
+        "count": 2,
+        "maximum": 0.0,
+        "mean": 0.0,
+        "minimum": 0.0,
+        "values": [
+          0.0,
+          0.0
+        ]
+      },
+      "system_cpu_busy_all_cores": {
+        "count": 2,
+        "maximum": 28.452709483191168,
+        "mean": 26.917913590986366,
+        "minimum": 25.38311769878156,
+        "values": [
+          28.452709483191168,
+          25.38311769878156
+        ]
+      },
+      "system_cpu_busy_one_core_equivalent": {
+        "count": 2,
+        "maximum": 455.2433517310587,
+        "mean": 430.68661745578186,
+        "minimum": 406.129883180505,
+        "values": [
+          455.2433517310587,
+          406.129883180505
+        ]
+      }
+    }
+  },
+  "createdAtUTC": "2026-10-27T08:44:05.564474+00:00",
+  "design": {
+    "aggregateMembership": {
+      "chrome_core": [
+        "chrome_audio",
+        "chrome_capture",
+        "chrome_gpu",
+        "chrome_main",
+        "chrome_network",
+        "chrome_storage"
+      ],
+      "extension": [
+        "extension"
+      ],
+      "host": [
+        "host"
+      ],
+      "meet_renderers": [
+        "meet_a",
+        "meet_b"
+      ],
+      "wmc": [
+        "wmc"
+      ]
+    },
+    "allChromeProcessesMeasured": false,
+    "cpuPixelCopiesPerOutput": 0,
+    "gpuTransformsPerOutput": 1,
+    "meetMaximumReceiveResolutionSetting": "1080p",
+    "meetMaximumSendResolutionSetting": "1080p",
+    "microphones": "Off for both participants",
+    "order": [
+      "1080p",
+      "720p",
+      "720p",
+      "1080p"
+    ],
+    "receiverCamera": "Off",
+    "receiverPinnedSender": true,
+    "requestedCPUSecondsPerWindow": 40,
+    "sameMacSenderAndReceiver": true,
+    "samplingIntervalSeconds": 5,
+    "selectedProcessLabels": [
+      "cameracaptured",
+      "chrome_audio",
+      "chrome_capture",
+      "chrome_gpu",
+      "chrome_main",
+      "chrome_network",
+      "chrome_storage",
+      "extension",
+      "host",
+      "meet_a",
+      "meet_b",
+      "wmc"
+    ],
+    "settingsAreActualRTPProof": false,
+    "sourceKind": "syphon",
+    "sourceSampling": "Samples the latest WMC texture at each admitted 30 Hz tick; upstream unique-image cadence was not independently measured.",
+    "targetOutputFPS": 30,
+    "transportMode": "syphon-gpu-resize-flip",
+    "upstreamTextureDimensions": [
+      1920,
+      1080
+    ],
+    "windowsPerCondition": 2
+  },
+  "environment": {
+    "cpuBrand": "Apple M4 Max",
+    "googleChromeVersion": "155.0.8059.85",
+    "logicalCPUs": 16,
+    "macOSBuildVersion": "26A434",
+    "macOSProductVersion": "27.0.1",
+    "machineVerificationTimeUTC": "2026-10-27T08:42:30.078492+00:00",
+    "provenance": {
+      "chrome": "Version from each primary window census-before.json executable paths; those paths are omitted from this public summary.",
+      "machine": {
+        "repositoryRelativePath": "build/meet-30fps-20261027/environment-final.json",
+        "sha256": "540db722a07c61bc00696b728c51139035fed01196ccaf07f64783e1610063b3"
+      },
+      "machineTiming": "Read-only environment confirmation after the measurements. Logical CPU count also remained 16 in all primary CPU samples."
+    }
+  },
+  "findings": {
+    "cpuReductionObserved": false,
+    "hostPhysicalFootprintReductionMiB": 8.21875,
+    "interpretation": "720p reduced observed producer GPU command time and Host physical footprint in both oriented pairs. CPU reductions were not observed; the small CPU increase does not establish that resolution caused a regression.",
+    "producerGPUCommandTimeRelativeReductionPercent": 21.84271416474786,
+    "selectedWithWMCCPUPercentOneCore": {
+      "1080p": 117.10037013329965,
+      "720p": 118.30753433189128
+    },
+    "wholeMacCPUPercentAllCores": {
+      "1080p": 26.529986552975057,
+      "720p": 26.917913590986366
+    }
+  },
+  "fixedWorkloadValidation": {
+    "errors": [],
+    "passed": true,
+    "required": true,
+    "requirements": "Output and GPU transformation FPS 29.5..30.5; no repeated outputs; complete GPU timing; same upstream dimensions/source kind/transport mode; raw CPU counters and process identities valid"
+  },
+  "inputComparison": {
+    "repositoryRelativePath": "build/meet-30fps-20261027/cpu-fixed-comparison.json",
+    "sha256": "da260893718703e08db83bc8cc7b35409672f3c1b6581d1b8b8b25849c29e9c0"
+  },
+  "limitations": [
+    "Two windows per condition (N=2); descriptive observations, not a statistical significance test or causal isolation of resolution.",
+    "Meet A+B contains sender and receiver on the same Mac. Sender/receiver role is not inferred from the process labels.",
+    "Selected Chrome main/GPU/network/storage/audio/capture services also serve unrelated user work. This is not whole-Chrome or Meet-only CPU.",
+    "Whole-Mac CPU includes background work and uses a different 0..100 scale from one-core process CPU.",
+    "GPU transformations and submitted frames are approximately 30 per second in every window, with no cached output repeats. The earlier varying-transformation-cadence confound does not apply.",
+    "Thirty GPU transformations per second does not prove 30 independent upstream images per second; WMC uses mutable image storage and new-frame notifications can coalesce.",
+    "Producer status-window boundaries differ from CPU sample boundaries by approximately one status interval. A4 producer deltas cover about 41 seconds while its CPU window covers about 40 seconds.",
+    "GPU command time is neither whole-system GPU utilization nor Chrome encode time or end-to-end latency.",
+    "Host physical footprint does not establish whole-Mac memory savings; RSS and shared-memory mappings are not summed.",
+    "Power consumption, whole-system GPU utilization, and whole-Mac memory reductions were not measured.",
+    "Actual RTP resolution, encoded FPS, and bitrate for these four primary CPU windows are unverified because retained RTP history did not cover them. Separate supplementary measurements do not retroactively prove those windows."
+  ],
+  "measurementDefinitions": {
+    "conditionSummaries": "Unweighted means and minimum/maximum across two windows per condition.",
+    "gpuTime": "Producer GPU command execution time, not system GPU utilization, Chrome encoding time, or end-to-end latency.",
+    "hostPhysicalFootprint": "proc_pid_rusage physicalFootprintBytes. Each window uses the median of its samples; condition values are the unweighted mean of the two window medians. MiB = 1048576 bytes. RSS/shared-memory mappings are not summed.",
+    "orientedPairs": "A1 minus B2 and A4 minus B3. A positive reduction means the 720p observation is lower.",
+    "processCPU": "Cumulative user+system CPU-time delta divided by each process wall interval. 100 percent means one logical CPU fully occupied. Selected process sums are not whole-Chrome or sender-only CPU.",
+    "processCPUBackends": {
+      "cameracaptured": "ps_cumulative_time",
+      "chrome_audio": "proc_pid_rusage",
+      "chrome_capture": "proc_pid_rusage",
+      "chrome_gpu": "proc_pid_rusage",
+      "chrome_main": "proc_pid_rusage",
+      "chrome_network": "proc_pid_rusage",
+      "chrome_storage": "proc_pid_rusage",
+      "extension": "ps_cumulative_time",
+      "host": "proc_pid_rusage",
+      "meet_a": "proc_pid_rusage",
+      "meet_b": "proc_pid_rusage",
+      "wmc": "proc_pid_rusage"
+    },
+    "producerCounterBoundaries": "Host-written status snapshots are distinct from CPU sample boundaries and may differ by approximately one status interval (~1 second).",
+    "transportPixelCopiesCounter": "This source-mode counter counts the one GPU transform/write per output, not a CPU copy or a second transform.",
+    "wholeMacCPU": "host_statistics(HOST_CPU_LOAD_INFO) unsigned 32-bit modular tick deltas: 100*(user+system+nice)/(user+system+nice+idle). 100 percent means all logical CPUs occupied.",
+    "wholeMacOneCoreEquivalent": "Whole-Mac percent on the 0..100 scale multiplied by the stable logical CPU count (16)."
+  },
+  "metricDefinitions": {
+    "cpu_chrome_core": {
+      "label": "Selected shared Chrome services CPU",
+      "unit": "% of one core"
+    },
+    "cpu_extension": {
+      "label": "Camera Extension CPU",
+      "unit": "% of one core"
+    },
+    "cpu_host": {
+      "label": "Host CPU",
+      "unit": "% of one core"
+    },
+    "cpu_meet_a": {
+      "label": "Meet A renderer CPU",
+      "unit": "% of one core"
+    },
+    "cpu_meet_and_chrome_core": {
+      "label": "Meet A+B + selected Chrome services CPU",
+      "unit": "% of one core"
+    },
+    "cpu_meet_b": {
+      "label": "Meet B renderer CPU",
+      "unit": "% of one core"
+    },
+    "cpu_meet_renderers": {
+      "label": "Meet A+B renderer CPU",
+      "unit": "% of one core"
+    },
+    "cpu_selected_with_wmc": {
+      "label": "All selected process CPU (includes WMC)",
+      "unit": "% of one core"
+    },
+    "cpu_selected_without_wmc": {
+      "label": "Selected process CPU excluding WMC",
+      "unit": "% of one core"
+    },
+    "cpu_wmc": {
+      "label": "WMC CPU",
+      "unit": "% of one core"
+    },
+    "fresh_conversion_fps": {
+      "label": "GPU transformations of the latest sampled texture; upstream image uniqueness not measured",
+      "unit": "transformations/s"
+    },
+    "gpu_ms_per_fresh_frame": {
+      "label": "Producer GPU command time / transformation",
+      "unit": "ms/transformation"
+    },
+    "gpu_ms_per_output_frame": {
+      "label": "Producer GPU command time / output frame",
+      "unit": "ms/frame"
+    },
+    "gpu_ms_per_second": {
+      "label": "Producer GPU command time / status-clock second",
+      "unit": "ms/s"
+    },
+    "host_physical_footprint_mib": {
+      "label": "Host physical footprint (within-run median)",
+      "unit": "MiB"
+    },
+    "output_fps": {
+      "label": "Submitted output cadence",
+      "unit": "fps"
+    },
+    "repeat_percent": {
+      "label": "Repeated output fraction",
+      "unit": "%"
+    },
+    "repeated_output_fps": {
+      "label": "Repeated owned output frames",
+      "unit": "fps"
+    },
+    "system_cpu_busy_all_cores": {
+      "label": "Whole Mac CPU busy",
+      "unit": "% of all cores"
+    },
+    "system_cpu_busy_one_core_equivalent": {
+      "label": "Whole Mac CPU, one-core equivalent",
+      "unit": "% of one core"
+    }
+  },
+  "networkEvidenceStatus": {
+    "primaryFourWindows": "RTP history for these four windows was not retained in the saved dump. This is missing evidence, not evidence of failed sending.",
+    "supplementaryWindows": "Tracked separately; do not apply supplementary RTP verification retroactively to these four primary windows."
+  },
+  "networkSupplement": {
+    "bothInputConditionsActualNetworkVerified": false,
+    "limitations": [
+      "Primary CPU comparison remains four independent fixed-workload windows with no time-aligned RTP confirmation.",
+      "1080p camera input was confirmed for the reference; actual encoded and decoded video was 720p. Actual 1080p transmission was not demonstrated.",
+      "Supplemental CPU windows at 08:27 and 08:29 UTC have not been matched to RTP counters.",
+      "Bitrates describe video RTP payload, including any retransmissions, excluding IP/UDP overhead and other media.",
+      "No network-load reduction between the two camera input resolutions is established."
+    ],
+    "primaryCPUWindowsTimeAlignedRTPVerified": false,
+    "referenceObservations": [
+      {
+        "actualNetworkSendingVerified": true,
+        "cameraInputResolution": "1080p",
+        "chromeMediaSource": {
+          "frameCounterDelta": 1739,
+          "framesPerSecondFromCounterDelta": 29.982167730884143,
+          "observedDimensions": {
+            "1920x1080": 59
+          },
+          "samples": 59,
+          "scope": "Chrome media-source input, not the dimensions or frame rate sent over RTP",
+          "timedEvidenceAvailable": true,
+          "windowEndUTC": "2026-10-27T08:24:58.368569+00:00",
+          "windowSeconds": 58.00114306640625,
+          "windowStartUTC": "2026-10-27T08:24:00.367426+00:00"
+        },
+        "cpuTimeAligned": false,
+        "evidence": {
+          "analysis": {
+            "repositoryRelativePath": "build/meet-30fps-20261027/network-final-latest-observation.json",
+            "sha256": "c78c3423e24d399c373297e303c5719d8f519c1053ec5aaef9e2f699452434e6"
+          },
+          "dump": {
+            "repositoryRelativePath": "build/meet-30fps-20261027/webrtc-final-export.gz",
+            "sha256": "caf4c29c73c86e0879a400907edf890b18f08ff7d0dba3ae4574f669e0cfed49"
+          }
+        },
+        "hostBuild": "6",
+        "inbound": {
+          "actualFrameRateFromCounterDelta": 29.98409442539535,
+          "codecMimeTypes": [
+            "video/VP9"
+          ],
+          "counterDeltas": {
+            "bytesReceived": 6623244,
+            "firCount": 0,
+            "framesDecoded": 1740,
+            "framesDropped": 0,
+            "framesReceived": 1740,
+            "headerBytesReceived": 228596,
+            "nackCount": 0,
+            "packetsReceived": 6924,
+            "pliCount": 0,
+            "retransmittedBytesReceived": 0,
+            "totalDecodeTime": 3.074823000000009
+          },
+          "counterResetFields": [],
+          "decodeMillisecondsPerDecodedFrame": 1.7671396551724192,
+          "encodeMillisecondsPerEncodedFrame": null,
+          "encodedFrameRateFromCounterDelta": null,
+          "encoderImplementations": {},
+          "networkVideoConfirmed": true,
+          "observedDimensionsInSendingIntervals": {
+            "1280x720": 58
+          },
+          "payloadBitrateBitsPerSecondIncludingRetransmissions": 913066.5448203826,
+          "qualityLimitationReasons": {},
+          "qualityLimitationSecondsByReason": {},
+          "samples": 59,
+          "windowEndUTC": "2026-10-27T08:24:58.403501+00:00",
+          "windowSeconds": 58.03076708984375,
+          "windowStartUTC": "2026-10-27T08:24:00.372734+00:00"
+        },
+        "outbound": {
+          "actualFrameRateFromCounterDelta": 29.982167730884143,
+          "codecMimeTypes": [
+            "video/VP9"
+          ],
+          "counterDeltas": {
+            "bytesSent": 6619405,
+            "firCount": 0,
+            "framesEncoded": 1739,
+            "framesSent": 1739,
+            "headerBytesSent": 227652,
+            "nackCount": 0,
+            "packetsSent": 6920,
+            "pliCount": 0,
+            "qpSum": 15007,
+            "qualityLimitationResolutionChanges": 0,
+            "retransmittedBytesSent": 0,
+            "retransmittedPacketsSent": 0,
+            "totalEncodeTime": 4.975999999999999,
+            "totalPacketSendDelay": 0.004550999999999306
+          },
+          "counterResetFields": [],
+          "decodeMillisecondsPerDecodedFrame": null,
+          "encodeMillisecondsPerEncodedFrame": 2.861414606095457,
+          "encodedFrameRateFromCounterDelta": 29.982167730884143,
+          "encoderImplementations": {
+            "libvpx": 59
+          },
+          "networkVideoConfirmed": true,
+          "observedDimensionsInSendingIntervals": {
+            "1280x720": 58
+          },
+          "payloadBitrateBitsPerSecondIncludingRetransmissions": 913003.3858017396,
+          "qualityLimitationReasons": {
+            "none": 59
+          },
+          "qualityLimitationSecondsByReason": {
+            "bandwidth": 0.0,
+            "cpu": 0,
+            "none": 58.001000000000204,
+            "other": 0
+          },
+          "samples": 59,
+          "windowEndUTC": "2026-10-27T08:24:58.368569+00:00",
+          "windowSeconds": 58.00114306640625,
+          "windowStartUTC": "2026-10-27T08:24:00.367426+00:00"
+        },
+        "scope": "Asynchronous reference only; neither a primary CPU window nor a supplemental CPU window."
+      }
+    ],
+    "status": "partial-reference-only",
+    "supplementalCPUWindows": [
+      {
+        "actualNetworkSendingVerified": false,
+        "actualWallSeconds": 30.005040958,
+        "cameraInputResolution": "1080p",
+        "cpuEvidence": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/network-check-1080p/cpu.json",
+          "sha256": "fa0fd96c21edf6cdfe8c71843b45492f19b5fa6299ca56f2a951eaf209d3d827"
+        },
+        "finishedAtUTC": "2026-10-27T08:28:11.986357+00:00",
+        "rtpCoverageStatus": "No matching RTP export was retained in the evidence for this comparison.",
+        "startedAtUTC": "2026-10-27T08:27:41.949590+00:00"
+      },
+      {
+        "actualNetworkSendingVerified": false,
+        "actualWallSeconds": 30.005043417,
+        "cameraInputResolution": "720p",
+        "cpuEvidence": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/network-check-720p/cpu.json",
+          "sha256": "c6c8e55712ed946c1b90b09c78549bd507d67b107aee3e9c70872cf3453de437"
+        },
+        "finishedAtUTC": "2026-10-27T08:29:54.553555+00:00",
+        "rtpCoverageStatus": "No matching RTP export was retained in the evidence for this comparison.",
+        "startedAtUTC": "2026-10-27T08:29:24.522172+00:00"
+      }
+    ],
+    "unconfirmedConditions": [
+      {
+        "actualNetworkSendingVerified": false,
+        "cameraInputResolution": "720p",
+        "reason": "No matching or separate 720p RTP observation was retained for this comparison."
+      }
+    ]
+  },
+  "orientedPairs": [
+    {
+      "baseline": "A1",
+      "lowerResolution": "B2",
+      "metrics": {
+        "cpu_chrome_core": {
+          "reduction1080Minus720": 0.12760953859423907,
+          "relativeReductionPercent": 0.4355561046509804
+        },
+        "cpu_extension": {
+          "reduction1080Minus720": 0.3496945238009985,
+          "relativeReductionPercent": 7.3269301344376965
+        },
+        "cpu_host": {
+          "reduction1080Minus720": 7.428684133437002e-05,
+          "relativeReductionPercent": 0.001435626178310551
+        },
+        "cpu_meet_a": {
+          "reduction1080Minus720": -0.637793705509484,
+          "relativeReductionPercent": -2.53685979840242
+        },
+        "cpu_meet_and_chrome_core": {
+          "reduction1080Minus720": -0.513404918337443,
+          "relativeReductionPercent": -0.8374294319540183
+        },
+        "cpu_meet_b": {
+          "reduction1080Minus720": -0.003220751422201573,
+          "relativeReductionPercent": -0.04689433201488445
+        },
+        "cpu_meet_renderers": {
+          "reduction1080Minus720": -0.6410144569316856,
+          "relativeReductionPercent": -2.0025960488698127
+        },
+        "cpu_selected_with_wmc": {
+          "reduction1080Minus720": -0.15558070298557425,
+          "relativeReductionPercent": -0.13122204945642027
+        },
+        "cpu_selected_without_wmc": {
+          "reduction1080Minus720": -0.18862500338516952,
+          "relativeReductionPercent": -0.26472012754635504
+        },
+        "cpu_wmc": {
+          "reduction1080Minus720": 0.03304430039958817,
+          "relativeReductionPercent": 0.06984865566822383
+        },
+        "fresh_conversion_fps": {
+          "reduction1080Minus720": -0.0002763708790638475,
+          "relativeReductionPercent": -0.0009212473174131464
+        },
+        "gpu_ms_per_fresh_frame": {
+          "reduction1080Minus720": 0.013836701788629092,
+          "relativeReductionPercent": 21.59454005942715
+        },
+        "gpu_ms_per_output_frame": {
+          "reduction1080Minus720": 0.013836701788629092,
+          "relativeReductionPercent": 21.59454005942715
+        },
+        "gpu_ms_per_second": {
+          "reduction1080Minus720": 0.4150821885392899,
+          "relativeReductionPercent": 21.593817751230755
+        },
+        "host_physical_footprint_mib": {
+          "reduction1080Minus720": 7.578125,
+          "relativeReductionPercent": 3.60432319930712
+        },
+        "output_fps": {
+          "reduction1080Minus720": -0.0002763708790638475,
+          "relativeReductionPercent": -0.0009212473174131464
+        },
+        "repeat_percent": {
+          "reduction1080Minus720": 0.0,
+          "relativeReductionPercent": null
+        },
+        "repeated_output_fps": {
+          "reduction1080Minus720": 0.0,
+          "relativeReductionPercent": null
+        },
+        "system_cpu_busy_all_cores": {
+          "reduction1080Minus720": -0.8594721317906462,
+          "relativeReductionPercent": -3.1147926604089564
+        },
+        "system_cpu_busy_one_core_equivalent": {
+          "reduction1080Minus720": -13.751554108650339,
+          "relativeReductionPercent": -3.1147926604089564
+        }
+      },
+      "pair": "A1-B2"
+    },
+    {
+      "baseline": "A4",
+      "lowerResolution": "B3",
+      "metrics": {
+        "cpu_chrome_core": {
+          "reduction1080Minus720": -0.2676349586037716,
+          "relativeReductionPercent": -0.9207649421077546
+        },
+        "cpu_extension": {
+          "reduction1080Minus720": 0.12516677577132374,
+          "relativeReductionPercent": 2.79781471428159
+        },
+        "cpu_host": {
+          "reduction1080Minus720": -0.1029129065520733,
+          "relativeReductionPercent": -2.0913298958440256
+        },
+        "cpu_meet_a": {
+          "reduction1080Minus720": -1.7728024697927687,
+          "relativeReductionPercent": -7.443378552595683
+        },
+        "cpu_meet_and_chrome_core": {
+          "reduction1080Minus720": -1.9863604198501505,
+          "relativeReductionPercent": -3.3502376511567475
+        },
+        "cpu_meet_b": {
+          "reduction1080Minus720": 0.05407700854638886,
+          "relativeReductionPercent": 0.8441129096776632
+        },
+        "cpu_meet_renderers": {
+          "reduction1080Minus720": -1.718725461246379,
+          "relativeReductionPercent": -5.68671013941671
+        },
+        "cpu_selected_with_wmc": {
+          "reduction1080Minus720": -2.258747694197666,
+          "relativeReductionPercent": -1.9532950637589963
+        },
+        "cpu_selected_without_wmc": {
+          "reduction1080Minus720": -1.9890983137487694,
+          "relativeReductionPercent": -2.89598036909403
+        },
+        "cpu_wmc": {
+          "reduction1080Minus720": -0.26964938044888953,
+          "relativeReductionPercent": -0.574296218229582
+        },
+        "fresh_conversion_fps": {
+          "reduction1080Minus720": 2.0312329013449926e-05,
+          "relativeReductionPercent": 6.77063837631067e-05
+        },
+        "gpu_ms_per_fresh_frame": {
+          "reduction1080Minus720": 0.014295737791240479,
+          "relativeReductionPercent": 22.088412959889055
+        },
+        "gpu_ms_per_output_frame": {
+          "reduction1080Minus720": 0.014295737791240479,
+          "relativeReductionPercent": 22.088412959889055
+        },
+        "gpu_ms_per_second": {
+          "reduction1080Minus720": 0.42888189686942924,
+          "relativeReductionPercent": 22.088465711007164
+        },
+        "host_physical_footprint_mib": {
+          "reduction1080Minus720": 8.859375,
+          "relativeReductionPercent": 4.188810295067896
+        },
+        "output_fps": {
+          "reduction1080Minus720": 2.0312329013449926e-05,
+          "relativeReductionPercent": 6.77063837631067e-05
+        },
+        "repeat_percent": {
+          "reduction1080Minus720": 0.0,
+          "relativeReductionPercent": null
+        },
+        "repeated_output_fps": {
+          "reduction1080Minus720": 0.0,
+          "relativeReductionPercent": null
+        },
+        "system_cpu_busy_all_cores": {
+          "reduction1080Minus720": 0.0836180557680315,
+          "relativeReductionPercent": 0.32834226017008583
+        },
+        "system_cpu_busy_one_core_equivalent": {
+          "reduction1080Minus720": 1.337888892288504,
+          "relativeReductionPercent": 0.32834226017008583
+        }
+      },
+      "pair": "A4-B3"
+    }
+  ],
+  "privacy": "Public summary intentionally omits absolute user paths, meeting URLs/codes, tab IDs, device IDs, email addresses, IP addresses, process command lines, and process IDs.",
+  "runs": [
+    {
+      "actualNetworkSendingVerified": false,
+      "artifactDirectory": "build/meet-30fps-20261027/fixed-01-1080p",
+      "cameraDimensions": [
+        1920,
+        1080
+      ],
+      "cpuDataValid": true,
+      "cpuWindowSeconds": 40.00505225,
+      "designation": "A1",
+      "evidence": {
+        "cpu.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-01-1080p/cpu.json",
+          "sha256": "6de6b194c3e81063adb60f96cb6303119ca93b5e1752b3e81b28344f7a664934"
+        },
+        "manifest.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-01-1080p/manifest.json",
+          "sha256": "285073c54a50f612bf46ceaf4180ea6ddc8a111802d6ab3359da323b22765970"
+        },
+        "producer-after.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-01-1080p/producer-after.json",
+          "sha256": "45449aba7d97c503e644b32b933b6f4b0a72a68cb3c7873462ff5cf9675d446d"
+        },
+        "producer-before.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-01-1080p/producer-before.json",
+          "sha256": "9750b6fa48398939a1369dace99c1581d114d3ff939fab28096a9730016c03ee"
+        },
+        "summary.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-01-1080p/summary.json",
+          "sha256": "28dc105403ceebf8d83015e01c6c313b88274fc66209aec34407c364b8d6acfb"
+        }
+      },
+      "extensionCounterDeltas": {
+        "consumeErrors": 0,
+        "droppedNoConsumers": 0,
+        "forwarded": 1200,
+        "received": 1200,
+        "rejected": 0
+      },
+      "finishedAtUTC": "2026-10-27T07:52:55.958995+00:00",
+      "hostPhysicalFootprintBytesWithinRun": {
+        "availableSamples": 9,
+        "maximum": 220496904,
+        "median": 220464136,
+        "minimum": 220414984,
+        "totalSamples": 9
+      },
+      "logicalCPUCount": 16,
+      "metrics": {
+        "cpu_chrome_core": 29.29807141527613,
+        "cpu_extension": 4.7727290609389135,
+        "cpu_host": 5.174525406174398,
+        "cpu_meet_a": 25.141070307122718,
+        "cpu_meet_and_chrome_core": 61.30724557166425,
+        "cpu_meet_b": 6.8681038492653945,
+        "cpu_meet_renderers": 32.00917415638811,
+        "cpu_selected_with_wmc": 118.56292721387776,
+        "cpu_selected_without_wmc": 71.25450003877755,
+        "cpu_wmc": 47.3084271751002,
+        "fresh_conversion_fps": 29.999640035847733,
+        "gpu_ms_per_fresh_frame": 0.0640750011370983,
+        "gpu_ms_per_output_frame": 0.0640750011370983,
+        "gpu_ms_per_second": 1.9222269694094831,
+        "host_physical_footprint_mib": 210.25098419189453,
+        "output_fps": 29.999640035847733,
+        "repeat_percent": 0.0,
+        "repeated_output_fps": 0.0,
+        "system_cpu_busy_all_cores": 27.59323735140052,
+        "system_cpu_busy_one_core_equivalent": 441.49179762240834
+      },
+      "pool": {
+        "cachedOutputBufferCountAfter": 1,
+        "cachedOutputBufferCountBefore": 1,
+        "limit": 8,
+        "scratchBufferBytesAfter": 0,
+        "scratchBufferBytesBefore": 0,
+        "surfaceCountAfter": 8,
+        "surfaceCountBefore": 8,
+        "surfaceSetUnchangedWithinWindow": true
+      },
+      "producerCounterDeltas": {
+        "cpuPixelCopies": 0,
+        "freshRenderedFrames": 1200,
+        "gpuCommandSecondsTotal": 0.07689000136451796,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "poolPressureDrops": 0,
+        "queuePressureDrops": 0,
+        "renderedFrames": 1200,
+        "repeatedOutputFrames": 0,
+        "sourceTransformPasses": 1200,
+        "submitted": 1200,
+        "totalOutputFrames": 1200,
+        "transportPixelCopies": 1200
+      },
+      "producerStatusWindowSeconds": 40.00047995796194,
+      "resolution": "1080p",
+      "selectedProcessIdentitiesStable": true,
+      "startedAtUTC": "2026-10-27T07:52:15.926178+00:00",
+      "systemTickDeltas": {
+        "idle": 46168,
+        "nice": 0,
+        "system": 7985,
+        "user": 9609
+      },
+      "thermalStateAfter": 0,
+      "thermalStateBefore": 0
+    },
+    {
+      "actualNetworkSendingVerified": false,
+      "artifactDirectory": "build/meet-30fps-20261027/fixed-02-720p",
+      "cameraDimensions": [
+        1280,
+        720
+      ],
+      "cpuDataValid": true,
+      "cpuWindowSeconds": 40.003938125,
+      "designation": "B2",
+      "evidence": {
+        "cpu.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-02-720p/cpu.json",
+          "sha256": "d15a45ae459d09f053d2eacf6f66e9ce976c799b316b846e68387a1f699cee28"
+        },
+        "manifest.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-02-720p/manifest.json",
+          "sha256": "15f5c34ebc8b8d7b9c82e664a35b7b4c34ddca62d4832f153eda13c5efc33279"
+        },
+        "producer-after.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-02-720p/producer-after.json",
+          "sha256": "ebecb5cf06ae32061ac4101ff909825dde4c1c14a30b12381e9998c68cc149c1"
+        },
+        "producer-before.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-02-720p/producer-before.json",
+          "sha256": "34a2a8f3dad1fa11b0a9efb5505ab5071a8f4c46bc7bd75820e5dce57c099eb5"
+        },
+        "summary.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-02-720p/summary.json",
+          "sha256": "c05c011cb3ae96fce956a9d60466f52b01d9efbb91638f9a47d998a761536bec"
+        }
+      },
+      "extensionCounterDeltas": {
+        "consumeErrors": 0,
+        "droppedNoConsumers": 0,
+        "forwarded": 1200,
+        "received": 1200,
+        "rejected": 0
+      },
+      "finishedAtUTC": "2026-10-27T07:55:24.623708+00:00",
+      "hostPhysicalFootprintBytesWithinRun": {
+        "availableSamples": 9,
+        "maximum": 212517896,
+        "median": 212517896,
+        "minimum": 212403208,
+        "totalSamples": 9
+      },
+      "logicalCPUCount": 16,
+      "metrics": {
+        "cpu_chrome_core": 29.17046187668189,
+        "cpu_extension": 4.423034537137915,
+        "cpu_host": 5.174451119333064,
+        "cpu_meet_a": 25.7788640126322,
+        "cpu_meet_and_chrome_core": 61.82065049000169,
+        "cpu_meet_b": 6.871324600687596,
+        "cpu_meet_renderers": 32.6501886133198,
+        "cpu_selected_with_wmc": 118.71850791686333,
+        "cpu_selected_without_wmc": 71.44312504216272,
+        "cpu_wmc": 47.27538287470061,
+        "fresh_conversion_fps": 29.999916406726797,
+        "gpu_ms_per_fresh_frame": 0.050238299348469205,
+        "gpu_ms_per_output_frame": 0.050238299348469205,
+        "gpu_ms_per_second": 1.5071447808701932,
+        "host_physical_footprint_mib": 202.67285919189453,
+        "output_fps": 29.999916406726797,
+        "repeat_percent": 0.0,
+        "repeated_output_fps": 0.0,
+        "system_cpu_busy_all_cores": 28.452709483191168,
+        "system_cpu_busy_one_core_equivalent": 455.2433517310587
+      },
+      "pool": {
+        "cachedOutputBufferCountAfter": 1,
+        "cachedOutputBufferCountBefore": 1,
+        "limit": 8,
+        "scratchBufferBytesAfter": 0,
+        "scratchBufferBytesBefore": 0,
+        "surfaceCountAfter": 8,
+        "surfaceCountBefore": 8,
+        "surfaceSetUnchangedWithinWindow": true
+      },
+      "producerCounterDeltas": {
+        "cpuPixelCopies": 0,
+        "freshRenderedFrames": 1200,
+        "gpuCommandSecondsTotal": 0.06028595921816304,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "poolPressureDrops": 0,
+        "queuePressureDrops": 0,
+        "renderedFrames": 1200,
+        "repeatedOutputFrames": 0,
+        "sourceTransformPasses": 1200,
+        "submitted": 1200,
+        "totalOutputFrames": 1200,
+        "transportPixelCopies": 1200
+      },
+      "producerStatusWindowSeconds": 40.00011145800818,
+      "resolution": "720p",
+      "selectedProcessIdentitiesStable": true,
+      "startedAtUTC": "2026-10-27T07:54:44.592061+00:00",
+      "systemTickDeltas": {
+        "idle": 45630,
+        "nice": 0,
+        "system": 7785,
+        "user": 10361
+      },
+      "thermalStateAfter": 0,
+      "thermalStateBefore": 0
+    },
+    {
+      "actualNetworkSendingVerified": false,
+      "artifactDirectory": "build/meet-30fps-20261027/fixed-03-720p",
+      "cameraDimensions": [
+        1280,
+        720
+      ],
+      "cpuDataValid": true,
+      "cpuWindowSeconds": 40.001509458,
+      "designation": "B3",
+      "evidence": {
+        "cpu.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-03-720p/cpu.json",
+          "sha256": "599da101508af420a924a05294948b8c9b31454c9e6c3b161fdca45f90e7e4f8"
+        },
+        "manifest.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-03-720p/manifest.json",
+          "sha256": "a3aa49aee39e8c8df8679e76401a0db491fedd0c2d929bd3ee3f21673953c5e1"
+        },
+        "producer-after.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-03-720p/producer-after.json",
+          "sha256": "849e10b7542c144b4b0d33b1bb15c520b28af2e13123c751795f92162590d257"
+        },
+        "producer-before.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-03-720p/producer-before.json",
+          "sha256": "c4284f1c39c22f6d96867f582bbc1dbbdd09278343d672a1801c4243fbaa68f9"
+        },
+        "summary.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-03-720p/summary.json",
+          "sha256": "f4b2948c5e142b346dd691455e8406677f9212a37fc521359fdae8254c00687d"
+        }
+      },
+      "extensionCounterDeltas": {
+        "consumeErrors": 0,
+        "droppedNoConsumers": 0,
+        "forwarded": 1200,
+        "received": 1200,
+        "rejected": 0
+      },
+      "finishedAtUTC": "2026-10-27T07:57:11.592596+00:00",
+      "hostPhysicalFootprintBytesWithinRun": {
+        "availableSamples": 9,
+        "maximum": 212534280,
+        "median": 212485128,
+        "minimum": 212468744,
+        "totalSamples": 9
+      },
+      "logicalCPUCount": 16,
+      "metrics": {
+        "cpu_chrome_core": 29.334223657248103,
+        "cpu_extension": 4.348566782509124,
+        "cpu_host": 5.023844164532268,
+        "cpu_meet_a": 25.5899771206044,
+        "cpu_meet_and_chrome_core": 61.27649523056465,
+        "cpu_meet_b": 6.352294452712147,
+        "cpu_meet_renderers": 31.942271573316546,
+        "cpu_selected_with_wmc": 117.8965607469192,
+        "cpu_selected_without_wmc": 70.6738979407239,
+        "cpu_wmc": 47.222662806195295,
+        "fresh_conversion_fps": 30.00059098086804,
+        "gpu_ms_per_fresh_frame": 0.05042479155235924,
+        "gpu_ms_per_output_frame": 0.05042479155235924,
+        "gpu_ms_per_second": 1.5127735466578596,
+        "host_physical_footprint_mib": 202.64160919189453,
+        "output_fps": 30.00059098086804,
+        "repeat_percent": 0.0,
+        "repeated_output_fps": 0.0,
+        "system_cpu_busy_all_cores": 25.38311769878156,
+        "system_cpu_busy_one_core_equivalent": 406.129883180505
+      },
+      "pool": {
+        "cachedOutputBufferCountAfter": 1,
+        "cachedOutputBufferCountBefore": 1,
+        "limit": 8,
+        "scratchBufferBytesAfter": 0,
+        "scratchBufferBytesBefore": 0,
+        "surfaceCountAfter": 8,
+        "surfaceCountBefore": 8,
+        "surfaceSetUnchangedWithinWindow": true
+      },
+      "producerCounterDeltas": {
+        "cpuPixelCopies": 0,
+        "freshRenderedFrames": 1200,
+        "gpuCommandSecondsTotal": 0.060509749862831086,
+        "gpuTimedFrames": 1200,
+        "gpuTimingUnavailableFrames": 0,
+        "poolPressureDrops": 0,
+        "queuePressureDrops": 0,
+        "renderedFrames": 1200,
+        "repeatedOutputFrames": 0,
+        "sourceTransformPasses": 1200,
+        "submitted": 1200,
+        "totalOutputFrames": 1200,
+        "transportPixelCopies": 1200
+      },
+      "producerStatusWindowSeconds": 39.99921204103157,
+      "resolution": "720p",
+      "selectedProcessIdentitiesStable": true,
+      "startedAtUTC": "2026-10-27T07:56:31.568032+00:00",
+      "systemTickDeltas": {
+        "idle": 47522,
+        "nice": 0,
+        "system": 7042,
+        "user": 9124
+      },
+      "thermalStateAfter": 0,
+      "thermalStateBefore": 0
+    },
+    {
+      "actualNetworkSendingVerified": false,
+      "artifactDirectory": "build/meet-30fps-20261027/fixed-04-1080p",
+      "cameraDimensions": [
+        1920,
+        1080
+      ],
+      "cpuDataValid": true,
+      "cpuWindowSeconds": 40.005034583,
+      "designation": "A4",
+      "evidence": {
+        "cpu.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-04-1080p/cpu.json",
+          "sha256": "bf3dad789eeb93a9fee4beac93a51696e9efb35a712a8bf73b24bb403015f869"
+        },
+        "manifest.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-04-1080p/manifest.json",
+          "sha256": "41623726c81c058ccde64c23f1fe5be37279bc36945a390aebd0116983d8b886"
+        },
+        "producer-after.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-04-1080p/producer-after.json",
+          "sha256": "7e14b0bfa8ccc1359dac96f750460b4097c8cbdd8aca5a0a962c0daf646f195e"
+        },
+        "producer-before.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-04-1080p/producer-before.json",
+          "sha256": "2e2be88e791da92955531efd0eb428e6b316c7f2c9c83690e76414470cdd0f36"
+        },
+        "summary.json": {
+          "repositoryRelativePath": "build/meet-30fps-20261027/fixed-04-1080p/summary.json",
+          "sha256": "3c1ffbf5052f42be4c822054c6579c0b0aa29df528e6cbd71e71c61711bb4979"
+        }
+      },
+      "extensionCounterDeltas": {
+        "consumeErrors": 0,
+        "droppedNoConsumers": 0,
+        "forwarded": 1230,
+        "received": 1230,
+        "rejected": 0
+      },
+      "finishedAtUTC": "2026-10-27T07:59:51.240074+00:00",
+      "hostPhysicalFootprintBytesWithinRun": {
+        "availableSamples": 9,
+        "maximum": 221971464,
+        "median": 221774856,
+        "minimum": 221725704,
+        "totalSamples": 9
+      },
+      "logicalCPUCount": 16,
+      "metrics": {
+        "cpu_chrome_core": 29.06658869864433,
+        "cpu_extension": 4.473733558280448,
+        "cpu_host": 4.920931257980195,
+        "cpu_meet_a": 23.81717465081163,
+        "cpu_meet_and_chrome_core": 59.2901348107145,
+        "cpu_meet_b": 6.406371461258536,
+        "cpu_meet_renderers": 30.223546112070167,
+        "cpu_selected_with_wmc": 115.63781305272154,
+        "cpu_selected_without_wmc": 68.68479962697513,
+        "cpu_wmc": 46.953013425746406,
+        "fresh_conversion_fps": 30.000611293197053,
+        "gpu_ms_per_fresh_frame": 0.06472052934359972,
+        "gpu_ms_per_output_frame": 0.06472052934359972,
+        "gpu_ms_per_second": 1.9416554435272888,
+        "host_physical_footprint_mib": 211.50098419189453,
+        "output_fps": 30.000611293197053,
+        "repeat_percent": 0.0,
+        "repeated_output_fps": 0.0,
+        "system_cpu_busy_all_cores": 25.466735754549592,
+        "system_cpu_busy_one_core_equivalent": 407.4677720727935
+      },
+      "pool": {
+        "cachedOutputBufferCountAfter": 1,
+        "cachedOutputBufferCountBefore": 1,
+        "limit": 8,
+        "scratchBufferBytesAfter": 0,
+        "scratchBufferBytesBefore": 0,
+        "surfaceCountAfter": 8,
+        "surfaceCountBefore": 8,
+        "surfaceSetUnchangedWithinWindow": true
+      },
+      "producerCounterDeltas": {
+        "cpuPixelCopies": 0,
+        "freshRenderedFrames": 1230,
+        "gpuCommandSecondsTotal": 0.07960625109262764,
+        "gpuTimedFrames": 1230,
+        "gpuTimingUnavailableFrames": 0,
+        "poolPressureDrops": 0,
+        "queuePressureDrops": 0,
+        "renderedFrames": 1230,
+        "repeatedOutputFrames": 0,
+        "sourceTransformPasses": 1230,
+        "submitted": 1230,
+        "totalOutputFrames": 1230,
+        "transportPixelCopies": 1230
+      },
+      "producerStatusWindowSeconds": 40.99916458298685,
+      "resolution": "1080p",
+      "selectedProcessIdentitiesStable": true,
+      "startedAtUTC": "2026-10-27T07:59:11.222603+00:00",
+      "systemTickDeltas": {
+        "idle": 47468,
+        "nice": 0,
+        "system": 7060,
+        "user": 9159
+      },
+      "thermalStateAfter": 0,
+      "thermalStateBefore": 0
+    }
+  ],
+  "schemaVersion": 1,
+  "scope": "Primary fixed-workload CPU/GPU/physical-footprint comparison; networkSupplement holds separately scoped asynchronous reference evidence and explicitly unverified conditions."
+}
